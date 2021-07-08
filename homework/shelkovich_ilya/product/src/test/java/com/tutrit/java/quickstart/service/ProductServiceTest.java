@@ -14,7 +14,7 @@ public class ProductServiceTest {
 
     @Before
     public void setUp() {
-        this.product = new Product("test");
+        this.product = new Product("water");
         this.productService = new ProductService();
         this.regularPrice = 10;
         this.discount = 0.4;
@@ -22,7 +22,7 @@ public class ProductServiceTest {
 
     @Test
     public void actualPrice() {
-        double expected = 4;
+        double expected = 6;
         double actual = productService.actualPrice(regularPrice, discount);
         double delta = 0;
         Assert.assertEquals(expected, actual, delta);
