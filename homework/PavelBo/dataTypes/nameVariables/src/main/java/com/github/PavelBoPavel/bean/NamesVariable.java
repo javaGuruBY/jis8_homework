@@ -1,6 +1,6 @@
 package com.github.PavelBoPavel.bean;
 
-public class Variables {
+public class NamesVariables {
 
     private int numberOfShipsInPort;
     private int counterInteger;
