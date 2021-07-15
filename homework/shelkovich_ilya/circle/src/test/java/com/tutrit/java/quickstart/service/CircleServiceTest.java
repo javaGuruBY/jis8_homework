@@ -9,21 +9,18 @@ public class CircleServiceTest {
 
     Circle circle;
     CircleService circleService;
-    double radius;
 
     @Before
     public void setUp(){
-        this.circle = new Circle();
+        this.circle = new Circle(4);
         this.circleService = new CircleService();
-        this.radius = 4.5;
     }
 
     @Test
     public void calculateArea() {
-        double r = radius;
-        double expected = Math.PI * r * r;
-        double actual = circleService.calculateArea(r);
-        double delta = 2;
+        double expected = Math.PI * circle.getRadius() * circle.getRadius();
+        double actual = circleService.calculateArea(circle);
+        double delta = 0;
         Assert.assertEquals(expected, actual, delta);
     }
 }
