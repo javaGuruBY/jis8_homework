@@ -9,22 +9,19 @@ public class ProductServiceTest {
 
     Product product;
     ProductService productService;
-    double regularPrice;
-    double discount;
 
     @Before
     public void setUp() {
         this.product = new Product("water");
         this.productService = new ProductService();
-        this.regularPrice = 10;
-        this.discount = 0.4;
     }
 
     @Test
     public void actualPrice() {
+        double regularPrice = 10;
+        double discount = 40;
         double expected = 6;
         double actual = productService.actualPrice(regularPrice, discount);
-        double delta = 0;
-        Assert.assertEquals(expected, actual, delta);
+        Assert.assertEquals(expected, actual, 0.0);
     }
 }

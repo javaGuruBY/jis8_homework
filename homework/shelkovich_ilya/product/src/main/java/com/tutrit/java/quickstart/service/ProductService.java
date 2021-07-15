@@ -9,11 +9,12 @@ public class ProductService {
     Logger log = LoggerFactory.getLogger("ProductService");
 
     public double actualPrice(double regularPrice, double discount) {
-        return regularPrice - (regularPrice * discount);
+        return regularPrice - (regularPrice * discount / 100);
     }
 
-    public void printInformation(Product product, double actualPrice) {
+    public void printInformation(Product product) {
         log.info("Product name: {}, regular price: {}, discount: {}%, actual price: {}",
-                product.getName(), product.getRegularPrice(), product.getDiscount() * 100, actualPrice);
+                product.getName(), product.getRegularPrice(), product.getDiscount(),
+                actualPrice(product.getRegularPrice(), product.getDiscount()));
     }
 }
