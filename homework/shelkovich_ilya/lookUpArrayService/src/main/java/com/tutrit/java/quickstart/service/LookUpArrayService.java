@@ -3,13 +3,13 @@ package com.tutrit.java.quickstart.service;
 public class LookUpArrayService {
 
 
-    public int findMax(int[] array){
-        if (array == null || array.length == 0){
+    public int findMax(int[] array) {
+        if (array == null || array.length == 0) {
             return 0;
         }
         int max = array[0];
-        for (int i = 1; i < array.length; i++){
-            if (array[i] > max){
+        for (var i = 1; i < array.length; i++) {
+            if (array[i] > max) {
                 max = array[i];
             }
         }
@@ -17,12 +17,12 @@ public class LookUpArrayService {
     }
 
     public int findMin(int[] array) {
-        if (array == null || array.length == 0){
+        if (array == null || array.length == 0) {
             return 0;
         }
         int min = array[0];
-        for (int i = 1; i < array.length; i++){
-            if (array[i] < min){
+        for (var i = 1; i < array.length; i++) {
+            if (array[i] < min) {
                 min = array[i];
             }
         }
@@ -30,40 +30,43 @@ public class LookUpArrayService {
     }
 
     public int indexOfMax(int[] array) {
-        if (array == null || array.length == 0){
+        if (array == null || array.length == 0) {
             return -1;
         }
         int arrayMax = array[0];
-        int indexOfMax = 0;
-        for (int i = 0; i < array.length; i++) {
+        var indexOfMax = 0;
+        for (var i = 0; i < array.length; i++) {
             if (arrayMax < array[i]) {
                 arrayMax = array[i];
                 indexOfMax = i;
             }
-        } return indexOfMax;
+        }
+        return indexOfMax;
     }
 
     public int indexOfMin(int[] array) {
-        if (array == null || array.length == 0){
+        if (array == null || array.length == 0) {
             return -1;
         }
         int arrayMin = array[0];
-        int indexOfMin = 0;
-        for (int i = 0; i < array.length; i++){
+        var indexOfMin = 0;
+        for (var i = 0; i < array.length; i++) {
             if (arrayMin > array[i]) {
                 arrayMin = array[i];
                 indexOfMin = i;
             }
-        } return indexOfMin;
+        }
+        return indexOfMin;
     }
 
     public int indexOf(int[] array, int value) {
-        if (array == null || array.length == 0){
+        if (array == null || array.length == 0) {
             return -1;
         }
-        int i = 0;
-        while (value != array[i]){
+        var i = 0;
+        while (value != array[i]) {
             i++;
-        } return i;
+        }
+        return i;
     }
 }
