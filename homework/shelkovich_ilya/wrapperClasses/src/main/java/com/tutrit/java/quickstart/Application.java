@@ -8,22 +8,7 @@ public class Application {
     static Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
-        Integer intByLiteral = 100;
-        Integer.valueOf(4);
-        Integer.parseInt("4");
-
-
-        // Не понял как продемонстрировать разницу присвоения по ссылке и методом valueOf
-
-        Integer x = intByLiteral;
-        Integer.valueOf(intByLiteral);
-
-        log.info(Integer.toBinaryString(intByLiteral));
-        log.info(Integer.toHexString(intByLiteral));
-        log.info(Integer.toString(intByLiteral));
-
         //  Сравните передаваемые разными способами значения, используя "==" и equals().
-
         Integer a = 20;
         Integer b = 20;
 
