@@ -7,13 +7,15 @@ public class Encoder {
 
     static Logger log = LoggerFactory.getLogger("Encoder");
 
-    void decode(char symbol) {
+    public  int decode(char symbol) {
         int code = (int) symbol;
-        log.info("code = " + code);
+        log.info("code = {} " + code);
+        return code;
     }
 
-    void encode(short code) {
+    public char encode(int code) {
         char symbol = (char) code;
-        log.info("symbol = " + symbol);
+        log.info("symbol = {} " + symbol);
+        return symbol;
     }
 }

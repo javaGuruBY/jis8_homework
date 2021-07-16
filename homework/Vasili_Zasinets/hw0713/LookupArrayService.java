@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class LookupArrayService {
     static Logger log = LoggerFactory.getLogger("Array");
-        int arrayMin = 0;
+    int arrayMin = 0;
     int arrayMax = 0;
     int indexMin = -1;
     int indexMax = -1;
@@ -18,7 +18,7 @@ public class LookupArrayService {
                 arrayMax = array[i];
             }
         }
-        log.info("arrayMax = " + arrayMax);
+        log.info("arrayMax  = {}" + arrayMax);
         return arrayMax;
     }
 
@@ -30,7 +30,7 @@ public class LookupArrayService {
                 arrayMin = array[i];
             }
         }
-        log.info("arrayMin = " + arrayMin);
+        log.info("arrayMin = {}" + arrayMin);
         return arrayMin;
 
     }
@@ -44,7 +44,7 @@ public class LookupArrayService {
                 indexMax = i;
             }
         }
-        log.info("indexMax = " + indexMax);
+        log.info("indexMax = {}" + indexMax);
         return indexMax;
     }
 
@@ -58,14 +58,17 @@ public class LookupArrayService {
                 indexMin = i;
             }
         }
-        log.info("indexMin = " + indexMin);
+        log.info("indexMin = {}" + indexMin);
         return indexMin;
 
     }
 
     public int indexOf(int[] array, int value) {
         int i = 0;
-        while (value != array[i]){i++;}
-        log.info("indexOf = " + i);
-    return i;}
+        while (value != array[i]) {
+            i++;
+        }
+        log.info("indexOf = {}" + i);
+        return i;
+    }
 }
