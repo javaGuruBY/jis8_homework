@@ -10,31 +10,19 @@ public class Sum {
         return a + b;
     }
 
-    public int cycleSumOfPrimitives(){
+    public long millsToCalculatePrimitives(){
         int i = 0;
         while (i < 10_000_000){
             sumByPrimitives(3,5);
             i++;
-        } return i;
+        } return System.currentTimeMillis();
     }
 
-    public int cycleSumOfWrapper(){
+    public long millsToCalculateWrappers(){
         int i = 0;
         while (i < 10_000_000){
             sumByWrapper(3,5);
             i++;
-        } return i;
-    }
-
-    public long timeForCountPrimitive(){
-        long start = System.nanoTime();
-        cycleSumOfPrimitives();
-        return System.nanoTime() - start;
-    }
-
-    public long timeForCountWrapper(){
-        long start = System.nanoTime();
-        cycleSumOfWrapper();
-        return System.nanoTime() - start;
+        } return System.currentTimeMillis();
     }
 }
