@@ -7,74 +7,62 @@ import org.junit.Test;
 public class LookUpArrayServiceTest {
 
     LookUpArrayService lookUpArrayService;
-    int[] array;
-    int[] emptyArray;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         this.lookUpArrayService = new LookUpArrayService();
-        this.array = new int[]{1, 4, 6, 12};
-        this.emptyArray = new int[]{};
+
     }
 
     @Test
     public void findMax() {
-        int expected = 12;
-        int actual = lookUpArrayService.findMax(array);
-        Assert.assertEquals(expected, actual);
+        int[] array = new int[]{1, 3, 12, 4};
+
+        Assert.assertEquals(12, lookUpArrayService.findMax(array));
     }
 
     @Test
     public void findMin() {
-        int expected = 1;
-        int actual = lookUpArrayService.findMin(array);
-        Assert.assertEquals(expected, actual);
+        int[] array = new int[]{1, 3, 12, 4};
+
+        Assert.assertEquals(1, lookUpArrayService.findMin(array));
     }
 
     @Test
-    public void shouldReturn0IfArrayIsEmpty(){
-        int expected = 0;
-        int actual = lookUpArrayService.findMax(emptyArray);
-        Assert.assertEquals(expected, actual);
+    public void shouldReturn0IfArrayIsEmpty() {
+        int[] emptyArray = new int[]{};
 
-        int expected2 = 0;
-        int actual2 = lookUpArrayService.findMin(emptyArray);
-        Assert.assertEquals(expected2, actual2);
+        Assert.assertEquals(0, lookUpArrayService.findMax(emptyArray));
+        Assert.assertEquals(0, lookUpArrayService.findMin(emptyArray));
     }
 
     @Test
     public void indexOfMax() {
-        int expected = 3;
-        int actual = lookUpArrayService.indexOfMax(array);
-        Assert.assertEquals(expected, actual);
+        int[] array = new int[]{1, 3, 12, 4};
+
+        Assert.assertEquals(2, lookUpArrayService.indexOfMax(array));
     }
 
     @Test
     public void indexOfMin() {
-        int expected = 0;
-        int actual = lookUpArrayService.indexOfMin(array);
-        Assert.assertEquals(expected, actual);
+        int[] array = new int[]{1, 3, 12, 4};
+
+        Assert.assertEquals(0, lookUpArrayService.indexOfMin(array));
     }
 
     @Test
     public void indexOf() {
-        int expected = 2;
-        int actual = lookUpArrayService.indexOf(array, 6);
-        Assert.assertEquals(expected, actual);
+        int[] array = new int[]{1, 3, 12, 4};
+
+        Assert.assertEquals(2, lookUpArrayService.indexOf(array, 12));
     }
 
     @Test
-    public void shouldReturnMinusOneIfArrayIsEmpty(){
-        int expected = -1;
-        int actual = lookUpArrayService.indexOfMax(emptyArray);
-        Assert.assertEquals(expected, actual);
+    public void shouldReturnMinusOneIfArrayIsEmpty() {
+        int[] emptyArray = new int[]{};
 
-        int expected2 = -1;
-        int actual2 = lookUpArrayService.indexOfMin(emptyArray);
-        Assert.assertEquals(expected2, actual2);
-
-        int expected3 = -1;
-        int actual3 = lookUpArrayService.indexOf(emptyArray, 6);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(-1, lookUpArrayService.indexOfMax(emptyArray));
+        Assert.assertEquals(-1, lookUpArrayService.indexOfMin(emptyArray));
+        Assert.assertEquals(-1, lookUpArrayService.indexOf(emptyArray, 6));
     }
 }
