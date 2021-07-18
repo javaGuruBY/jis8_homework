@@ -8,18 +8,19 @@ public class ArrayService {
 
     Logger log = LoggerFactory.getLogger(ArrayService.class);
 
-    public int[] createArray(int size){
+    public int[] createArray(int size) {
         return new int[size];
     }
 
-    public int[] fillRandomly(int[] array){
-        for (int i = 0; i < array.length; i++){
+    public int[] fillRandomly(int[] array) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(-1, 101);
-        } return array;
+        }
+        return array;
     }
 
     public void printArray(int[] array) {
-        for (int value : array){
+        for (int value : array) {
             log.info("{}", value);
         }
     }
@@ -28,7 +29,8 @@ public class ArrayService {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum = array[i] + sum;
-        } return sum;
+        }
+        return sum;
     }
 
     public double avg(int[] array) {
