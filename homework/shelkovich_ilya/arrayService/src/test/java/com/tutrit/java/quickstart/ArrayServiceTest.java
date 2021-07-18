@@ -32,5 +32,9 @@ public class ArrayServiceTest {
         // не понял какой assert можно использовать здесь
     }
 
-
+    @Test
+    public void sum(){
+        int[] array = {1, 4, 1};
+        Assert.assertEquals(6, arrayService.sum(array));
+    }
 }

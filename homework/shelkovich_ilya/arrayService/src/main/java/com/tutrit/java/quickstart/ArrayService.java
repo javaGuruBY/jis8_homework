@@ -25,9 +25,12 @@ public class ArrayService {
     }
 
     int sum(int[] array) {
-        return 0;
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum = array[i] + sum;
+        } return sum;
     }
-    //- метод должен вернуть сумму всех элементов массива;
+
     double avg(int[] array) {
         return 0;
     }
