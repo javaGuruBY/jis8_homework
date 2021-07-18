@@ -37,4 +37,10 @@ public class ArrayServiceTest {
         int[] array = {1, 4, 1};
         Assert.assertEquals(6, arrayService.sum(array));
     }
+
+    @Test
+    public  void avg(){
+        int[] array = {6, 4, 5};
+        Assert.assertEquals(5, arrayService.avg(array), 0.0);
+    }
 }

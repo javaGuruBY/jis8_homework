@@ -32,7 +32,6 @@ public class ArrayService {
     }
 
     double avg(int[] array) {
-        return 0;
+        return (double) sum(array) / array.length;
     }
-    //- метод должен рассчитать среднее арифметическое всех элементов массива (в случае, если массив пустой, вернуть 0);
 }
