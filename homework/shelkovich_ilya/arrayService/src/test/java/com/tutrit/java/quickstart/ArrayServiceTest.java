@@ -25,5 +25,12 @@ public class ArrayServiceTest {
         Assert.assertArrayEquals(array, arrayService.fillRandomly(array));
     }
 
+    @Test
+    public void printArray(){
+        int[] array = {10, 12, 14};
+        arrayService.printArray(array);
+        // не понял какой assert можно использовать здесь
+    }
+
 
 }
