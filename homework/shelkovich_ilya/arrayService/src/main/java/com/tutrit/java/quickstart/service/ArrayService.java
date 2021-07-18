@@ -1,4 +1,4 @@
-package com.tutrit.java.quickstart;
+package com.tutrit.java.quickstart.service;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;

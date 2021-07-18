@@ -1,4 +1,4 @@
-package com.tutrit.java.quickstart;
+package com.tutrit.java.quickstart.service;
 
 import org.junit.Assert;
 import org.junit.Before;
