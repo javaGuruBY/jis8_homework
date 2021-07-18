@@ -43,4 +43,20 @@ public class ArrayServiceTest {
         int[] array = {6, 4, 5};
         Assert.assertEquals(5, arrayService.avg(array), 0.0);
     }
+
+    //не понял какой нужен assertion
+    @Test
+    public void sort() {
+        int[] array = {6, 4, 5};
+        arrayService.sort(array);
+        Assert.assertTrue(true);
+    }
+
+    //не понял какой нужен assertion
+    @Test
+    public void swap() {
+        int[] array = {1, 2, 3, 4, 5};
+        arrayService.swap(array);
+        Assert.assertTrue(true);
+    }
 }
