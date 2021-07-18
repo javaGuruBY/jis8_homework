@@ -4,31 +4,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MathOperationsDemo {
-    public static void main(String[] args) {
 
-        Logger log = LoggerFactory.getLogger("MathOperations ");
-        int a = 50;
-        int b = 12;
-        int subtraction;
-        int sum;
-        float division;
-        int multiplication;
+    Logger log = LoggerFactory.getLogger("MathOperations ");
 
-        log.info("Var a {}", a);
-        log.info("Var b {}", b);
+    int sum(int a, int b) {
+        log.info("Sum {}", a + b);
+        return a + b;
 
-        sum = a + b;
-        log.info("Sum {}", sum);
+    }
 
-        subtraction = a - b;
-        log.info("Subtraction {}", subtraction);
+    int subtraction(int a, int b) {
+        log.info("Subtraction {}", a - b);
+        return a - b;
+    }
 
-        division = (float) a / b;
-        log.info("Division {}", division);
+    float division(int a, int b) {
+        log.info("Division {}", a / b);
+        return (float) a / b;
 
-        multiplication = a * b;
-        log.info("Multiplication {}", multiplication);
+    }
+
+    int multiplication(int a, int b) {
+        log.info("Multiplication {}", a * b);
+        return a * b;
 
     }
 }
-
