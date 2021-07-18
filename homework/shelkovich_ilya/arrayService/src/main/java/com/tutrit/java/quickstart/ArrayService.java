@@ -18,20 +18,20 @@ public class ArrayService {
         } return array;
     }
 
-    void printArray(int[] array) {
+    public void printArray(int[] array) {
         for (int value : array){
             log.info("{}", value);
         }
     }
 
-    int sum(int[] array) {
+    public int sum(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum = array[i] + sum;
         } return sum;
     }
 
-    double avg(int[] array) {
+    public double avg(int[] array) {
         return (double) sum(array) / array.length;
     }
 }
