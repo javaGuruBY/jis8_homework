@@ -3,17 +3,12 @@ package homework.set;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.LinkedHashSet;
 
 public class UniqueWordVocabularyTest {
 
-    Logger log = LoggerFactory.getLogger("Set ");
+
     UniqueWordVocabulary vocabulary;
     UniqueWordVocabulary vocabularyTest;
-    LinkedHashSet<String> set;
 
     @Before
     public void setUp() {
