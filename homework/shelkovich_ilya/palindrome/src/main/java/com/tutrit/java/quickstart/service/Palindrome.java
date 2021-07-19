@@ -3,10 +3,17 @@ package com.tutrit.java.quickstart.service;
 public class Palindrome {
 
     public boolean isPalindrome(String text) {
-        var stringBuilder = new StringBuilder(text);
-        stringBuilder.reverse();
-
-        var reverseText = stringBuilder.toString();
-        return text.equals(reverseText);
+        String clean = text.replaceAll("\\s+", "").toLowerCase();
+        int length = clean.length();
+        int forward = 0;
+        int backward = length - 1;
+        while (backward > forward){
+            char forwardChar = clean.charAt(forward++);
+            char backwardChar = clean.charAt(backward--);
+            if(forwardChar != backwardChar){
+                return false;
+            }
+        } return true;
     }
 }
+

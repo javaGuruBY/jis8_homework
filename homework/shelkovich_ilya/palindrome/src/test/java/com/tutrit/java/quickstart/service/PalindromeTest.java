@@ -15,7 +15,7 @@ public class PalindromeTest {
 
     @Test
     public void shouldReturnTrue(){
-        String text = "tennet";
+        String text = "teNneT";
         palindrome.isPalindrome(text);
         Assert.assertTrue(true);
     }
@@ -26,4 +26,6 @@ public class PalindromeTest {
         palindrome.isPalindrome(text);
         Assert.assertFalse(false);
     }
+
+
 }
