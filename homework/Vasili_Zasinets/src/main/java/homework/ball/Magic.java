@@ -19,30 +19,30 @@ public class Magic {
     }
 
     void addPrediction() {
-        ball.put(1, "It is certain");
-        ball.put(2, "It is decidedly so");
-        ball.put(3, "Without a doubt");
-        ball.put(4, "Yes — definitely");
-        ball.put(5, "You may rely on it");
-        ball.put(6, "As I see it,yes");
-        ball.put(7, "Most likely");
-        ball.put(8, "Outlook good");
-        ball.put(9, "Signs point to yes");
-        ball.put(10, "Yes");
-        ball.put(11, "Reply hazy,try again");
-        ball.put(12, "Ask again later");
-        ball.put(13, "Better not tell you now");
-        ball.put(14, "Cannot predict now");
-        ball.put(15, "Don’t count on it");
-        ball.put(16, "My reply is no");
-        ball.put(17, "My sources say no");
-        ball.put(18, "Outlook not so good");
-        ball.put(19, "Very doubtful");
-        ball.put(20, "Concentrate and ask again");
+        ball.put(0, "It is certain");
+        ball.put(1, "It is decidedly so");
+        ball.put(2, "Without a doubt");
+        ball.put(3, "Yes — definitely");
+        ball.put(4, "You may rely on it");
+        ball.put(5, "As I see it,yes");
+        ball.put(6, "Most likely");
+        ball.put(7, "Outlook good");
+        ball.put(8, "Signs point to yes");
+        ball.put(9, "Yes");
+        ball.put(10, "Reply hazy,try again");
+        ball.put(11, "Ask again later");
+        ball.put(12, "Better not tell you now");
+        ball.put(13, "Cannot predict now");
+        ball.put(14, "Don’t count on it");
+        ball.put(15, "My reply is no");
+        ball.put(16, "My sources say no");
+        ball.put(17, "Outlook not so good");
+        ball.put(18, "Very doubtful");
+        ball.put(19, "Concentrate and ask again");
     }
 
     int number() {
-        return random.nextInt(21);
+        return random.nextInt(20);
     }
 
     void prediction() {
