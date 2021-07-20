@@ -46,7 +46,7 @@ public class Magic {
     }
 
     void prediction() {
-        log.info("Prediction fo you {}", ball.get(number()));
+        log.info("Prediction fo you: {}", ball.get(number()));
     }
 
 }

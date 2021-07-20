@@ -29,7 +29,6 @@ public class MagicTest {
     @Test
     public void prediction() {
         magic.addPrediction();
-        magic.number();
         magic.prediction();
     }
 }
