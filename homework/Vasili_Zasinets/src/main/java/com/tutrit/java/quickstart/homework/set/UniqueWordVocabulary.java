@@ -1,16 +1,17 @@
-package homework.set;
+package com.tutrit.java.quickstart.homework.set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class UniqueWordVocabulary {
 
     Logger log = LoggerFactory.getLogger("Set ");
 
-    LinkedHashSet<String> linkedHashSetSet = new LinkedHashSet<>();
+    Set<String> linkedHashSetSet = new LinkedHashSet<>();
 
     @Override
     public boolean equals(Object o) {

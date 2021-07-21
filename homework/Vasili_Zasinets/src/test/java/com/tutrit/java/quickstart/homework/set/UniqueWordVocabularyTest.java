@@ -1,4 +1,4 @@
-package homework.set;
+package com.tutrit.java.quickstart.homework.set;
 
 import org.junit.Assert;
 import org.junit.Before;
