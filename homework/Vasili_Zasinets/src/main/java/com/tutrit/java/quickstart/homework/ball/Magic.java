@@ -1,14 +1,15 @@
-package homework.ball;
+package com.tutrit.java.quickstart.homework.ball;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Magic {
     Logger log = LoggerFactory.getLogger("Magic Ball ");
-    HashMap<Integer, String> ball = new HashMap<>();
+    Map<Integer, String> ball = new HashMap<>();
     Random random = new Random();
 
     @Override

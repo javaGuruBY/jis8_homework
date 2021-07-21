@@ -1,4 +1,4 @@
-package homework.ball;
+package com.tutrit.java.quickstart.homework.ball;
 
 import org.junit.Before;
 import org.junit.Test;
