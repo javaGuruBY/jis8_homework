@@ -47,6 +47,6 @@ public class StringAnalyzerTest extends TestCase {
 
     @Test
     public void testMostCommonPunctuationMarks(){
-
+        Assert.assertEquals(",",stringAnalyzer.mostCommonPunctuationMarks(Text.text));
     }
 }
