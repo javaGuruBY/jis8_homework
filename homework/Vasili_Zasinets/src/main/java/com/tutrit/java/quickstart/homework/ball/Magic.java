@@ -12,13 +12,6 @@ public class Magic {
     Map<Integer, String> ball = new HashMap<>();
     Random random = new Random();
 
-    @Override
-    public String toString() {
-        return "Magic{" +
-                "ball=" + ball +
-                '}';
-    }
-
     void addPrediction() {
         ball.put(0, "It is certain");
         ball.put(1, "It is decidedly so");
@@ -48,6 +41,13 @@ public class Magic {
 
     void prediction() {
         log.info("Prediction fo you: {}", ball.get(number()));
+    }
+
+    @Override
+    public String toString() {
+        return "Magic{" +
+                "ball=" + ball +
+                '}';
     }
 
 }
