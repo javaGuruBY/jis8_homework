@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class UniqueWordVocabularyTest {
 
-
     UniqueWordVocabulary vocabulary;
     UniqueWordVocabulary vocabularyTest;
 

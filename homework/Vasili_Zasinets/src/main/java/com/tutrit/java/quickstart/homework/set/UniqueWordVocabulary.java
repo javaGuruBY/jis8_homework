@@ -13,6 +13,24 @@ public class UniqueWordVocabulary {
 
     Set<String> linkedHashSetSet = new LinkedHashSet<>();
 
+    public void addWord(String word) {
+        if (!word.equals("")) {
+            linkedHashSetSet.add(word);
+        }
+    }
+
+    public int getWordsCount() {
+        return linkedHashSetSet.size();
+    }
+
+    public void printVocabulary() {
+        for (String set : linkedHashSetSet
+        ) {
+            log.info("hashSet {}", set);
+
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -31,24 +49,6 @@ public class UniqueWordVocabulary {
         return "UniqueWordVocabulary{" +
                 "Set=" + linkedHashSetSet +
                 '}';
-    }
-
-    public void addWord(String word) {
-        if (!word.equals("")) {
-            linkedHashSetSet.add(word);
-        }
-    }
-
-    public int getWordsCount() {
-        return linkedHashSetSet.size();
-    }
-
-    public void printVocabulary() {
-        for (String set : linkedHashSetSet
-        ) {
-            log.info("hashSet {}", set);
-
-        }
     }
 
 }
