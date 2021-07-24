@@ -7,7 +7,7 @@ public class UserLoginService {
              user.setBloc(true);
              return  false;
         }
-        if (user.isBloc()) return false;
+        if (user.isBlock()) return false;
         if (user.getPassword().equals(password)) {
             user.setEntry(3);
             return true;

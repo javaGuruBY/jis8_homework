@@ -2,7 +2,7 @@ package com.tutrit.java.quickstart.homework;
 
 public class User {
 
-    boolean bloc = false;
+    boolean isBlock = false;
     int entry = 3;
     private final String login;
     private final String password;
@@ -16,12 +16,12 @@ public class User {
         return password;
     }
 
-    public boolean isBloc() {
-        return bloc;
+    public boolean isBlock() {
+        return isBlock;
     }
 
     public boolean setBloc(boolean bloc) {
-        this.bloc = bloc;
+        this.isBlock = bloc;
         return bloc;
     }
 
