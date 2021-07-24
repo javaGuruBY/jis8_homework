@@ -8,14 +8,14 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 
 public class ShopTest {
-    ProductBank bank;
+    ProductRepository bank;
 
     Shop myTestShop = new Shop();
     Logger log = LoggerFactory.getLogger("Test ");
 
     @Before
     public void setUp() {
-        this.bank = new ProductBank();
+        this.bank = new ProductRepository();
         myTestShop.addProduct(bank.milk);
         myTestShop.addProduct(bank.water);
         myTestShop.addProduct(bank.bread);

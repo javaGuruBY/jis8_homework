@@ -11,14 +11,7 @@ public class Shop {
     Logger log = LoggerFactory.getLogger("Shop ");
     Map<String, BigDecimal> myShop = new LinkedHashMap<>();
     Product myProduct;
-    ProductBank bank;
-
-    @Override
-    public String toString() {
-        return " " +
-                "shop =" + myShop +
-                '}';
-    }
+    ProductRepository bank;
 
     void addProduct(Product product) {
         myShop.put(product.getName(), product.getPrice());
@@ -30,7 +23,7 @@ public class Shop {
     }
 
     void searchProductOfName(String name) {
-        log.info("Product: {}", name + ", price: " + myShop.get(name));
+        log.info("Product: {}, price{}", name, myShop.get(name));
     }
 
 
@@ -39,11 +32,17 @@ public class Shop {
             String k = entry.getKey();
             BigDecimal v = entry.getValue();
             if (v.compareTo(maxPriceRange) <= 0 && v.compareTo(minPriceRange) >= 0) {
-                log.info("Product : {}", k + " price: " + myShop.get(k));
+                log.info("Product : {}, price {}", k ,myShop.get(k));
 
             }
-
         }
+    }
+
+    @Override
+    public String toString() {
+        return " " +
+                "shop =" + myShop +
+                '}';
     }
 }
 

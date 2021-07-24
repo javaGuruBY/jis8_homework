@@ -2,7 +2,7 @@ package com.tutrit.java.quickstart.homework.shop;
 
 import java.math.BigDecimal;
 
-public class ProductBank {
+public class ProductRepository {
     Product milk = new Product("Milk", BigDecimal.valueOf(15.89));
     Product water = new Product("water", BigDecimal.valueOf(1.01));
     Product bread = new Product("bread", BigDecimal.valueOf(0.19));
