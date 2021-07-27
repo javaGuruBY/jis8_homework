@@ -7,26 +7,27 @@ public class MathOperationsDemo {
 
     Logger log = LoggerFactory.getLogger("MathOperations ");
 
-    int sum(int a, int b) {
-        log.info("Sum {}", a + b);
-        return a + b;
-
+   public int sum(int a, int b) {
+        int result = a + b;
+        log.info("Sum {}", result);
+        return result;
     }
 
-    int subtraction(int a, int b) {
-        log.info("Subtraction {}", a - b);
-        return a - b;
+    public int subtraction(int a, int b) {
+        int result = a - b;
+        log.info("Subtraction {}", result);
+        return result;
     }
 
-    float division(int a, int b) {
-        log.info("Division {}", a / b);
-        return (float) a / b;
-
+    public float division(int a, int b) {
+        float result = (float) a / b;
+        log.info("Division {}", result);
+        return result;
     }
 
-    int multiplication(int a, int b) {
-        log.info("Multiplication {}", a * b);
-        return a * b;
-
+    public int multiplication(int a, int b) {
+        int result = a * b;
+        log.info("Multiplication {}", result);
+        return result;
     }
 }
