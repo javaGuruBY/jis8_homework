@@ -17,5 +17,4 @@ public class SumTest {
     public void timeToCount(){
         Assert.assertTrue(sum.millsToCalculatePrimitives() < sum.millsToCalculateWrappers());
     }
-
 }

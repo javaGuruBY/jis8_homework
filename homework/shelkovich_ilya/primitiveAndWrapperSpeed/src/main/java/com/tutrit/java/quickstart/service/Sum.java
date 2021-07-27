@@ -11,18 +11,24 @@ public class Sum {
     }
 
     public long millsToCalculatePrimitives(){
-        int i = 0;
+        long start = System.currentTimeMillis();
+        var i = 0;
         while (i < 10_000_000){
-            sumByPrimitives(3,5);
+            sumByPrimitives(300,500);
             i++;
-        } return System.currentTimeMillis();
+        }
+        long finish = System.currentTimeMillis();
+        return finish - start;
     }
 
     public long millsToCalculateWrappers(){
-        int i = 0;
+        long start = System.currentTimeMillis();
+        var i = 0;
         while (i < 10_000_000){
-            sumByWrapper(3,5);
+            sumByWrapper(300,500);
             i++;
-        } return System.currentTimeMillis();
+        }
+        long finish = System.currentTimeMillis();
+        return finish - start;
     }
 }
