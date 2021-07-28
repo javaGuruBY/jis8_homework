@@ -21,7 +21,6 @@ public class ShopTest {
         myTestShop.addProduct(bank.bread);
         myTestShop.addProduct(bank.cola);
         myTestShop.addProduct(bank.meal);
-
     }
 
     @Test
