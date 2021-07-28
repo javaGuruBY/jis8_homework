@@ -1,41 +1,44 @@
 package com.github.pavelbopavel;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
+
 
 public class WrapperDemoTest {
-    Logger log;
+    Logger log = LoggerFactory.getLogger(WrapperDemoTest.class);
 
     @Before
     public void setUp(){
-        log = LoggerFactory.getLogger(WrapperDemoTest.class);
+
     }
     @Test
     public void immutableDemo(){
-        Integer i1 = 10;
-        Integer i2 = i1;
-        Assert.assertEquals(i1.hashCode(), i2.hashCode());
-        i2 = 5;
-        Assert.assertNotEquals(i1.hashCode(), i2.hashCode());
+        String str1 = "str1";
+        int str1Int = str1.hashCode();
+        str1 += " change";
+        int str1ChangeInt = str1.hashCode();
+        boolean result = str1Int ==str1ChangeInt;
+        assertFalse(result);
     }
 
     @Test
     public void  intejerToOctal(){
-        Assert.assertEquals("12", Integer.toString(10,8));
+        assertEquals("12", Integer.toString(10,8));
     }
 
     @Test
     public void  intejerToHex(){
-        Assert.assertEquals("a", Integer.toString(10,16));
+        assertEquals("a", Integer.toString(10,16));
     }
 
     @Test
     public void  intejerToBinary(){
-        Assert.assertEquals("1010", Integer.toString(10,2));
+        assertEquals("1010", Integer.toString(10,2));
     }
 
 }

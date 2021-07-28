@@ -1,10 +1,6 @@
 package com.github.pavelbopavel;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class WrapperDemo {
-    Logger log = LoggerFactory.getLogger(WrapperDemo.class);
 
     Integer integerConstructor = new Integer(5);
     Integer integerLiteral = 5;
