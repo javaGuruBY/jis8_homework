@@ -31,11 +31,7 @@ public class UniqueWordVocabularyTest {
 
     @Test
     public void getWordsCount() {
-        Assert.assertEquals(3, vocabularyTest.getWordsCount());
-    }
-
-    @Test
-    public void printVocabulary() {
-        vocabularyTest.printVocabulary();
+        int expectedSize = 3;
+        Assert.assertEquals(expectedSize, vocabularyTest.getWordsCount());
     }
 }
