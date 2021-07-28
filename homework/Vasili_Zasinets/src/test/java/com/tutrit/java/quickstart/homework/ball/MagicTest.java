@@ -1,5 +1,6 @@
 package com.tutrit.java.quickstart.homework.ball;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -7,8 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class MagicTest {
     Magic magic;
-    Logger log = LoggerFactory.getLogger("Ball ");
-
+    Logger log = LoggerFactory.getLogger("Ball");
 
     @Before
     public void setUp() {
@@ -16,9 +16,8 @@ public class MagicTest {
     }
 
     @Test
-    public void addPrediction() {
-        magic.addPrediction();
-        log.info("Test {}", magic);
+    public void addPredict() {
+        Assert.assertNotNull(magic.getBall());
     }
 
     @Test
@@ -27,8 +26,8 @@ public class MagicTest {
     }
 
     @Test
-    public void prediction() {
-        magic.addPrediction();
-        magic.prediction();
+    public void predict() {
+        magic.addPredict();
+        magic.predict();
     }
 }

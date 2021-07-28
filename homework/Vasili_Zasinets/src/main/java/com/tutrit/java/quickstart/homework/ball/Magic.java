@@ -8,11 +8,11 @@ import java.util.Map;
 import java.util.Random;
 
 public class Magic {
-    Logger log = LoggerFactory.getLogger("Magic Ball ");
-    Map<Integer, String> ball = new HashMap<>();
-    Random random = new Random();
+    private final Random random = new Random();
+    private final Map<Integer, String> ball = new HashMap<>();
+    Logger log = LoggerFactory.getLogger("Magic Ball");
 
-    void addPrediction() {
+    public void addPredict() {
         ball.put(0, "It is certain");
         ball.put(1, "It is decidedly so");
         ball.put(2, "Without a doubt");
@@ -35,12 +35,16 @@ public class Magic {
         ball.put(19, "Concentrate and ask again");
     }
 
-    int number() {
+    public int number() {
         return random.nextInt(20);
     }
 
-    void prediction() {
-        log.info("Prediction fo you: {}", ball.get(number()));
+    public String predictNext() {
+        return ball.get(number());
+    }
+
+    public void predict() {
+        log.info("Prediction fo you: {}", predictNext());
     }
 
     @Override
@@ -50,4 +54,7 @@ public class Magic {
                 '}';
     }
 
+    public Map<Integer, String> getBall() {
+        return ball;
+    }
 }
