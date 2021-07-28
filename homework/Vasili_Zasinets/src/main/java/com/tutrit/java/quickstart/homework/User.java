@@ -3,9 +3,9 @@ package com.tutrit.java.quickstart.homework;
 public class User {
 
     boolean isBlock = false;
-    int entry = 3;
-    private final String login;
-    private final String password;
+    int numberOfAttempts = 3;
+    private  String login;
+    private  String password;
 
     public User(String login, String password) {
         this.login = login;
@@ -25,12 +25,12 @@ public class User {
         return bloc;
     }
 
-    public int getEntry() {
-        return entry;
+    public int getNumberOfAttempts() {
+        return numberOfAttempts;
     }
 
-    public void setEntry(int entry) {
-        this.entry = entry;
+    public void setNumberOfAttempts(int numberOfAttempts) {
+        this.numberOfAttempts = numberOfAttempts;
     }
 
 

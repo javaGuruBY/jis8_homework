@@ -2,18 +2,29 @@ package com.tutrit.java.quickstart.homework;
 
 public class UserLoginService {
 
-    boolean login(User user, String password) {
-        if (user.getEntry() == 0) {
-             user.setBloc(true);
-             return  false;
-        }
-        if (user.isBlock()) return false;
+    public void decreaseLoginAttempts(User user) {
+        user.setNumberOfAttempts(user.getNumberOfAttempts() - 1);
+    }
+
+    public boolean restorationOfLoginAttempts(User user, String password) {
         if (user.getPassword().equals(password)) {
-            user.setEntry(3);
+            user.setNumberOfAttempts(3);
             return true;
         } else {
-            user.setEntry(user.getEntry() - 1);
+            decreaseLoginAttempts(user);
             return false;
         }
     }
+
+   public boolean login(User user, String password) {
+        if (user.getNumberOfAttempts() == 0) {
+            user.setBloc(true);
+            return false;
+        }
+        if (user.isBlock()) {
+            return false;
+        }
+       return restorationOfLoginAttempts(user, password);
+    }
 }
+
