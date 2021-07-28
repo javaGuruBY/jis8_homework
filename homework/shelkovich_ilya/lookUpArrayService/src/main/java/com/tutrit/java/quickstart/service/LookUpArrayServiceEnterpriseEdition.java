@@ -1,12 +1,13 @@
 package com.tutrit.java.quickstart.service;
 
-public class LookUpArrayService {
+public class LookUpArrayServiceEnterpriseEdition {
 
 
     public int findMax(int[] array) {
-        int check = checkIfArrayEmptyWhenSearchExtremum(array);
-        if (check < 0) {
-            return check;
+        try {
+            checkIfArrayEmpty(array);
+        } catch (ArrayEmptyException exception) {
+            return 0;
         }
         int max = array[0];
         for (var i = 1; i < array.length; i++) {
@@ -18,9 +19,10 @@ public class LookUpArrayService {
     }
 
     public int findMin(int[] array) {
-        int check = checkIfArrayEmptyWhenSearchExtremum(array);
-        if (check < 0) {
-            return check;
+        try {
+            checkIfArrayEmpty(array);
+        } catch (ArrayEmptyException exception) {
+            return 0;
         }
         int min = array[0];
         for (var i = 1; i < array.length; i++) {
@@ -32,9 +34,10 @@ public class LookUpArrayService {
     }
 
     public int indexOfMax(int[] array) {
-        int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
-            return check;
+        try {
+            checkIfArrayEmpty(array);
+        } catch (ArrayEmptyException exception) {
+            return -1;
         }
         int arrayMax = array[0];
         var indexOfMax = 0;
@@ -48,9 +51,10 @@ public class LookUpArrayService {
     }
 
     public int indexOfMin(int[] array) {
-        int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
-            return check;
+        try {
+            checkIfArrayEmpty(array);
+        } catch (ArrayEmptyException exception) {
+            return -1;
         }
         int arrayMin = array[0];
         var indexOfMin = 0;
@@ -64,9 +68,10 @@ public class LookUpArrayService {
     }
 
     public int indexOf(int[] array, int value) {
-        int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
-            return check;
+        try {
+            checkIfArrayEmpty(array);
+        } catch (ArrayEmptyException exception) {
+            return -1;
         }
         var i = 0;
         while (value != array[i]) {
@@ -75,17 +80,9 @@ public class LookUpArrayService {
         return i;
     }
 
-    public int checkIfArrayEmptyWhenSearchExtremum(int[] array) {
+    public void checkIfArrayEmpty(int[] array) throws ArrayEmptyException {
         if (array == null || array.length == 0) {
-            return 0;
+            throw new ArrayEmptyException("Array could not be empty or zero");
         }
-        return 1;
-    }
-
-    public int checkIfArrayEmptyWhenSearchIndex(int[] array) {
-        if (array == null || array.length == 0) {
-            return -1;
-        }
-        return 1;
     }
 }

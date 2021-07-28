@@ -26,10 +26,9 @@ public class LookUpArrayServiceTest {
     }
 
     @Test
-    public void shouldReturn0IfArrayIsEmpty() {
+    public void shouldReturnZeroIfArrayIsEmpty() {
         int[] emptyArray = {};
-        Assert.assertEquals(0, lookUpArrayService.findMax(emptyArray));
-        Assert.assertEquals(0, lookUpArrayService.findMin(emptyArray));
+        Assert.assertEquals(0, lookUpArrayService.checkIfArrayEmptyWhenSearchExtremum(emptyArray));
     }
 
     @Test
@@ -53,8 +52,6 @@ public class LookUpArrayServiceTest {
     @Test
     public void shouldReturnMinusOneIfArrayIsEmpty() {
         int[] emptyArray = {};
-        Assert.assertEquals(-1, lookUpArrayService.indexOfMax(emptyArray));
-        Assert.assertEquals(-1, lookUpArrayService.indexOfMin(emptyArray));
-        Assert.assertEquals(-1, lookUpArrayService.indexOf(emptyArray, 6));
+        Assert.assertEquals(-1,lookUpArrayService.checkIfArrayEmptyWhenSearchIndex(emptyArray));
     }
 }
