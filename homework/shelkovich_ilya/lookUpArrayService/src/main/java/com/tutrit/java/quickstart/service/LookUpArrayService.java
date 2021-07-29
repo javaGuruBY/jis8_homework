@@ -5,7 +5,7 @@ public class LookUpArrayService {
 
     public int findMax(int[] array) {
         int check = checkIfArrayEmptyWhenSearchExtremum(array);
-        if (check < 0) {
+        if (check <= 0) {
             return check;
         }
         int max = array[0];
@@ -19,7 +19,7 @@ public class LookUpArrayService {
 
     public int findMin(int[] array) {
         int check = checkIfArrayEmptyWhenSearchExtremum(array);
-        if (check < 0) {
+        if (check <= 0) {
             return check;
         }
         int min = array[0];
@@ -33,7 +33,7 @@ public class LookUpArrayService {
 
     public int indexOfMax(int[] array) {
         int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
+        if (check <= 0) {
             return check;
         }
         int arrayMax = array[0];
@@ -49,7 +49,7 @@ public class LookUpArrayService {
 
     public int indexOfMin(int[] array) {
         int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
+        if (check <= 0) {
             return check;
         }
         int arrayMin = array[0];
@@ -65,7 +65,7 @@ public class LookUpArrayService {
 
     public int indexOf(int[] array, int value) {
         int check = checkIfArrayEmptyWhenSearchIndex(array);
-        if (check < 0) {
+        if (check <= 0) {
             return check;
         }
         var i = 0;
