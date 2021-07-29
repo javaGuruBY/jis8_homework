@@ -24,10 +24,8 @@ public class UniqueWordVocabulary {
     }
 
     public void printVocabulary() {
-        for (String set : linkedHashSetSet
-        ) {
+        for (String set : linkedHashSetSet) {
             log.info("hashSet {}", set);
-
         }
     }
 
@@ -50,5 +48,4 @@ public class UniqueWordVocabulary {
                 "Set=" + linkedHashSetSet +
                 '}';
     }
-
 }
