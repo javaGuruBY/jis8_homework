@@ -35,17 +35,22 @@ public class ArrayService {
     }
 
     public double avg(int[] array) {
-        return (double) sum(array) / array.length;
+        return (double) sum(array) /  array.length;
     }
 
-    public void sort(int[] array) {
+    public int[] sort(int[] array) {
         Arrays.sort(array);
         log.info("{}", array);
+        return array;
     }
 
-    public void swap(int[] array) {
-        for (int i = array.length - 1; i >= 0; i--) {
-            log.info("{}", array[i]);
+    public int[] swap(int[] array) {
+        for (var i = 0; i < array.length / 2; i++) {
+            int element = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = element;
         }
+        return array;
     }
 }
+

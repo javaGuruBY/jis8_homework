@@ -3,10 +3,14 @@ package com.tutrit.java.quickstart.service;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ArrayServiceTest {
 
     ArrayService arrayService;
+    Logger log = LoggerFactory.getLogger(ArrayServiceTest.class);
+
 
     @Before
     public void setUp() {
@@ -18,18 +22,16 @@ public class ArrayServiceTest {
         Assert.assertArrayEquals(new int[]{}, arrayService.createArray(0));
     }
 
-    // не уверен что этот тест проверяет то, что я хотел. Я хотел проверить заполняется ли массив случайными числами
     @Test
     public void fillRandomly() {
         int[] array = new int[10];
-        Assert.assertArrayEquals(array, arrayService.fillRandomly(array));
+        Assert.assertNotNull(arrayService.fillRandomly(array));
     }
 
     @Test
     public void printArray() {
         int[] array = {10, 12, 14};
         arrayService.printArray(array);
-        Assert.assertTrue(true);
     }
 
     @Test
@@ -40,23 +42,21 @@ public class ArrayServiceTest {
 
     @Test
     public void avg() {
-        int[] array = {6, 4, 5};
-        Assert.assertEquals(5, arrayService.avg(array), 0.0);
+        int[] array = {49, 16, 4, 25, 3, 12, 2};
+        Assert.assertEquals(15.85714285714286, arrayService.avg(array), 0.00000000000001);
     }
 
-    //не понял какой нужен assertion
     @Test
     public void sort() {
         int[] array = {6, 4, 5};
-        arrayService.sort(array);
-        Assert.assertTrue(true);
+        int[] expectedArray = {4, 5, 6};
+        Assert.assertArrayEquals(expectedArray, arrayService.sort(array));
     }
 
-    //не понял какой нужен assertion
     @Test
     public void swap() {
         int[] array = {1, 2, 3, 4, 5};
-        arrayService.swap(array);
-        Assert.assertTrue(true);
+        int[] expectedArray = {5, 4, 3, 2, 1};
+        Assert.assertArrayEquals(expectedArray, arrayService.swap(array));
     }
 }
