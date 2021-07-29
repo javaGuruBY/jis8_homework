@@ -16,15 +16,13 @@ public class PalindromeTest {
     @Test
     public void shouldReturnTrue(){
         String text = "teNneT";
-        palindrome.isPalindrome(text);
-        Assert.assertTrue(true);
+        Assert.assertTrue(palindrome.isPalindrome(text));
     }
 
     @Test
     public void shouldReturnFalse(){
         String text = "airport";
-        palindrome.isPalindrome(text);
-        Assert.assertFalse(false);
+        Assert.assertFalse(palindrome.isPalindrome(text));
     }
 
 
