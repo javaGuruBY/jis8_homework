@@ -18,7 +18,7 @@ public class UniqueWordCounterTest {
 
     @Test
     public void addWord_test(){
-        addInitialWords();
+        uniqueWordCounter.addWord("dog");
         Assert.assertEquals(3, uniqueWordCounter.getWords().size());
     }
 

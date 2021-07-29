@@ -13,23 +13,6 @@ public class UniqueWordCounter {
 
     private Map<String, Integer> words = new HashMap<>();
 
-    public Map<String, Integer> getWords() {
-        return words;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof UniqueWordCounter)) return false;
-        UniqueWordCounter that = (UniqueWordCounter) o;
-        return Objects.equals(getWords(), that.getWords());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getWords());
-    }
-
     public void addWord(String word) {
         Integer value = words.get(word);
         if (value != null){
@@ -55,5 +38,22 @@ public class UniqueWordCounter {
         for(Map.Entry<String, Integer> word : words.entrySet()){
             log.info("word = {}, number of repetitions = {}",word.getKey(), word.getValue());
         }
+    }
+
+    public Map<String, Integer> getWords() {
+        return words;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UniqueWordCounter)) return false;
+        UniqueWordCounter that = (UniqueWordCounter) o;
+        return Objects.equals(getWords(), that.getWords());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getWords());
     }
 }
