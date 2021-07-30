@@ -1,10 +1,10 @@
 package com.tutrit.java.quickstart.homework.number;
 
 public class NumberService {
-    int result;
-    int i;
+   private int result;
+   private int i;
 
-    int sumStartingFromTheSmallestValue(int start, int finish) {
+   public int sumStartingFromTheSmallestValue(int start, int finish) {
         result = 0;
         while (start <= finish) {
             result += start;
@@ -13,7 +13,7 @@ public class NumberService {
         return result;
     }
 
-    int sumStartingFromTheHigherValue(int start, int finish) {
+    public int sumStartingFromTheHigherValue(int start, int finish) {
         result = 0;
         while (start >= finish) {
             result += start;
@@ -22,7 +22,7 @@ public class NumberService {
         return result;
     }
 
-    int selectionOfTheSummationMethod(int start, int finish) {
+    public int selectionOfTheSummationMethod(int start, int finish) {
         if (start > finish) {
             sumStartingFromTheHigherValue(start, finish);
         } else {
@@ -31,7 +31,7 @@ public class NumberService {
         return result;
     }
 
-    int selectionOfTheEvenNumberCounterMethod(int start, int finish) {
+    public int selectionOfTheEvenNumberCounterMethod(int start, int finish) {
         if (start > finish) {
             counterOfEvenNumbersStartingWithHigher(start, finish);
         } else {
@@ -40,7 +40,7 @@ public class NumberService {
         return i;
     }
 
-    int counterOfEvenNumbersStartingWithHigher(int start, int finish) {
+    public int counterOfEvenNumbersStartingWithHigher(int start, int finish) {
         while (start >= finish) {
             if (start % 2 == 0) {
                 i++;
@@ -50,7 +50,7 @@ public class NumberService {
         return i;
     }
 
-    int counterOfEvenNumbersStartingWithLowest(int start, int finish) {
+    public int counterOfEvenNumbersStartingWithLowest(int start, int finish) {
         while (start <= finish) {
             if (start % 2 == 0) {
                 i++;
