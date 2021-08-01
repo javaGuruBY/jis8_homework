@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class UniqueWordVocabulary {
 
-    Logger log = LoggerFactory.getLogger("Set ");
+    Logger log = LoggerFactory.getLogger("Set");
 
     Set<String> linkedHashSetSet = new LinkedHashSet<>();
 
