@@ -23,18 +23,12 @@ public class UserValidationServiceTest {
         user.setLastName("Matarazzzzzzzzzio");
         user.setAge(21);
         Assert.assertFalse(userValidationService.validate(user));
-    }
 
-    @Test
-    public void shouldThrowValidateExceptionFirstName() throws UserValidationException {
         user.setFirstName("An");
         user.setLastName("Matarazo");
         user.setAge(21);
         Assert.assertFalse(userValidationService.validate(user));
-    }
 
-    @Test
-    public void shouldThrowValidateExceptionAge() throws UserValidationException {
         user.setFirstName("Anna");
         user.setLastName("Matarazo");
         user.setAge(2021);
