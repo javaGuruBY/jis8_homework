@@ -32,11 +32,4 @@ public class UserValidationService {
             throw new UserValidationException("Age is incorrect");
         }
     }
-
-
-
-//    Допустимый возраст пользователя: от 0 до 120 лет включительно;
-//    В случае, если данные не проходят одну из проверок, то необходимо выбросить UserValidationException с причиной ошибки.
-
-
 }
