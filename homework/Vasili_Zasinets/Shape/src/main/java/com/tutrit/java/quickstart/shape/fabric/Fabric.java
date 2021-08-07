@@ -1,4 +1,4 @@
-package com.tutrit.java.quickstart.shape;
+package com.tutrit.java.quickstart.shape.fabric;
 
 public class Fabric {
 
