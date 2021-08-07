@@ -5,8 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class CircleTest {
-    Circle circleTest = new Circle("Circle", 6);
-    Circle circleTestException = new Circle("CircleTest", -6);
+    ShapeService shapeService = new ShapeService(Fabric.getNewShape("Circle"));
+    AbstractShape circleTest = shapeService.createShape("CircleTest", 6);
+    AbstractShape circleTestException = shapeService.createShape("CircleTestException", -6);
 
     @Test
     public void Circumference() throws ShapeLengthException {
@@ -16,7 +17,7 @@ public class CircleTest {
 
     @Test
     public void getName() {
-        assertEquals("Circle", circleTest.getName());
+        assertEquals("CircleTest", circleTest.getName());
     }
 
     @Test
@@ -26,8 +27,8 @@ public class CircleTest {
     }
 
     @Test
-    public void Perimeter() {
-       assertEquals(0, circleTest.perimeter(), 0);
+    public void Perimeter() throws ShapeLengthException {
+        assertEquals(0, circleTest.perimeter(), 0);
     }
 
     @Test(expected = ShapeLengthException.class)
