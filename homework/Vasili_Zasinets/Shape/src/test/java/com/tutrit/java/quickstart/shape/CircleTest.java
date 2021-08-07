@@ -15,20 +15,19 @@ public class CircleTest {
     }
 
     @Test
-    public void TestGetName() {
+    public void getName() {
         assertEquals("Circle", circleTest.getName());
     }
 
     @Test
-    public void testGetArea() throws ShapeLengthException {
+    public void getArea() throws ShapeLengthException {
         double expected = 113.097;
         assertEquals(expected, circleTest.getArea(), 0.0004);
     }
 
     @Test
     public void Perimeter() {
-        double expected = 20;
-        assertEquals(expected, circleTest.perimeter(), 0);
+       assertEquals(0, circleTest.perimeter(), 0);
     }
 
     @Test(expected = ShapeLengthException.class)

@@ -16,8 +16,11 @@ public class Square extends AbstractShape {
 
     @Override
     public double getArea() throws ShapeLengthException {
-        if (sideLength <= 0) {throw new ShapeLengthException("Incorrect data entered");}
-        else {return sideLength * sideLength;}
+        if (sideLength <= 0) {
+            throw new ShapeLengthException("Incorrect in data entered");
+        } else {
+            return sideLength * sideLength;
+        }
     }
 
     @Override
@@ -32,8 +35,11 @@ public class Square extends AbstractShape {
     }
 
     @Override
-    public double perimeter()  throws ShapeLengthException {
-        if (sideLength <= 0) {throw new ShapeLengthException("Incorrect data entered");}
-        else {return 4 * sideLength;}
+    public double perimeter() throws ShapeLengthException {
+        if (sideLength <= 0) {
+            throw new ShapeLengthException("Incorrect in data entered");
+        } else {
+            return 4 * sideLength;
+        }
     }
 }
