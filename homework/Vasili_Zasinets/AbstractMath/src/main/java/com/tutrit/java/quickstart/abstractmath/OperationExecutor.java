@@ -1,10 +1,20 @@
 package com.tutrit.java.quickstart.abstractmath;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class OperationExecutor {
 
-    void execute(MathOperation[] operations, double a, double b) throws DivisionByZeroException {
+    Logger log = LoggerFactory.getLogger("OperationExecutor");
+
+    public void execute(MathOperation[] operations, double a, double b) {
+
         for (MathOperation operation : operations) {
-            operation.compute(a, b);
+            try {
+                operation.compute(a, b);
+            } catch (DivisionByZeroException exception) {
+                log.warn(exception.toString());
+            }
         }
     }
 }

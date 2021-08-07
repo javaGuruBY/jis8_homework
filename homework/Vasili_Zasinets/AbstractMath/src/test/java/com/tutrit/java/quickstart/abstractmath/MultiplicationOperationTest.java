@@ -1,7 +1,8 @@
 package com.tutrit.java.quickstart.abstractmath;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MultiplicationOperationTest {
 
@@ -9,7 +10,6 @@ public class MultiplicationOperationTest {
 
     @Test
     public void compute() {
-        double expected = 20;
-        Assert.assertEquals(expected, multiplicationOperation.compute(4, 5), 0.000);
+        assertEquals(20, multiplicationOperation.compute(4, 5), 0.000);
     }
 }
