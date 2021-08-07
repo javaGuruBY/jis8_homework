@@ -3,9 +3,10 @@ package com.tutrit.java.quickstart.shape;
 public abstract class AbstractShape implements Shape{
     protected String name;
 
+
     @Override
     public double getArea() throws ShapeLengthException {
-        return 0;
+        throw new ShapeLengthException("Incorrect in data entered");
     }
 
     protected AbstractShape(String name) {

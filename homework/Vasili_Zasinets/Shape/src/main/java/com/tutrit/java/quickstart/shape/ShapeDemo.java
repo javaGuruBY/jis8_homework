@@ -8,7 +8,7 @@ public class ShapeDemo {
     public void shapeDemo(Shape... shapes) throws ShapeLengthException {
         Logger log = LoggerFactory.getLogger("ShapeDemo");
         for (Shape shape : shapes) {
-            log.info("Name: {} ",shape.getName()+"; Area: "+shape.getArea());
+            log.info("Name: {}, Area: {}", shape.getName(), shape.getArea());
         }
     }
 }
