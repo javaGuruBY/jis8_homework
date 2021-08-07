@@ -3,9 +3,7 @@ package com.tutrit.java.quickstart.shape.fabric;
 public class Fabric {
 
 //created a private constructor on the recommendation of sonar
-   private Fabric() {
-       throw new IllegalStateException("Utility class");
-    }
+   private Fabric() {}
 
     public static ShapeProvider getNewShape(String name) {
         return switch (name) {
