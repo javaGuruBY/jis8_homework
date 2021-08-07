@@ -1,4 +1,6 @@
-package com.tutrit.java.quickstart.shape;
+package com.tutrit.java.quickstart.shape.fabric;
+
+import com.tutrit.java.quickstart.shape.AbstractShape;
 
 interface Provider {
 
