@@ -16,17 +16,10 @@ public class OperationExecutorTest {
     }
 
     @Test
-    public void Execute() {
+    public void execute() {
         double a = 8;
         double b = 4;
         executor.execute(ops, a, b);
         Assert.assertNotNull(executor);
-    }
-
-    @Test
-    public void ExecuteException() {
-        double a = 8;
-        double b = 0;
-        executor.execute(ops, a, b);
     }
 }

@@ -1,14 +1,16 @@
 package com.tutrit.java.quickstart.abstractmath;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class SubtractionOperationTest {
-    SubtractionOperation subtractionOperation = new SubtractionOperation();
+import static com.tutrit.java.quickstart.abstractmath.facade.Facade.getResultMathOperation;
+import static org.junit.Assert.assertEquals;
 
+public class SubtractionOperationTest {
+
+    //getResultMathOperation(String nameOperation, double valueA, double valueB)
     @Test
     public void compute() {
         double expected = -1;
-        Assert.assertEquals(expected, subtractionOperation.compute(4, 5), 0.000);
+        assertEquals(expected, getResultMathOperation("Subtraction", 4, 5), 0.000);
     }
 }
