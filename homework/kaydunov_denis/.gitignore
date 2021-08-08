@@ -61,3 +61,6 @@ build/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+/java-quickstart-main/.idea/
+/java-quickstart-main/.mvn/
