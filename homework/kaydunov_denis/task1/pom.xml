@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>github.kaydunovdenis</groupId>
-    <artifactId>homework</artifactId>
+    <artifactId>shoping-list-application</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -16,8 +16,8 @@
         <!--suppress UnresolvedMavenProperty -->
         <sonar.login>${sonar.token}</sonar.login>
         <!-- Java version to use on project -->
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <!-- Default file encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -64,6 +64,12 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
         </dependency>
 
     </dependencies>
