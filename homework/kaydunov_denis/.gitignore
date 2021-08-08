@@ -1,12 +1,12 @@
 ### IntelliJ IDEA ###
-.idea
+*.idea/
 *.iws
 *.ipr
 
 ### Maven ###
-/mvnw
-/mvnw.cmd
-.mvn
+*/mvnw
+*/mvnw.cmd
+*.mvn
 !.mvn/wrapper/maven-wrapper.jar
 
 # Sonar
@@ -61,4 +61,3 @@ build/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
