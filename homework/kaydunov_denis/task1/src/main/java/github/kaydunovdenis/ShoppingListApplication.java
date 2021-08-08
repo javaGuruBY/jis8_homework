@@ -8,6 +8,7 @@ public class ShoppingListApplication {
 
     public static void main(String[] args) {
         log.info("Welcome to ShoppingList   ");
+        throw new UnsupportedOperationException();
     }
 }
 
