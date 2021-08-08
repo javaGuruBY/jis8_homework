@@ -1,5 +1,6 @@
 package github.kaydunovdenis.bean;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,12 +14,7 @@ public class ProductTest {
 
     @Before
     public void setUp() {
-        product = new Product(1L,
-                "Notebook Acer 9302V-1",
-                new BigDecimal("1000.00"),
-                Category.NOTEBOOK,
-                new BigDecimal("0"),
-                "Not description");
+        product = getDefaultProduct();
     }
 
     @Test
@@ -113,10 +109,32 @@ public class ProductTest {
 
     @Test
     public void testTestToString() {
-        Logger log = LoggerFactory.getLogger("main");
+        Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
         log.info(product.toString());
         String expect = "Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
                 " discount=0, description='Not description'}";
         Assert.assertEquals(expect, product.toString());
     }
+
+
+    @Test
+    public void testTestEquals() {
+        Product secondProduct = getDefaultProduct();
+        Assert.assertEquals(secondProduct, product);
+    }
+
+    @Test
+    public void testTestHashCode() {
+        EqualsVerifier.simple().forClass(Product.class).verify();
+    }
+
+    private Product getDefaultProduct() {
+        return new Product(1L,
+                "Notebook Acer 9302V-1",
+                new BigDecimal("1000.00"),
+                Category.NOTEBOOK,
+                new BigDecimal("0"),
+                "Not description");
+    }
+
 }

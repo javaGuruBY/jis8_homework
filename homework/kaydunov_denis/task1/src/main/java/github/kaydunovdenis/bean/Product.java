@@ -1,8 +1,5 @@
 package github.kaydunovdenis.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.math.BigDecimal;
 
 public class Product {
