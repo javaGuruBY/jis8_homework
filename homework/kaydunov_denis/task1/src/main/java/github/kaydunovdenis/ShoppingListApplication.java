@@ -7,7 +7,7 @@ public class ShoppingListApplication {
     private static Logger log = LoggerFactory.getLogger("main");
 
     public static void main(String[] args) {
-        log.info("Hello world!!");
+        log.info("Hello world!");
     }
 }
 
