@@ -6,6 +6,6 @@ public class MathProvider implements Provider {
 
     @Override
     public MathOperation getMathOperation() {
-        return null;
+        return new Operation();
     }
 }
