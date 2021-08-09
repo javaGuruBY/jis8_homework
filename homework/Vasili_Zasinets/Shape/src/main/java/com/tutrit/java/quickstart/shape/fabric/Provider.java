@@ -4,6 +4,6 @@ import com.tutrit.java.quickstart.shape.AbstractShape;
 
 interface Provider {
 
-//made the interface on the recommendation of the sonar
-     AbstractShape getShape(String name, double v);
+    //made the interface on the recommendation of the sonar
+    AbstractShape getShape(String name, double v);
 }
