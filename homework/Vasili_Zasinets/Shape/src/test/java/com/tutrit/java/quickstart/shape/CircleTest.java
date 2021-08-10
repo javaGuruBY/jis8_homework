@@ -9,7 +9,7 @@ public class CircleTest {
 
     //facadeForShape(String typeShape, String nameShape, double value) {
     @Test
-    public void circumference() throws ShapeLengthException {
+    public void circumference() throws ShapeException {
         assertEquals(37.7, facadeForShape("Circle", "CircleTest", 6).circumference(), 0.1);
     }
 
@@ -19,22 +19,22 @@ public class CircleTest {
     }
 
     @Test
-    public void getArea() throws ShapeLengthException {
+    public void getArea() throws ShapeException {
         assertEquals(78.54, facadeForShape("Circle", "CircleTest", 5).getArea(), 0.01);
     }
 
     @Test
-    public void perimeter() throws ShapeLengthException {
+    public void perimeter() throws ShapeException {
         assertEquals(0, facadeForShape("Circle", "CircleTest", 6).perimeter(), 0);
     }
 
-    @Test(expected = ShapeLengthException.class)
-    public void circumferenceException() throws ShapeLengthException {
+    @Test(expected = ShapeException.class)
+    public void circumferenceException() throws ShapeException {
         facadeForShape("Circle", "CircleTest", -6).circumference();
     }
 
-    @Test(expected = ShapeLengthException.class)
-    public void getAreaException() throws ShapeLengthException {
+    @Test(expected = ShapeException.class)
+    public void getAreaException() throws ShapeException {
         facadeForShape("Circle", "CircleTest", -7).getArea();
     }
 }

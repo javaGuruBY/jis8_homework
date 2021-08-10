@@ -20,9 +20,9 @@ public class Circle extends AbstractShape {
     }
 
     @Override
-    public double circumference() throws ShapeLengthException {
+    public double circumference() throws ShapeException {
         if (radius <= 0) {
-            throw new ShapeLengthException("Incorrect in data entered");
+            throw new ShapeException("Incorrect in data entered");
         }
         return 2 * Math.PI * radius;
     }
@@ -33,9 +33,9 @@ public class Circle extends AbstractShape {
     }
 
     @Override
-    public double getArea() throws ShapeLengthException {
+    public double getArea() throws ShapeException {
         if (radius <= 0) {
-            throw new ShapeLengthException("Incorrect in data entered");
+            throw new ShapeException("Incorrect in data entered");
         }
         return Math.PI * radius * radius;
     }

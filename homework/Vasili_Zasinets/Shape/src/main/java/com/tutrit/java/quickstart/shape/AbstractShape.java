@@ -5,17 +5,17 @@ public abstract class AbstractShape implements Shape{
 
 
     @Override
-    public double getArea() throws ShapeLengthException {
-        throw new ShapeLengthException("Incorrect in data entered");
+    public double getArea() throws ShapeException {
+        throw new ShapeException("Incorrect in data entered");
     }
 
     protected AbstractShape(String name) {
         this.name = name;
     }
 
-    public abstract double circumference() throws ShapeLengthException;
+    public abstract double circumference() throws ShapeException;
 
-    public abstract double perimeter() throws  ShapeLengthException;
+    public abstract double perimeter() throws ShapeException;
 
     @Override
     public String getName() {
