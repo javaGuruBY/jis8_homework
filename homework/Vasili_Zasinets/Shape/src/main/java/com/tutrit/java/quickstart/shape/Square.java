@@ -18,9 +18,8 @@ public class Square extends AbstractShape {
     public double getArea() throws ShapeLengthException {
         if (sideLength <= 0) {
             throw new ShapeLengthException("Incorrect in data entered");
-        } else {
-            return sideLength * sideLength;
         }
+        return sideLength * sideLength;
     }
 
     @Override
