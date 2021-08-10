@@ -37,5 +37,4 @@ public class CircleTest {
     public void getAreaException() throws ShapeLengthException {
         facadeForShape("Circle", "CircleTest", -7).getArea();
     }
-
 }
