@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class ShapeDemo {
 
-    public void shapeDemo(Shape... shapes) throws ShapeLengthException {
+    public void shapeDemo(Shape... shapes) throws ShapeException {
         Logger log = LoggerFactory.getLogger("ShapeDemo");
         for (Shape shape : shapes) {
             log.info("Name: {}, Area: {}", shape.getName(), shape.getArea());

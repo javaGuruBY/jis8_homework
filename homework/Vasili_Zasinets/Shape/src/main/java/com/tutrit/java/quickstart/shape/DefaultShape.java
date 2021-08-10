@@ -7,12 +7,12 @@ public class DefaultShape extends AbstractShape {
     }
 
     @Override
-    public double circumference() throws ShapeLengthException {
+    public double circumference() throws ShapeException {
         return 0;
     }
 
     @Override
-    public double perimeter() throws ShapeLengthException {
+    public double perimeter() throws ShapeException {
         return 0;
     }
 }

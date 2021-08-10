@@ -8,13 +8,13 @@ public class ShapeDemoTest {
     ShapeDemo shapeDemoTestException = new ShapeDemo();
 
     @Test
-    public void ShapeDemo() throws ShapeLengthException {
+    public void ShapeDemo() throws ShapeException {
         shapeDemoTest.shapeDemo(new Circle("Circle", 15.9), new Square("Square", 5.52));
         Assert.assertNotNull(shapeDemoTest);
     }
 
-    @Test(expected = ShapeLengthException.class)
-    public void ShapeDemoException() throws ShapeLengthException {
+    @Test(expected = ShapeException.class)
+    public void ShapeDemoException() throws ShapeException {
        shapeDemoTestException.shapeDemo(new Circle("Circle", -66), new Square("Square", 5.52));
     }
 }
