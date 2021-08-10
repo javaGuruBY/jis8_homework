@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 
 public class Circle extends AbstractShape {
 
-    Logger log = LoggerFactory.getLogger("Circle");
     private final double radius;
+    Logger log = LoggerFactory.getLogger("Circle");
 
     public Circle(String name, double radius) {
         super(name);
@@ -23,9 +23,8 @@ public class Circle extends AbstractShape {
     public double circumference() throws ShapeLengthException {
         if (radius <= 0) {
             throw new ShapeLengthException("Incorrect in data entered");
-        } else {
-            return 2 * Math.PI * radius;
         }
+        return 2 * Math.PI * radius;
     }
 
     @Override
