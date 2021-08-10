@@ -37,8 +37,7 @@ public class Square extends AbstractShape {
     public double perimeter() throws ShapeLengthException {
         if (sideLength <= 0) {
             throw new ShapeLengthException("Incorrect in data entered");
-        } else {
-            return 4 * sideLength;
         }
+        return 4 * sideLength;
     }
 }
