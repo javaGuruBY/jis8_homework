@@ -36,8 +36,7 @@ public class Circle extends AbstractShape {
     public double getArea() throws ShapeLengthException {
         if (radius <= 0) {
             throw new ShapeLengthException("Incorrect in data entered");
-        } else {
-            return Math.PI * radius * radius;
         }
+        return Math.PI * radius * radius;
     }
 }
