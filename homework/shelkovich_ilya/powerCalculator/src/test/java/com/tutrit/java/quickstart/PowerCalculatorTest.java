@@ -2,6 +2,11 @@ package com.tutrit.java.quickstart;
 
 import com.tutrit.java.quickstart.exceptions.NegativeNumberException;
 import com.tutrit.java.quickstart.exceptions.ZeroException;
+import com.tutrit.java.quickstart.service.PowerCalculator;
+import com.tutrit.java.quickstart.service.NotZeroNumberValidator;
+import com.tutrit.java.quickstart.service.PositiveNumberValidator;
+import com.tutrit.java.quickstart.service.ValidatorService;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,22 +16,25 @@ public class PowerCalculatorTest {
     PowerCalculator powerCalculator;
 
     @Before
-    public void setUp(){
-        powerCalculator = new PowerCalculator();
-    }
-
-    @Test(expected = NegativeNumberException.class)
-    public void shouldThrowNegativeNumberException() throws NegativeNumberException, ZeroException {
-        powerCalculator.calculate(-2,45);
+    public void setUp() {
+        powerCalculator = new PowerCalculator(
+                new ValidatorService(List.of(
+                        new PositiveNumberValidator(),
+                        new NotZeroNumberValidator())));
     }
 
     @Test
-    public void shouldCalculatePoweredNumber() throws NegativeNumberException, ZeroException {
-        Assert.assertEquals(32, powerCalculator.calculate(2,5));
+    public void shouldCalculatePoweredNumber() throws Exception {
+        Assert.assertEquals(32, powerCalculator.calculate(2, 5));
+    }
+
+    @Test(expected = NegativeNumberException.class)
+    public void shouldThrowNegativeNumberException() throws Exception {
+        powerCalculator.calculate(-2, 45);
     }
 
     @Test(expected = ZeroException.class)
-    public void shouldThrowZeroException() throws NegativeNumberException, ZeroException {
-        powerCalculator.calculate(0,5);
+    public void shouldThrowZeroException() throws Exception {
+        powerCalculator.calculate(0, 5);
     }
 }
