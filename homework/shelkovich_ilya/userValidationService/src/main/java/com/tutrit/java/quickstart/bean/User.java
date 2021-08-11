@@ -10,9 +10,10 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName) {
+    public User(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
     }
 
     public String getFirstName() {

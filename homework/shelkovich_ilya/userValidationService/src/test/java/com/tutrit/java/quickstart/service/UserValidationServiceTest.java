@@ -2,44 +2,51 @@ package com.tutrit.java.quickstart.service;
 
 import com.tutrit.java.quickstart.bean.User;
 import com.tutrit.java.quickstart.exceptions.UserValidationException;
-import org.junit.Assert;
+import com.tutrit.java.quickstart.validator.CheckUserAge;
+import com.tutrit.java.quickstart.validator.CheckUserNameLength;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class UserValidationServiceTest {
 
-    UserValidationService userValidationService;
-    User user;
+    private UserValidationService userValidationService;
 
     @Before
     public void setUp() {
-        this.userValidationService = new UserValidationService();
-        this.user = new User();
+        this.userValidationService = new UserValidationService(
+                List.of(
+                        new CheckUserAge(),
+                        new CheckUserNameLength()));
     }
 
-    @Test
-    public void shouldThrowValidateExceptionLastName() throws UserValidationException {
-        user.setFirstName("Anna");
-        user.setLastName("Matarazzzzzzzzzio");
-        user.setAge(21);
-        Assert.assertFalse(userValidationService.validate(user));
+    @Test(expected = UserValidationException.class)
+    public void ifFirstOrLastNameIsMoreThan15Letters() throws UserValidationException {
+        userValidationService.validate(new User("Anna", "Matarazzzzzzzzzio", 21));
+    }
 
-        user.setFirstName("An");
-        user.setLastName("Matarazo");
-        user.setAge(21);
-        Assert.assertFalse(userValidationService.validate(user));
+    @Test(expected = UserValidationException.class)
+    public void ifFirstOrLastNameIsLessThan3Letters() throws UserValidationException {
+        userValidationService.validate(new User("An", "Matarazo", 21));
+    }
 
-        user.setFirstName("Anna");
-        user.setLastName("Matarazo");
-        user.setAge(2021);
-        Assert.assertFalse(userValidationService.validate(user));
+    @Test(expected = UserValidationException.class)
+    public void ifUserAgeOutOfRightBound() throws UserValidationException {
+        userValidationService.validate(new User("Elder", "Ghost", 2021));
+    }
+
+    @Test(expected = UserValidationException.class)
+    public void ifUserAgeOutOfLeftBound() throws UserValidationException {
+        userValidationService.validate(new User("Unborn", "Child", -23));
+    }
+
+    @Test(expected = UserValidationException.class)
+    public void ifUserFirstOrLastNameIsEmpty() throws UserValidationException {
+        userValidationService.validate(new User());
     }
 
     @Test
     public void shouldValidateUser() throws UserValidationException {
-        user.setFirstName("Anna");
-        user.setLastName("Matarazo");
-        user.setAge(21);
-        Assert.assertTrue(userValidationService.validate(user));
+        userValidationService.validate(new User("Anna", "Matarazo", 21));
     }
 }
