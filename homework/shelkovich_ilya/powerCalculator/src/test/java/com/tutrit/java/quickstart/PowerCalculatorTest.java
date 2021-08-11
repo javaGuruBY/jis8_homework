@@ -1,7 +1,5 @@
 package com.tutrit.java.quickstart;
 
-import static org.junit.Assert.*;
-
 import com.tutrit.java.quickstart.exceptions.NegativeNumberException;
 import com.tutrit.java.quickstart.exceptions.ZeroException;
 import org.junit.Assert;

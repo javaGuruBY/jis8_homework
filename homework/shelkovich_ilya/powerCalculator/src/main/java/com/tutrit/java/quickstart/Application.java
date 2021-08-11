@@ -6,4 +6,3 @@ public class Application {
         //code is redundant
     }
 }
-
