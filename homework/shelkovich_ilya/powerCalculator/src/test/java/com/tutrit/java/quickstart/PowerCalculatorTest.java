@@ -25,16 +25,16 @@ public class PowerCalculatorTest {
 
     @Test
     public void shouldCalculatePoweredNumber() throws Exception {
-        Assert.assertEquals(32, powerCalculator.calculate(2, 5));
+        Assert.assertEquals(32, powerCalculator.raiseToPower(2, 5));
     }
 
     @Test(expected = NegativeNumberException.class)
     public void shouldThrowNegativeNumberException() throws Exception {
-        powerCalculator.calculate(-2, 45);
+        powerCalculator.raiseToPower(-2, 45);
     }
 
     @Test(expected = ZeroException.class)
     public void shouldThrowZeroException() throws Exception {
-        powerCalculator.calculate(0, 5);
+        powerCalculator.raiseToPower(0, 5);
     }
 }

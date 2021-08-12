@@ -10,12 +10,12 @@ public class PowerCalculator {
         this.validatorService = validatorService;
     }
 
-    public int calculate(int number, int power) throws PowerCalculatorException {
+    public int raiseToPower(int number, int power) throws PowerCalculatorException {
         validatorService.validate(number, power);
-        var powering = 1;
+        var result = 1;
         for (var i = 0; i < power; i++) {
-            powering *= number;
+            result *= number;
         }
-        return powering;
+        return result;
     }
 }
