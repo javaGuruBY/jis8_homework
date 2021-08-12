@@ -3,9 +3,9 @@ package com.tutrit.java.quickstart.bean;
 import java.util.Objects;
 
 public class User {
-    String firstName;
-    String lastName;
-    int age;
+    private String firstName;
+    private String lastName;
+    private int age;
 
     public User() {
     }
