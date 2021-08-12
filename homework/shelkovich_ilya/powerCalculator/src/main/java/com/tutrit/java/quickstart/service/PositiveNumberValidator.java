@@ -7,7 +7,7 @@ public class PositiveNumberValidator implements Validatable {
     @Override
     public void validate(int number) throws PowerCalculatorException {
         if (number < 0) {
-            throw new NegativeNumberException("Number is negative!");
+            throw new NegativeNumberException("Negative values are not allowed!");
         }
     }
 }
