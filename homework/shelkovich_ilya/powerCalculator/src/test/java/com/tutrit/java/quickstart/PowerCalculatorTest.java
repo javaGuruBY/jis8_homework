@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class PowerCalculatorTest {
 
-    PowerCalculator powerCalculator;
+    private PowerCalculator powerCalculator;
 
     @Before
     public void setUp() {
