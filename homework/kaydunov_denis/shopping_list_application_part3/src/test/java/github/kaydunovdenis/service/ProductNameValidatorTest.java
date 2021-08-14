@@ -2,11 +2,10 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Product;
 import github.kaydunovdenis.bean.ProductTest;
+import github.kaydunovdenis.service.product_validator.ProductNameValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 
 import static org.junit.Assert.*;
 

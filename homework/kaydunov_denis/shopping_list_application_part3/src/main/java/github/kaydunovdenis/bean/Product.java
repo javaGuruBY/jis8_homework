@@ -1,5 +1,7 @@
 package github.kaydunovdenis.bean;
 
+import github.kaydunovdenis.service.ProductPrintService;
+
 import java.math.BigDecimal;
 
 public class Product {
@@ -101,7 +103,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", productCategory=" + productCategory +
-                ", discount=" + discount +
+                ", discount=" + ProductPrintService.getPercentageDiscount(this) +
                 ", description='" + description + '\'' +
                 '}';
     }

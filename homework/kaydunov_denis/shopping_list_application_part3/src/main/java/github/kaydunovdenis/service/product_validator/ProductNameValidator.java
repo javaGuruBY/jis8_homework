@@ -1,4 +1,4 @@
-package github.kaydunovdenis.service;
+package github.kaydunovdenis.service.product_validator;
 
 import github.kaydunovdenis.bean.Product;
 

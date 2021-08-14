@@ -2,6 +2,7 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Product;
 import github.kaydunovdenis.bean.ProductTest;
+import github.kaydunovdenis.service.product_validator.PriceValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -9,8 +9,16 @@ import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 
+/**
+ * About the discount:
+ * value variable 1 = view 100,00%
+ * value variable 0.2 = view 20,00%
+ */
 public class ProductTest {
+    private static final String DEFAULT_DISCOUNT = "0.2";
+    public static final String DEFAULT_PERCENTAGE_DISCOUNT = "20,00%";
     private Product product;
+    private static final Logger LOG = LoggerFactory.getLogger(ProductTest.class.getSimpleName());
 
     @Before
     public void setUp() {
@@ -18,7 +26,7 @@ public class ProductTest {
     }
 
     @Test
-    public void testTestGetName() {
+    public void testGetName() {
         String expect = "Notebook Acer 9302V-1";
         String result = product.getName();
         Assert.assertEquals(expect, result);
@@ -47,7 +55,7 @@ public class ProductTest {
 
     @Test
     public void testGetDiscount() {
-        Double expect = new BigDecimal("0.00").doubleValue();
+        Double expect = new BigDecimal(DEFAULT_DISCOUNT).doubleValue();
         Double result = product.getDiscount().doubleValue();
         Assert.assertEquals(expect, result);
     }
@@ -60,7 +68,7 @@ public class ProductTest {
     }
 
     @Test
-    public void testTestSetName() {
+    public void testSetName() {
         String expect = "Name is change";
         product.setName(expect);
         String result = product.getName();
@@ -93,7 +101,7 @@ public class ProductTest {
 
     @Test
     public void testSetDiscount() {
-        BigDecimal expect = new BigDecimal("0.10");
+        BigDecimal expect = new BigDecimal(DEFAULT_DISCOUNT);
         product.setDiscount(expect);
         BigDecimal result = product.getDiscount();
         Assert.assertEquals(expect, result);
@@ -108,23 +116,22 @@ public class ProductTest {
     }
 
     @Test
-    public void testTestToString() {
-        Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-        log.info(product.toString());
-        String expect = "Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
-                " discount=0, description='Not description'}";
+    public void testToString() {
+        String expect = String.format("Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
+                " discount=%s, description='Not description'}", DEFAULT_PERCENTAGE_DISCOUNT);
+        LOG.info("Expect:\n {}",expect);
+        LOG.info("Result:\n {}", product.toString());
         Assert.assertEquals(expect, product.toString());
     }
 
-
     @Test
-    public void testTestEquals() {
+    public void testEquals() {
         Product secondProduct = getDefaultProduct();
         Assert.assertEquals(secondProduct, product);
     }
 
     @Test
-    public void testTestHashCode() {
+    public void testHashCode() {
         EqualsVerifier.simple().forClass(Product.class).verify();
     }
 
@@ -133,7 +140,7 @@ public class ProductTest {
                 "Notebook Acer 9302V-1",
                 new BigDecimal("1000.00"),
                 Category.NOTEBOOK,
-                new BigDecimal("0"),
+                new BigDecimal(DEFAULT_DISCOUNT),
                 "Not description");
     }
 }

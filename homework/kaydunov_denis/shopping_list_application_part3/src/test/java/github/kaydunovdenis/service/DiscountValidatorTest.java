@@ -2,13 +2,12 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Product;
 import github.kaydunovdenis.bean.ProductTest;
+import github.kaydunovdenis.service.product_validator.DiscountValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-
-import static org.junit.Assert.*;
 
 public class DiscountValidatorTest {
     private DiscountValidator discountValidator;
