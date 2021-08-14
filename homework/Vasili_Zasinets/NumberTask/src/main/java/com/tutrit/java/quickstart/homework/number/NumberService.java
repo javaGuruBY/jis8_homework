@@ -65,4 +65,3 @@ public class NumberService {
        return selectionOfTheEvenNumberCounterMethod(start, finish);
     }
 }
-
