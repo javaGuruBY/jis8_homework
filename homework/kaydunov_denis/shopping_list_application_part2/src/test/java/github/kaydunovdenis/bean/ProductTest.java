@@ -90,7 +90,7 @@ public class ProductTest {
     @Test
     public void testToString() {
         final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-        String expect = "Product{id=1, name='Notebook Acer 9302V-1', price=1000, productCategory=NOTEBOOK," +
+        String expect = "Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
                 " discount=0, description='Not description'}";
         log.info("Expect: {}", expect);
         log.info("Result: {}", getDefaultProduct());

@@ -12,34 +12,32 @@ import static org.junit.Assert.assertTrue;
 
 public class DiscountValidatorTest {
     private DiscountValidator discountValidator;
-    private Product product;
 
     @Before
     public void setUp() {
         discountValidator = new DiscountValidator();
-        product = ProductTest.getDefaultProduct();
     }
 
     @Test
-    public void validate() {
-        BigDecimal discount = new BigDecimal("-12.3");
-        product.setDiscount(discount);
+    public void validatePositiveScenario() {
+        Product product = ProductTest.getDefaultProduct();
+        product.setDiscount(new BigDecimal("0.0"));
+        assertTrue(discountValidator.validate(product));
+
+        product.setDiscount(new BigDecimal("11.32"));
+        assertTrue(discountValidator.validate(product));
+
+        product.setDiscount(new BigDecimal("100.0"));
+        assertTrue(discountValidator.validate(product));
+    }
+
+    @Test
+    public void validateNegativeScenario() {
+        Product product = ProductTest.getDefaultProduct();
+        product.setDiscount(new BigDecimal("-11.22"));
         assertFalse(discountValidator.validate(product));
 
-        discount = new BigDecimal("0.0");
-        product.setDiscount(discount);
-        assertTrue(discountValidator.validate(product));
-
-        discount = new BigDecimal("11.32");
-        product.setDiscount(discount);
-        assertTrue(discountValidator.validate(product));
-
-        discount = new BigDecimal("100.0");
-        product.setDiscount(discount);
-        assertTrue(discountValidator.validate(product));
-
-        discount = new BigDecimal("111.32");
-        product.setDiscount(discount);
+        product.setDiscount(new BigDecimal("111.32"));
         assertFalse(discountValidator.validate(product));
     }
 }
