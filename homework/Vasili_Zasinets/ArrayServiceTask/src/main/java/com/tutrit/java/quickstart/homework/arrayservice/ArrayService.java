@@ -36,13 +36,14 @@ public class ArrayService {
     public double avg(int[] array) {
         if (verification(array) != 0) {
             int sumOfArray = 0;
-            double average;
+            int average;
             for (int j : array) {
                 sumOfArray += j;
             }
-            average = (double) sumOfArray / (array.length);
+            average = sumOfArray / (array.length);
             return average;
-        } else return 0;
+        }
+        return 0;
     }
 
     public int verification(int[] array) {
