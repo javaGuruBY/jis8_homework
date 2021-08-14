@@ -1,11 +1,9 @@
 package com.tutrit.java.quickstart.homework.number;
 
 public class NumberService {
-   private int result;
-   private int i;
 
-   public int sumStartingFromTheSmallestValue(int start, int finish) {
-        result = 0;
+    public int sumStartingFromTheSmallestValue(int start, int finish) {
+        int result = 0;
         while (start <= finish) {
             result += start;
             start = start + 1;
@@ -14,7 +12,7 @@ public class NumberService {
     }
 
     public int sumStartingFromTheHigherValue(int start, int finish) {
-        result = 0;
+        int result = 0;
         while (start >= finish) {
             result += start;
             start = start - 1;
@@ -24,23 +22,21 @@ public class NumberService {
 
     public int selectionOfTheSummationMethod(int start, int finish) {
         if (start > finish) {
-            sumStartingFromTheHigherValue(start, finish);
-        } else {
-            sumStartingFromTheSmallestValue(start, finish);
+            return sumStartingFromTheHigherValue(start, finish);
         }
-        return result;
+        return sumStartingFromTheSmallestValue(start, finish);
     }
 
     public int selectionOfTheEvenNumberCounterMethod(int start, int finish) {
         if (start > finish) {
-            counterOfEvenNumbersStartingWithHigher(start, finish);
-        } else {
-            counterOfEvenNumbersStartingWithLowest(start, finish);
+            return counterOfEvenNumbersStartingWithHigher(start, finish);
         }
-        return i;
+        return counterOfEvenNumbersStartingWithLowest(start, finish);
+
     }
 
     public int counterOfEvenNumbersStartingWithHigher(int start, int finish) {
+        int i = 0;
         while (start >= finish) {
             if (start % 2 == 0) {
                 i++;
@@ -51,6 +47,7 @@ public class NumberService {
     }
 
     public int counterOfEvenNumbersStartingWithLowest(int start, int finish) {
+        int i = 0;
         while (start <= finish) {
             if (start % 2 == 0) {
                 i++;
@@ -60,16 +57,12 @@ public class NumberService {
         return i;
     }
 
-    public int
-    summationOfNumbers(int start, int finish) {
-        selectionOfTheSummationMethod(start, finish);
-        return result;
+    public int summationOfNumbers(int start, int finish) {
+        return selectionOfTheSummationMethod(start, finish);
     }
 
     public int evenNumberCounter(int start, int finish) {
-        i = 0;
-        selectionOfTheEvenNumberCounterMethod(start, finish);
-        return i;
+       return selectionOfTheEvenNumberCounterMethod(start, finish);
     }
 }
 
