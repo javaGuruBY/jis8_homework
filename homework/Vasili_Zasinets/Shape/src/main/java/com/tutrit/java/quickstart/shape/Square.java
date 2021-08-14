@@ -26,13 +26,7 @@ public class Square extends AbstractShape {
     }
 
     @Override
-    public double circumference() {
-        log.info("Impossible for this shape");
-        return 0;
-    }
-
-    @Override
-    public double perimeter() throws ShapeException {
+    public double lengthOfFigureBorders() throws ShapeException {
         verifyShape();
         return 4 * sideLength;
     }

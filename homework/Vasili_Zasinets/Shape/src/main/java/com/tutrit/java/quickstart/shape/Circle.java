@@ -14,12 +14,6 @@ public class Circle extends AbstractShape {
     }
 
     @Override
-    public double perimeter() {
-        log.info("Impossible for this shape");
-        return 0;
-    }
-
-    @Override
     public void verifyShape() throws ShapeException {
         if (radius <= 0) {
             throw new ShapeException("Incorrect in data entered");
@@ -27,7 +21,7 @@ public class Circle extends AbstractShape {
     }
 
     @Override
-    public double circumference() throws ShapeException {
+    public double lengthOfFigureBorders() throws ShapeException {
         verifyShape();
         return 2 * Math.PI * radius;
     }
