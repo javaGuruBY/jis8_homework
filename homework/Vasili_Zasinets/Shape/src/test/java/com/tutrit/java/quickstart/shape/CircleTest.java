@@ -9,8 +9,8 @@ public class CircleTest {
 
     //facadeForShape(String typeShape, String nameShape, double value) {
     @Test
-    public void circumference() throws ShapeException {
-        assertEquals(37.7, facadeForShape("Circle", "CircleTest", 6).circumference(), 0.1);
+    public void lengthOfFigureBorders() throws ShapeException {
+        assertEquals(37.7, facadeForShape("Circle", "CircleTest", 6).lengthOfFigureBorders(), 0.1);
     }
 
     @Test
@@ -23,14 +23,9 @@ public class CircleTest {
         assertEquals(78.54, facadeForShape("Circle", "CircleTest", 5).getArea(), 0.01);
     }
 
-    @Test
-    public void perimeter() throws ShapeException {
-        assertEquals(0, facadeForShape("Circle", "CircleTest", 6).perimeter(), 0);
-    }
-
     @Test(expected = ShapeException.class)
-    public void circumferenceException() throws ShapeException {
-        facadeForShape("Circle", "CircleTest", -6).circumference();
+    public void lengthOfFigureBordersException() throws ShapeException {
+        facadeForShape("Circle", "CircleTest", -6).lengthOfFigureBorders();
     }
 
     @Test(expected = ShapeException.class)

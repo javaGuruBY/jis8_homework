@@ -14,8 +14,8 @@ public class SquareTest {
     }
 
     @Test
-    public void perimeter() throws ShapeException {
-        assertEquals(24, facadeForShape("Square", "SquareTest", 6).perimeter(), 0.000);
+    public void lengthOfFigureBorders() throws ShapeException {
+        assertEquals(24, facadeForShape("Square", "SquareTest", 6).lengthOfFigureBorders(),0.000);
     }
 
     @Test
@@ -23,14 +23,9 @@ public class SquareTest {
         assertEquals("SquareTest", facadeForShape("Square", "SquareTest", 5).getName());
     }
 
-    @Test
-    public void circumference() throws ShapeException {
-        assertEquals(0, facadeForShape("Square", "SquareTest", 5).circumference(), 0);
-    }
-
     @Test(expected = ShapeException.class)
-    public void perimeterException() throws ShapeException {
-        facadeForShape("Square", "SquareTest", -5).perimeter();
+    public void lengthOfFigureBordersException() throws ShapeException {
+        facadeForShape("Square", "SquareTest", -5).lengthOfFigureBorders();
     }
 
     @Test(expected = ShapeException.class)

@@ -14,9 +14,10 @@ public abstract class AbstractShape implements Shape {
         return 0;
     }
 
-    public abstract double circumference() throws ShapeException;
-
-    public abstract double perimeter() throws ShapeException;
+    public double lengthOfFigureBorders() throws ShapeException {
+        verifyShape();
+        return -1;
+    }
 
     public abstract void verifyShape() throws ShapeException;
 
