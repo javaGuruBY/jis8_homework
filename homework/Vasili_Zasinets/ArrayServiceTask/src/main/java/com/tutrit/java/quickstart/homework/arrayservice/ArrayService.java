@@ -3,17 +3,18 @@ package com.tutrit.java.quickstart.homework.arrayservice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class ArrayService {
     Logger log = LoggerFactory.getLogger("ArrayService");
-    Random random = new Random();
+    SecureRandom random = new SecureRandom();
 
     public int[] create(int size) {
         return new int[size];
     }
 
-    public void fillRandomly(int[] array) {
+    public void fillRandomly(int[] array) throws ArrayVerificationException {
+        verification(array);
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(101);
         }
@@ -25,7 +26,8 @@ public class ArrayService {
         }
     }
 
-    public int sum(int[] array) {
+    public int sum(int[] array) throws ArrayVerificationException {
+        verification(array);
         int sumOfArray = 0;
         for (int j : array) {
             sumOfArray += j;
@@ -33,18 +35,14 @@ public class ArrayService {
         return sumOfArray;
     }
 
-    public double avg(int[] array) {
-        if (verification(array) != 0) {
-            return (double) sum(array) / (array.length);
-        }
-        return 0;
+    public double avg(int[] array) throws ArrayVerificationException {
+        verification(array);
+        return (double) sum(array) / (array.length);
     }
 
-    public int verification(int[] array) {
-        int result = 0;
-        if (array != null) {
-            result = 1;
+    public void verification(int[] array) throws ArrayVerificationException {
+        if (array == null) {
+            throw new ArrayVerificationException("Array can't be NULL!!!");
         }
-        return result;
     }
 }
