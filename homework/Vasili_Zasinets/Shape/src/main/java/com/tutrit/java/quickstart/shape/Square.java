@@ -16,9 +16,7 @@ public class Square extends AbstractShape {
 
     @Override
     public double getArea() throws ShapeException {
-        if (sideLength <= 0) {
-            throw new ShapeException("Incorrect in data entered");
-        }
+        verifyShape();
         return sideLength * sideLength;
     }
 
@@ -35,9 +33,14 @@ public class Square extends AbstractShape {
 
     @Override
     public double perimeter() throws ShapeException {
+        verifyShape();
+        return 4 * sideLength;
+    }
+
+    @Override
+    public void verifyShape() throws ShapeException {
         if (sideLength <= 0) {
             throw new ShapeException("Incorrect in data entered");
         }
-        return 4 * sideLength;
     }
 }

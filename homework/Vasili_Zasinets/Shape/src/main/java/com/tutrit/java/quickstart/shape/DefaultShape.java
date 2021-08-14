@@ -15,4 +15,9 @@ public class DefaultShape extends AbstractShape {
     public double perimeter() throws ShapeException {
         return 0;
     }
+
+    @Override
+    public void verifyShape() throws ShapeException {
+
+    }
 }
