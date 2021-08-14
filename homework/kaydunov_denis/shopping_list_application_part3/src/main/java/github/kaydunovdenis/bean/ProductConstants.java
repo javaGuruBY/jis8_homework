@@ -1,8 +1,8 @@
-package github.kaydunovdenis;
+package github.kaydunovdenis.bean;
 
 import java.text.DecimalFormat;
 
-public class Constant {
+public class ProductConstants {
     public static final Double ZERO = 0.0;
     public static final Double MIN_DISCOUNT = 0.0;
     public static final Double MAX_DISCOUNT = 100.0;

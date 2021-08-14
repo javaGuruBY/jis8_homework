@@ -47,12 +47,10 @@ public class ProductPrintServiceTest {
         LOG.info("Expect:\n {}",expect);
         LOG.info("Result:\n {}", result);
         Assert.assertEquals(expect, result);
-
-
     }
 
     @Test(expected = NumberFormatException.class)
-    public void testValueMore100Percent() {
+    public void testValueDiscountMore100Percent() {
         product.setDiscount(new BigDecimal("1,12"));
         String result = ProductPrintService.getPercentageDiscount(product);
     }

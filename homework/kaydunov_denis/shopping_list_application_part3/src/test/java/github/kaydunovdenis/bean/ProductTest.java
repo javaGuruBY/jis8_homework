@@ -2,7 +2,6 @@ package github.kaydunovdenis.bean;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,117 +16,99 @@ import java.math.BigDecimal;
 public class ProductTest {
     private static final String DEFAULT_DISCOUNT = "0.2";
     public static final String DEFAULT_PERCENTAGE_DISCOUNT = "20,00%";
-    private Product product;
     private static final Logger LOG = LoggerFactory.getLogger(ProductTest.class.getSimpleName());
 
-    @Before
-    public void setUp() {
-        product = getDefaultProduct();
+    @Test
+    public void getName() {
+        Assert.assertEquals("Notebook Acer 9302V-1", getDefaultProduct().getName());
     }
 
     @Test
-    public void testGetName() {
-        String expect = "Notebook Acer 9302V-1";
-        String result = product.getName();
-        Assert.assertEquals(expect, result);
+    public void getId() {
+        Assert.assertEquals(0, getDefaultProduct().getId().compareTo(1L));
     }
 
     @Test
-    public void testGetId() {
-        Long expect = 1L;
-        Long result = product.getId();
-        Assert.assertEquals(expect, result);
+    public void getPrice() {
+        Assert.assertEquals(0, getDefaultProduct().getPrice().compareTo(new BigDecimal("1000.00")));
     }
 
     @Test
-    public void testGetPrice() {
-        BigDecimal expect = new BigDecimal("1000.00");
-        BigDecimal result = product.getPrice();
-        Assert.assertEquals(expect, result);
+    public void getProductCategory() {
+        Assert.assertEquals(ProductCategory.NOTEBOOK, getDefaultProduct().getProductCategory());
     }
 
     @Test
-    public void testGetProductCategory() {
-        Category expect = Category.NOTEBOOK;
-        Category result = product.getProductCategory();
-        Assert.assertEquals(expect, result);
+    public void getDiscount() {
+        Assert.assertEquals(0, getDefaultProduct().getDiscount().compareTo(new BigDecimal(DEFAULT_DISCOUNT)));
     }
 
     @Test
-    public void testGetDiscount() {
-        Double expect = new BigDecimal(DEFAULT_DISCOUNT).doubleValue();
-        Double result = product.getDiscount().doubleValue();
-        Assert.assertEquals(expect, result);
+    public void getDescription() {
+        Assert.assertEquals("Not description", getDefaultProduct().getDescription());
     }
 
     @Test
-    public void testGetDescription() {
-        String expect = "Not description";
-        String result = product.getDescription();
-        Assert.assertEquals(expect, result);
-    }
-
-    @Test
-    public void testSetName() {
+    public void setName() {
+        Product product = getDefaultProduct();
         String expect = "Name is change";
         product.setName(expect);
-        String result = product.getName();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(expect, product.getName());
     }
 
     @Test
-    public void testSetId() {
+    public void setId() {
+        Product product = getDefaultProduct();
         Long expect = 2L;
         product.setId(expect);
-        Long result = product.getId();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(0, product.getId().compareTo(expect));
     }
 
     @Test
-    public void testSetPrice() {
+    public void setPrice() {
+        Product product = getDefaultProduct();
         BigDecimal expect = new BigDecimal("2000.00");
         product.setPrice(expect);
-        BigDecimal result = product.getPrice();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(0, product.getPrice().compareTo(expect));
     }
 
     @Test
-    public void testSetProductCategory() {
-        Category expect = Category.COMPUTER;
+    public void setProductCategory() {
+        Product product = getDefaultProduct();
+        ProductCategory expect = ProductCategory.COMPUTER;
         product.setProductCategory(expect);
-        Category result = product.getProductCategory();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(expect, product.getProductCategory());
     }
 
     @Test
-    public void testSetDiscount() {
+    public void setDiscount() {
+        Product product = getDefaultProduct();
         BigDecimal expect = new BigDecimal(DEFAULT_DISCOUNT);
         product.setDiscount(expect);
-        BigDecimal result = product.getDiscount();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(0, product.getDiscount().compareTo(expect));
     }
 
     @Test
-    public void testSetDescription() {
+    public void setDescription() {
+        Product product = getDefaultProduct();
         String expect = "Description is change";
         product.setDescription(expect);
-        String result = product.getDescription();
-        Assert.assertEquals(expect, result);
+        Assert.assertEquals(expect, product.getDescription());
     }
 
     @Test
     public void testToString() {
+        Product product = getDefaultProduct();
         String expect = String.format("Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
                 " discount=%s, description='Not description'}", DEFAULT_PERCENTAGE_DISCOUNT);
         LOG.info("Expect:\n {}",expect);
-        LOG.info("Result:\n {}", product.toString());
+        LOG.info("Result:\n {}", product);
         Assert.assertEquals(expect, product.toString());
     }
 
     @Test
     public void testEquals() {
-        Product secondProduct = getDefaultProduct();
-        Assert.assertEquals(secondProduct, product);
+        Assert.assertEquals(getDefaultProduct(), getDefaultProduct());
     }
 
     @Test
@@ -139,7 +120,7 @@ public class ProductTest {
         return new Product(1L,
                 "Notebook Acer 9302V-1",
                 new BigDecimal("1000.00"),
-                Category.NOTEBOOK,
+                ProductCategory.NOTEBOOK,
                 new BigDecimal(DEFAULT_DISCOUNT),
                 "Not description");
     }

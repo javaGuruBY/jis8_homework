@@ -1,29 +1,26 @@
 package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Product;
-import github.kaydunovdenis.bean.ProductTest;
 import github.kaydunovdenis.service.product_validator.ProductNameValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static github.kaydunovdenis.bean.ProductTest.getDefaultProduct;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ProductNameValidatorTest {
     private ProductNameValidator productNameValidator;
-    private Product product;
 
     @Before
     public void setUp() {
         productNameValidator = new ProductNameValidator();
-        product = ProductTest.getDefaultProduct();
     }
 
     @Test
-    public void validate() {
-        product.setName("2_");
-        Assert.assertFalse(productNameValidator.validate(product));
-
+    public void validatePositiveScenario() {
+        Product product = getDefaultProduct();
         product.setName("3__");
         Assert.assertTrue(productNameValidator.validate(product));
 
@@ -32,8 +29,15 @@ public class ProductNameValidatorTest {
 
         product.setName("Name 32 simbols_________________");
         assertTrue(productNameValidator.validate(product));
+    }
 
-        product.setName("Name 33_simbols__________________");
+    @Test
+    public void validateNegativeScenario() {
+        Product product = getDefaultProduct();
+        product.setName("2_");
+        Assert.assertFalse(productNameValidator.validate(product));
+
+        product.setName("Name 33_symbols__________________");
         assertFalse(productNameValidator.validate(product));
     }
 }
