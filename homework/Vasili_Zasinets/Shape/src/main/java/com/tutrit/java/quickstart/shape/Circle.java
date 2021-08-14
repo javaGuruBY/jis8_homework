@@ -1,12 +1,8 @@
 package com.tutrit.java.quickstart.shape;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Circle extends AbstractShape {
 
     private final double radius;
-    Logger log = LoggerFactory.getLogger("Circle");
 
     public Circle(String name, double radius) {
         super(name);

@@ -1,13 +1,9 @@
 package com.tutrit.java.quickstart.shape;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Square extends AbstractShape {
 
     private final double sideLength;
 
-    Logger log = LoggerFactory.getLogger("Square");
 
     public Square(String name, double sideLength) {
         super(name);
