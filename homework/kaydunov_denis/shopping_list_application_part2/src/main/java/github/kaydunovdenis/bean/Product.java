@@ -6,11 +6,11 @@ public class Product {
     private Long id;
     private String name;
     private BigDecimal price;
-    private Category productCategory;
+    private ProductCategory productCategory;
     private BigDecimal discount;
     private String description;
 
-    public Product(Long id, String name, BigDecimal price, Category productCategory, BigDecimal discount,
+    public Product(Long id, String name, BigDecimal price, ProductCategory productCategory, BigDecimal discount,
                    String description) {
         this.id = id;
         this.name = name;
@@ -44,11 +44,11 @@ public class Product {
         this.price = price;
     }
 
-    public Category getProductCategory() {
+    public ProductCategory getProductCategory() {
         return productCategory;
     }
 
-    public void setProductCategory(Category productCategory) {
+    public void setProductCategory(ProductCategory productCategory) {
         this.productCategory = productCategory;
     }
 

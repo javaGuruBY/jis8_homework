@@ -2,8 +2,8 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Product;
 
-import static github.kaydunovdenis.Constant.MAX_LENGTH_NAME;
-import static github.kaydunovdenis.Constant.MIN_LENGTH_NAME;
+import static github.kaydunovdenis.bean.ProductConstants.MAX_LENGTH_NAME;
+import static github.kaydunovdenis.bean.ProductConstants.MIN_LENGTH_NAME;
 
 public class ProductNameValidator implements Validable {
     @Override
