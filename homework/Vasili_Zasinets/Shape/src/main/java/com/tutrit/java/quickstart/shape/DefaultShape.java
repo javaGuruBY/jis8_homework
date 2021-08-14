@@ -18,6 +18,6 @@ public class DefaultShape extends AbstractShape {
 
     @Override
     public void verifyShape() throws ShapeException {
-
+//in this method you need to check the correctness of the entered values for each shape
     }
 }
