@@ -22,4 +22,24 @@ public class NumberServiceTest {
     public void evenNumberCounter() {
         assertEquals(4, numberService.evenNumberCounter(9, 2));
     }
+
+    @Test
+    public void sumStartingFromTheSmallestValue() {
+        assertEquals(6, numberService.sumStartingFromTheSmallestValue(1, 3));
+    }
+
+    @Test
+    public void sumStartingFromTheHigherValue() {
+        assertEquals(6, numberService.sumStartingFromTheHigherValue(3, 1));
+    }
+
+    @Test
+    public void counterOfEvenNumbersStartingWithHigher() {
+        assertEquals(4, numberService.counterOfEvenNumbersStartingWithHigher(9, 1));
+    }
+
+    @Test
+    public void counterOfEvenNumbersStartingWithLowest() {
+        assertEquals(6, numberService.counterOfEvenNumbersStartingWithLowest(1, 13));
+    }
 }
