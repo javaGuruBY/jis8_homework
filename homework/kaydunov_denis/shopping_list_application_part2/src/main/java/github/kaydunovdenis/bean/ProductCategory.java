@@ -1,6 +1,6 @@
 package github.kaydunovdenis.bean;
 
-public enum Category {
+public enum ProductCategory {
     NOTEBOOK,
     COMPUTER,
     PHONE,
