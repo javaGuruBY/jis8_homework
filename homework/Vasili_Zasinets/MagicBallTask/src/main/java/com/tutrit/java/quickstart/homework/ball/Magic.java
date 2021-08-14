@@ -3,11 +3,11 @@ package com.tutrit.java.quickstart.homework.ball;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class Magic {
 
-    private final Random random = new Random();
+    private final SecureRandom random = new SecureRandom();
     private final Ball[] ball = Ball.values();
     Logger log = LoggerFactory.getLogger("Magic Ball");
 
