@@ -20,7 +20,8 @@ public class ArrayService {
         }
     }
 
-    public void printArray(int[] array) {
+    public void printArray(int[] array) throws ArrayVerificationException {
+        verification(array);
         for (int j : array) {
             log.info("array i = {} ", j);
         }

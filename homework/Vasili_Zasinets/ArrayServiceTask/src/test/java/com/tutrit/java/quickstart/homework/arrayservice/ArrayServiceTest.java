@@ -55,5 +55,10 @@ public class ArrayServiceTest {
         arrayService.printArray(array);
         assertNotNull(array);
     }
+
+    @Test(expected = ArrayVerificationException.class)
+    public void printArrayException() throws ArrayVerificationException{
+        arrayService.printArray(arrayTest);
+    }
 }
 
