@@ -1,7 +1,8 @@
 ### Added new validation rules for product 
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=coverage)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=coverage)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=code_smells)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=bugs)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 Task 3 for ShoppingListApplication
 Необходимо проверять продукт согласно правилам:
