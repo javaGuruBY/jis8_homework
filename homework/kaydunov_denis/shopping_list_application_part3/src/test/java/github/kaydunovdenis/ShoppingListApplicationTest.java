@@ -5,7 +5,7 @@ import org.junit.Test;
 public class ShoppingListApplicationTest {
 
     @Test(expected = UnsupportedOperationException.class)
-    public void main() {
+    public void testMain() {
         ShoppingListApplication.main(new String[]{});
     }
 }

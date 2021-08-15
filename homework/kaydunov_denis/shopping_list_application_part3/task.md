@@ -1,12 +1,16 @@
-### Added new validation rules for product
+### Added new validation rules for product 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=coverage)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=code_smells)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 Task 3 for ShoppingListApplication
 Необходимо проверять продукт согласно правилам:
-[+] Название продукта не может быть меньше 3 символов и больше 32.
-[+] Скидка не должна быть больше 100 %.
-[+] Скидка не может быть меньше 0. Скидка может быть дробным числом (10.5%).
-[+] Цена продукта должна быть больше 0.
-[+] Название продукта должно быть уникальным.
-[+] Если цена продукта меньше 20$, то скидку сделать нельзя.
+ [+] Название продукта не может быть меньше 3 символов и больше 32.
+ [+] Скидка не должна быть больше 100 %.
+ [+] Скидка не может быть меньше 0. Скидка может быть дробным числом (10.5%).
+ [+] Цена продукта должна быть больше 0.
+ [+] Название продукта должно быть уникальным.
+ [+] Если цена продукта меньше 20$, то скидку сделать нельзя.
 
 ### Single Responsibility Principle
 New domain - ShoppingCart

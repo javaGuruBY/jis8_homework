@@ -3,10 +3,10 @@ package github.kaydunovdenis.service.product_validator;
 import github.kaydunovdenis.bean.Product;
 import github.kaydunovdenis.bean.ProductConstants;
 
-public class DiscountValidator implements Validable {
+public class DiscountValidator implements Validity {
 
     @Override
-    public boolean validate(Product product) {
+    public boolean validate(final Product product) {
         return isDiscountAvailable(product)
                 && product.getDiscount().doubleValue() >= ProductConstants.MIN_DISCOUNT
                 && product.getDiscount().doubleValue() <= ProductConstants.MAX_DISCOUNT;
