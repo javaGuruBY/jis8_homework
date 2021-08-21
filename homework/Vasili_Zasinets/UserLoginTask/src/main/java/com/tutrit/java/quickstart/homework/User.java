@@ -2,7 +2,7 @@ package com.tutrit.java.quickstart.homework;
 
 public class User {
 
-    boolean isBlock = false;
+    boolean isBlock;
     int numberOfAttempts = 3;
     private  String login;
     private  String password;
@@ -32,6 +32,4 @@ public class User {
     public void setNumberOfAttempts(int numberOfAttempts) {
         this.numberOfAttempts = numberOfAttempts;
     }
-
-
 }
