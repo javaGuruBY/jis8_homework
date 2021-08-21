@@ -1,17 +1,22 @@
 package com.tutrit.java.quickstart.abstractmath;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.mockito.Mockito.*;
+
+
+@RunWith(MockitoJUnitRunner.class)
 public class OperationExecutorTest {
     OperationExecutor executor;
     MathOperation[] ops;
 
     @Before
     public void setUp() {
-        this.executor = new OperationExecutor();
-        this.ops = new MathOperation[]{new AdditionOperation(), new DivisionOperation(), new MultiplicationOperation(),
+        executor = mock(OperationExecutor.class);
+        ops = new MathOperation[]{new AdditionOperation(), new DivisionOperation(), new MultiplicationOperation(),
                 new SubtractionOperation()};
     }
 
@@ -20,6 +25,6 @@ public class OperationExecutorTest {
         double a = 8;
         double b = 4;
         executor.execute(ops, a, b);
-        Assert.assertNotNull(executor);
+        verify(executor, times(1)).execute(ops, a, b);
     }
 }
