@@ -3,7 +3,7 @@ package com.tutrit.java.quickstart.homework;
 public class User {
 
     boolean isBlock;
-    int numberOfAttempts = 3;
+    private int numberOfAttempts = 3;
     private  String login;
     private  String password;
 
@@ -23,6 +23,10 @@ public class User {
     public boolean setBloc(boolean bloc) {
         this.isBlock = bloc;
         return bloc;
+    }
+
+    public String getLogin() {
+        return login;
     }
 
     public int getNumberOfAttempts() {
