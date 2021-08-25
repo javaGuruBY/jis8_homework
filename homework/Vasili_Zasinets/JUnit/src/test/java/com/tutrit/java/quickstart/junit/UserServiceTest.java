@@ -7,11 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
@@ -29,20 +25,9 @@ public class UserServiceTest {
 
     @Test
     public void addUserTest() throws UserValidationException {
-        var userTest = User.builder().age(2).id(123456789).name("Bakke").build();
-        when(mockRepository.save(userTest)).thenReturn(methodForReturn());
+        var userTest = User.builder().age(2).id(1234).name("Bakke").build();
         userService.addUser(userTest);
-        //  doNothing().when(mockRepository.save(user));
         verify(mockRepository).save(userTest);
-        var actual = methodForReturn().get(8);
-        // assertEquals(userTest, actual);
-    }
-
-    private Map<Integer, User> methodForReturn() {
-        Map<Integer, User> userMockRepository = new HashMap<>();
-        var user = User.builder().age(33).name("Vasili").id(8).build();
-        userMockRepository.put(8, user);
-        return userMockRepository;
     }
 
     @Test(expected = UserValidationException.class)
@@ -52,7 +37,7 @@ public class UserServiceTest {
     }
 
     @Test(expected = UserValidationException.class)
-    public void addUserExceptionTest() throws UserValidationException {
+    public void addUserExceptionNotNullTest() throws UserValidationException {
         userService.addUser(null);
     }
 }
