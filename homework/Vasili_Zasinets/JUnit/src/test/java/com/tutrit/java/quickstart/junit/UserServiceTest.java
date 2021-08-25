@@ -10,52 +10,49 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
 
-    private final UserService userService2 = new UserService();
-    private  User userNullTest;
-
-    private Map<Integer, User> userMockRepository;
-    private User user;
-
     @Mock
-    private UserRepository mock;
+    private UserRepository mockRepository;
 
     @InjectMocks
     private UserService userService;
 
     @Before
     public void setUp() {
-        this.user = new User(1256, "Bakke", 2);
-        this.userMockRepository = new HashMap<>();
+        userService = new UserService(mockRepository);
     }
 
     @Test
     public void addUserTest() throws UserValidationException {
-        when(mock.save(user)).thenReturn(methodForReturn());
-        userService.addUser(user);
-        var actual = userMockRepository.get(1256);
-        assertEquals(user, actual);
+        var userTest = User.builder().age(2).id(123456789).name("Bakke").build();
+        when(mockRepository.save(userTest)).thenReturn(methodForReturn());
+        userService.addUser(userTest);
+        //  doNothing().when(mockRepository.save(user));
+        verify(mockRepository).save(userTest);
+        var actual = methodForReturn().get(8);
+        // assertEquals(userTest, actual);
     }
 
     private Map<Integer, User> methodForReturn() {
-        userMockRepository.put(1256, user);
+        Map<Integer, User> userMockRepository = new HashMap<>();
+        var user = User.builder().age(33).name("Vasili").id(8).build();
+        userMockRepository.put(8, user);
         return userMockRepository;
     }
 
     @Test(expected = UserValidationException.class)
     public void addUserExceptionIdTest() throws UserValidationException {
-        User userTest = new User(0, "Vasili", 444);
-        userService2.addUser(userTest);
+        var userTest = User.builder().age(33).name("Vasili").id(0).build();
+        userService.addUser(userTest);
     }
 
     @Test(expected = UserValidationException.class)
     public void addUserExceptionTest() throws UserValidationException {
-        userService2.addUser(userNullTest);
+        userService.addUser(null);
     }
 }
