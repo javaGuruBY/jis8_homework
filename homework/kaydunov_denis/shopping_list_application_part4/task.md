@@ -1,29 +1,22 @@
-### Added new validation rules for product 
+### Single Responsibility Principle - Task 4 for ShoppingListApplication
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=coverage)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=code_smells)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=bugs)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
-Task 3 for ShoppingListApplication
-Необходимо проверять продукт согласно правилам:
--[x] Название продукта не может быть меньше 3 символов и больше 32.
--[x] Скидка не должна быть больше 100 %.
--[x] Скидка не может быть меньше 0. Скидка может быть дробным числом (10.5%).
--[x] Цена продукта должна быть больше 0.
--[x] Название продукта должно быть уникальным.
--[x] Если цена продукта меньше 20$, то скидку сделать нельзя.
 
-### Single Responsibility Principle
-New domain - ShoppingCart
-Task 4 for ShoppingListApplication
+-[ ] New domain - ShoppingCart
 Необходимо добавить новую сущность в проект - Shopping cart.
-У "корзины" должно быть название и список продуктов.
-Название - обязательное поле
+-[ ] У "корзины" должно быть название и список продуктов.
+-[ ] Название корзины - обязательное поле
+
 Функциональные требования:
-Сохранение/получение/удаление корзины
-Добавление продукта в корзину
-Получение списка продуктов (в корзине)
-Получение общей стоимости продуктов в корзине
+-[ ] Сохранение корзины
+-[ ] получение корзины
+-[ ] удаление корзины
+-[ ] Добавление продукта в корзину
+-[ ] Получение списка продуктов (в корзине)
+-[ ] Получение общей стоимости продуктов в корзине
 
 ### Maven/Gradle, JUnit + Mockito
 Migrate to Maven/Gradle, add tests
