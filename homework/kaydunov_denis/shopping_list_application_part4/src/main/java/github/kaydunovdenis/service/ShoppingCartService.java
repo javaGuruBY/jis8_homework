@@ -7,9 +7,6 @@ import java.math.BigDecimal;
 
 public class ShoppingCartService {
 
-    public ShoppingCartService() {
-    }
-
     public void addProduct(final ShoppingCart shoppingCart, final Product product) {
         shoppingCart.getProductList().add(product);
     }
