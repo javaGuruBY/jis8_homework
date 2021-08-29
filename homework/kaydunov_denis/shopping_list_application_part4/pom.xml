@@ -91,6 +91,20 @@
             <version>1.7.3</version>
             <scope>test</scope>
         </dependency>
+        <!-- из-за этой зависимости ловлю глюки в тестах, отключаю её
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        -->
         <!--
         <dependency>
             <groupId>org.mockito</groupId>

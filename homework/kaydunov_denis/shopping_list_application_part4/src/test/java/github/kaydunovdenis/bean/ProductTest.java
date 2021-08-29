@@ -107,12 +107,8 @@ public class ProductTest {
     }
 
     @Test
-    public void testEquals() {
+    public void testEqualsAndHashCode() {
         Assert.assertEquals(getDefaultProduct(), getDefaultProduct());
-    }
-
-    @Test
-    public void testHashCode() {
         EqualsVerifier.simple().forClass(Product.class).verify();
     }
 

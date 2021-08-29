@@ -54,10 +54,20 @@ public class Product {
         this.productCategory = productCategory;
     }
 
+    /**
+     * @ProductConstants
+     * ProductConstants.MIN_DISCOUNT = 0;
+     * ProductConstants.MAX_DISCOUNT = 100;
+     */
     public BigDecimal getDiscount() {
         return discount;
     }
 
+    /**
+     * @ProductConstants
+     * ProductConstants.MIN_DISCOUNT = 0;
+     * ProductConstants.MAX_DISCOUNT = 100;
+     */
     public void setDiscount(BigDecimal discount) {
         this.discount = discount;
     }

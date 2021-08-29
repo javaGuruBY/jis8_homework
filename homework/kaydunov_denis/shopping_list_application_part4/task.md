@@ -5,18 +5,18 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=bugs)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 
--[ ] New domain - ShoppingCart
+-[Х] New domain - ShoppingCart
 Необходимо добавить новую сущность в проект - Shopping cart.
--[ ] У "корзины" должно быть название и список продуктов.
--[ ] Название корзины - обязательное поле
+-[Х] У "корзины" должно быть название и список продуктов.
+-[Х] Название корзины - обязательное поле
 
 Функциональные требования:
--[ ] Сохранение корзины
--[ ] получение корзины
--[ ] удаление корзины
--[ ] Добавление продукта в корзину
--[ ] Получение списка продуктов (в корзине)
--[ ] Получение общей стоимости продуктов в корзине
+-[х] Сохранение корзины
+-[х] получение корзины
+-[х] удаление корзины
+-[х] Добавление продукта в корзину
+-[х] Получение списка продуктов (в корзине)
+-[х] Получение общей стоимости продуктов в корзине
 
 ### Maven/Gradle, JUnit + Mockito
 Migrate to Maven/Gradle, add tests
