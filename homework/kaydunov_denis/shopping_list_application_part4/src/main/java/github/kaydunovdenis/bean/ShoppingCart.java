@@ -8,9 +8,6 @@ public class ShoppingCart {
     private String name;
     private List<Product> productList;
 
-    private ShoppingCart() {
-    }
-
     public ShoppingCart(String name) {
         this.name = name;
         this.productList = new ArrayList<>();
