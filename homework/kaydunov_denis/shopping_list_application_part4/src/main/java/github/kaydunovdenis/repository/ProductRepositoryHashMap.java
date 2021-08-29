@@ -5,7 +5,7 @@ import github.kaydunovdenis.bean.Product;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProductRepositoryHashMap extends ProductRepository {
+public class ProductRepositoryHashMap implements ProductRepository {
     private static final Map<String, Product> productMap = new HashMap<>();
 
     private ProductRepositoryHashMap() {

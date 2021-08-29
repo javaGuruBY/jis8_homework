@@ -1,4 +1,4 @@
 package github.kaydunovdenis.repository;
 
-abstract class ProductRepository {
+interface ProductRepository {
 }

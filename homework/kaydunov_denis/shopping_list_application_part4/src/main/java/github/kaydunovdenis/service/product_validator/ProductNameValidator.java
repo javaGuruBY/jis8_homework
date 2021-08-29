@@ -17,8 +17,6 @@ public class ProductNameValidator implements Validity {
                 && isNameUnique(product);
     }
 
-    //TODO Тут я не уверен с архитектурой расположения и взаимодействия этого метода
-    //TODO HashMap  здесь костыль временный
     private boolean isNameUnique(Product product) {
         return !ProductRepositoryHashMap.containsProduct(product);
     }
