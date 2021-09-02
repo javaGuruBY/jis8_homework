@@ -10,7 +10,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addUser(User user) throws UserValidationException {
+    public void addUser(User user)  {
         validation(user);
         userRepository.save(user);
     }
