@@ -15,10 +15,13 @@ public class Validator {
     private Validator() {
     }
 
-    public static void validation(User user) throws UserValidationException {
-        for (Checkable validation : userCheck
-        ) {
-            validation.check(user);
-        }
+    public static void validation(User user) {
+        userCheck.forEach(u -> {
+            try {
+                u.check(user);
+            } catch (Exception e) {
+                throw new UserValidationException(e);
+            }
+        });
     }
 }
