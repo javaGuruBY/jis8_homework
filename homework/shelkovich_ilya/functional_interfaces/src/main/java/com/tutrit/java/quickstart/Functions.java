@@ -15,16 +15,15 @@ public class Functions {
 
     static Logger log = LoggerFactory.getLogger(Functions.class);
 
-    public static final Runnable printCurrentTime = () -> log.info("{}", LocalDateTime.now());
+    public static final Runnable PRINT_CURRENT_TIME = () -> log.info("{}", LocalDateTime.now());
 
-    public static final Supplier<Person> defaultPerson = () -> new Person("default", 18);
-    public static final Consumer<Person> printPerson = person -> log.info("{}", person);
-    public static final Function<String, Person> createPersonWithName = name -> new Person(name, 18);
-    public static final IntFunction<Person> createPersonWithAge = age -> new Person("default", age);
-    public static final UnaryOperator<Person> makePersonBrutallyOlder = person -> person.setAge(99);
-    public static final Predicate<Person> isPersonOld = person -> person.getAge() > 19;
-    public static final BiFunction<Person, Integer, Person> addAge = (p, i) -> p.setAge(p.getAge() + i);
-    public static final BiFunction<Person, Integer, Person> setAge = Person::setAge;
-    public static final BiFunction<Person, String, Person> setName = Person::setName;
+    public static final Supplier<Person> DEFAULT_PERSON = () -> new Person("default", 18);
+    public static final Consumer<Person> PRINT_PERSON = person -> log.info("{}", person);
+    public static final Function<String, Person> CREATE_PERSON_WITH_NAME = name -> new Person(name, 18);
+    public static final IntFunction<Person> CREATE_PERSON_WITH_AGE = age -> new Person("default", age);
+    public static final UnaryOperator<Person> MAKE_PERSON_BRUTALLY_OLDER = person -> person.setAge(99);
+    public static final Predicate<Person> IS_PERSON_OLD = person -> person.getAge() > 19;
+    public static final BiFunction<Person, Integer, Person> ADD_AGE = (p, i) -> p.setAge(p.getAge() + i);
+    public static final BiFunction<Person, Integer, Person> SET_AGE = Person::setAge;
+    public static final BiFunction<Person, String, Person> SET_NAME = Person::setName;
 }
-

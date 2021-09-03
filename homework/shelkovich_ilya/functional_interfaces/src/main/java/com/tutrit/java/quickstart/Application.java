@@ -6,5 +6,3 @@ public class Application {
         //no code
     }
 }
-
-

@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Dog {
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Dog(String name, int age) {
         this.name = name;
@@ -50,4 +50,3 @@ public class Dog {
                 '}';
     }
 }
-
