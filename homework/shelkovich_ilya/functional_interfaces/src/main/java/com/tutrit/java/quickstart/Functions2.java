@@ -8,6 +8,9 @@ import java.util.function.*;
 
 public class Functions2 {
 
+    private Functions2() {
+    }
+
     static Logger log = LoggerFactory.getLogger(Functions2.class);
 
     public static final Supplier<Dog> defaultDog = () -> new Dog("default", 1);
@@ -19,3 +22,4 @@ public class Functions2 {
     public static final BiFunction<Dog, Integer, Dog> setAge = Dog::setAge;
     public static final BiFunction<Dog, String, Dog> setName = Dog::setName;
 }
+

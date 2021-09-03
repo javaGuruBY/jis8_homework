@@ -27,3 +27,4 @@ public class Functions {
     public static final BiFunction<Person, Integer, Person> setAge = Person::setAge;
     public static final BiFunction<Person, String, Person> setName = Person::setName;
 }
+
