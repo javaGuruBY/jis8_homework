@@ -1,24 +1,23 @@
 package com.tutrit.java.quickstart.bean;
 
-import com.tutrit.java.quickstart.exceptions.CalculatorException;
 import com.tutrit.java.quickstart.exceptions.ZeroException;
 
 public enum Operations {
-    PLUS,
-    MINUS,
-    MULTI,
-    DIV;
+    ADDITION,
+    SUBTRACTION,
+    MULTIPLICATION,
+    DIVISION;
 
-    double calculate(double x, double y) throws CalculatorException {
+    double calculate(double x, double y) throws ArithmeticException {
         switch (this) {
-            case PLUS:
+            case ADDITION:
                 return x + y;
-            case MINUS:
+            case SUBTRACTION:
                 return x - y;
-            case MULTI:
+            case MULTIPLICATION:
                 return x * y;
-            case DIV:
-                if (x == 0 || y == 0) {
+            case DIVISION:
+                if (y == 0) {
                     throw new ZeroException("Division by zero is forbidden");
                 }
                 return x / y;
