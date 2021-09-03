@@ -25,7 +25,7 @@ public class ArrayServiceTest {
     @Test
     public void fillRandomly() {
         int[] array = new int[10];
-        Assert.assertNotNull(arrayService.fillRandomly(array));
+        Assert.assertEquals(10, arrayService.fillRandomly(array).length);
     }
 
     @Test
