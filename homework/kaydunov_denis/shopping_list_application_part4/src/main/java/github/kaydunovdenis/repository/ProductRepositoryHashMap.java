@@ -1,6 +1,6 @@
 package github.kaydunovdenis.repository;
 
-import github.kaydunovdenis.bean.Product;
+import github.kaydunovdenis.bean.product.Product;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,10 +1,10 @@
 package github.kaydunovdenis.service.product_validator;
 
-import github.kaydunovdenis.bean.Product;
+import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.repository.ProductRepositoryHashMap;
 
-import static github.kaydunovdenis.bean.ProductConstants.MAX_LENGTH_NAME;
-import static github.kaydunovdenis.bean.ProductConstants.MIN_LENGTH_NAME;
+import static github.kaydunovdenis.bean.product.ProductConstants.MAX_LENGTH_NAME;
+import static github.kaydunovdenis.bean.product.ProductConstants.MIN_LENGTH_NAME;
 
 public class ProductNameValidator implements Validity {
 

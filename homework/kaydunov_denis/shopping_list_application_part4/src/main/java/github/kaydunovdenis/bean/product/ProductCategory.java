@@ -1,4 +1,4 @@
-package github.kaydunovdenis.bean;
+package github.kaydunovdenis.bean.product;
 
 public enum ProductCategory {
     NOTEBOOK,

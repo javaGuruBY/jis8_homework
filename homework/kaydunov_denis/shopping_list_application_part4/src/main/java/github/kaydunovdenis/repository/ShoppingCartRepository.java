@@ -1,6 +1,6 @@
 package github.kaydunovdenis.repository;
 
-import github.kaydunovdenis.bean.ShoppingCart;
+import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 
 import java.util.HashMap;
 import java.util.Map;

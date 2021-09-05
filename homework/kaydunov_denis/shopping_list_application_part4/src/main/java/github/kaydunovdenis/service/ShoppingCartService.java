@@ -1,7 +1,7 @@
 package github.kaydunovdenis.service;
 
-import github.kaydunovdenis.bean.Product;
-import github.kaydunovdenis.bean.ShoppingCart;
+import github.kaydunovdenis.bean.product.Product;
+import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 
 import java.math.BigDecimal;
 
@@ -18,7 +18,7 @@ public class ShoppingCartService {
 
     public BigDecimal calculateTotalPrice(final ShoppingCart shoppingCart) {
         var totalPrice = new BigDecimal("0.00");
-        for (Product product : shoppingCart.getProductList()) {
+        for (var product : shoppingCart.getProductList()) {
             var productPrice = productService.getPriceWithDiscount(product);
             totalPrice = totalPrice.add(productPrice);
         }

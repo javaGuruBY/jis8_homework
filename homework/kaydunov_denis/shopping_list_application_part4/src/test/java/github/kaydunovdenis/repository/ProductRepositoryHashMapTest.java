@@ -1,8 +1,8 @@
 package github.kaydunovdenis.repository;
 
-import github.kaydunovdenis.bean.Product;
-import github.kaydunovdenis.bean.ProductCategory;
-import github.kaydunovdenis.bean.ProductTest;
+import github.kaydunovdenis.bean.product.Product;
+import github.kaydunovdenis.bean.product.ProductCategory;
+import github.kaydunovdenis.bean.product.ProductTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +10,15 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.util.Map;
 
+import static github.kaydunovdenis.bean.product.ProductTest.*;
+
 public class ProductRepositoryHashMapTest {
+    private Product product;
 
     @Before
     public void setUp() {
         ProductRepositoryHashMap.clear();
+        product = getDefaultProduct();
     }
 
     @Test
@@ -22,14 +26,12 @@ public class ProductRepositoryHashMapTest {
         Assert.assertNotNull(ProductRepositoryHashMap.getProductMap());
         Assert.assertEquals(0, ProductRepositoryHashMap.getProductMap().size());
 
-        Product product = ProductTest.getDefaultProduct();
         ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
         Assert.assertEquals(1, ProductRepositoryHashMap.getProductMap().size());
     }
 
     @Test
     public void containsProduct() {
-        Product product = ProductTest.getDefaultProduct();
         Assert.assertFalse(ProductRepositoryHashMap.containsProduct(product));
 
         ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
@@ -37,7 +39,7 @@ public class ProductRepositoryHashMapTest {
     }
 
     public static void initialRepository(Map<String, Product> productMap) {
-        Product tempProduct = new Product(1L,
+        var tempProduct = new Product(1L,
                 "Notebook Acer 9302V-1",
                 new BigDecimal("1000.00"),
                 ProductCategory.NOTEBOOK,

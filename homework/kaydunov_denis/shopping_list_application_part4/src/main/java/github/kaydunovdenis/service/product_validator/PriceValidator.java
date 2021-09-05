@@ -1,7 +1,7 @@
 package github.kaydunovdenis.service.product_validator;
 
-import github.kaydunovdenis.bean.ProductConstants;
-import github.kaydunovdenis.bean.Product;
+import github.kaydunovdenis.bean.product.ProductConstants;
+import github.kaydunovdenis.bean.product.Product;
 
 public class PriceValidator implements Validity {
     @Override

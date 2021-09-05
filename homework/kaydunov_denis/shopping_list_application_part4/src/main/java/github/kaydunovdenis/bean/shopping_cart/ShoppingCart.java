@@ -1,4 +1,6 @@
-package github.kaydunovdenis.bean;
+package github.kaydunovdenis.bean.shopping_cart;
+
+import github.kaydunovdenis.bean.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;

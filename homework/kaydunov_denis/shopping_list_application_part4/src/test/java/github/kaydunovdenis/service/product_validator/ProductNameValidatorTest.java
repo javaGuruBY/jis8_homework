@@ -1,6 +1,6 @@
 package github.kaydunovdenis.service.product_validator;
 
-import github.kaydunovdenis.bean.Product;
+import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.repository.ProductRepositoryHashMap;
 import github.kaydunovdenis.repository.ProductRepositoryHashMapTest;
 import org.junit.Assert;
@@ -9,16 +9,19 @@ import org.junit.Test;
 
 import java.util.Map;
 
-import static github.kaydunovdenis.bean.ProductTest.getDefaultProduct;
+import static github.kaydunovdenis.bean.product.ProductTest.getDefaultProduct;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ProductNameValidatorTest {
     private ProductNameValidator productNameValidator;
+    private Product product
+            ;
 
     @Before
     public void setUp() {
         productNameValidator = new ProductNameValidator();
+        product = getDefaultProduct();
     }
 
     @Test
@@ -26,7 +29,6 @@ public class ProductNameValidatorTest {
         Map<String, Product> map = ProductRepositoryHashMap.getProductMap();
         ProductRepositoryHashMapTest.initialRepository(map);
 
-        Product product = getDefaultProduct();
         product.setName("Name1");
         map.put(product.getName(), product);
         Assert.assertFalse(productNameValidator.validate(product));
@@ -42,7 +44,6 @@ public class ProductNameValidatorTest {
 
     @Test
     public void validatePositiveScenario() {
-        Product product = getDefaultProduct();
         product.setName("3__");
         Assert.assertTrue(productNameValidator.validate(product));
 
@@ -55,7 +56,6 @@ public class ProductNameValidatorTest {
 
     @Test
     public void validateNegativeScenario() {
-        Product product = getDefaultProduct();
         product.setName("2_");
         Assert.assertFalse(productNameValidator.validate(product));
 

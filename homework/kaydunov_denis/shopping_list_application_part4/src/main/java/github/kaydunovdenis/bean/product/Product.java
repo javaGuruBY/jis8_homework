@@ -1,9 +1,15 @@
-package github.kaydunovdenis.bean;
+package github.kaydunovdenis.bean.product;
 
-import github.kaydunovdenis.service.ProductPrintService;
+import github.kaydunovdenis.service.ProductService;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 
+/**
+ * About the discount:
+ * value variable 1 = view 100,00%
+ * value variable 0.2 = view 20,00%
+ */
 public class Product {
     private Long id;
     private String name;
@@ -11,6 +17,9 @@ public class Product {
     private ProductCategory productCategory;
     private BigDecimal discount;
     private String description;
+
+    public Product() {
+    }
 
     public Product(Long id, String name, BigDecimal price, ProductCategory productCategory, BigDecimal discount,
                    String description) {
@@ -55,8 +64,7 @@ public class Product {
     }
 
     /**
-     * @ProductConstants
-     * ProductConstants.MIN_DISCOUNT = 0;
+     * @ProductConstants ProductConstants.MIN_DISCOUNT = 0;
      * ProductConstants.MAX_DISCOUNT = 100;
      */
     public BigDecimal getDiscount() {
@@ -64,8 +72,7 @@ public class Product {
     }
 
     /**
-     * @ProductConstants
-     * ProductConstants.MIN_DISCOUNT = 0;
+     * @ProductConstants ProductConstants.MIN_DISCOUNT = 0;
      * ProductConstants.MAX_DISCOUNT = 100;
      */
     public void setDiscount(BigDecimal discount) {
@@ -113,8 +120,12 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", productCategory=" + productCategory +
-                ", discount=" + ProductPrintService.getPercentageDiscount(this) +
+                ", discount=" + ProductService.getPercentageDiscount(this) +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public ProductBuilder builder() {
+        return new ProductBuilder();
     }
 }

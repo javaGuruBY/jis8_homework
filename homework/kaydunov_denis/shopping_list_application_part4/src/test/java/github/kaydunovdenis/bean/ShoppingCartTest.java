@@ -1,5 +1,7 @@
 package github.kaydunovdenis.bean;
 
+import github.kaydunovdenis.bean.product.Product;
+import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,7 +24,7 @@ public class ShoppingCartTest {
 
     @Test
     public void constructorTest() {
-        ShoppingCart shoppingCart = new ShoppingCart("CART#4", new ArrayList<>());
+        shoppingCart = new ShoppingCart("CART#4", new ArrayList<>());
         Assert.assertNotNull(shoppingCart.getName());
         Assert.assertNotNull(shoppingCart.getProductList());
     }
