@@ -1,7 +1,6 @@
 package github.kaydunovdenis.bean.product;
 
 import github.kaydunovdenis.service.ProductService;
-import lombok.Builder;
 
 import java.math.BigDecimal;
 

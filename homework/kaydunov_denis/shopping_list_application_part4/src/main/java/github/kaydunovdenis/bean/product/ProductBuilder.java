@@ -10,9 +10,6 @@ public class ProductBuilder {
     private BigDecimal discount;
     private String description;
 
-    public ProductBuilder() {
-    }
-
     public ProductBuilder id(Long id) {
         this.id = id;
         return this;
@@ -50,9 +47,5 @@ public class ProductBuilder {
                 this.productCategory,
                 this.discount,
                 this.description);
-    }
-
-    public String toString() {
-        return "Product.ProductBuilder(id=" + this.id + ", name=" + this.name + ", price=" + this.price + ", productCategory=" + this.productCategory + ", discount=" + this.discount + ", description=" + this.description + ")";
     }
 }
