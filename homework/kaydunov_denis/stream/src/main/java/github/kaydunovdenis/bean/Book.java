@@ -1,7 +1,9 @@
 package github.kaydunovdenis.bean;
 
+import com.sun.istack.internal.NotNull;
 import github.kaydunovdenis.repository.BookRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,7 +12,13 @@ public class Book {
     private List<Author> authors;
     private int numberOfPages;
 
-    public Book(String title, List<Author> authors, int numberOfPages) {
+    public Book(String title, int numberOfPages) {
+        this.title = title;
+        this.numberOfPages = numberOfPages;
+        authors = new ArrayList<>();
+    }
+
+    public Book(String title, @NotNull List<Author> authors, int numberOfPages) {
         this.title = title;
         this.authors = authors;
         this.numberOfPages = numberOfPages;
