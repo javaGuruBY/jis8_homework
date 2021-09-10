@@ -28,7 +28,7 @@ public class LibraryService {
      *
      * @return
      */
-    public List<Book> findBookWithMaxCountPages() {
+    public List<Book> findBooksWithMaxCountPages() {
         int maxPages = findMaxCountPagesAmongAllBooks();
         return BOOKS.values().stream()
                 .filter(book -> book.getNumberOfPages() == maxPages)

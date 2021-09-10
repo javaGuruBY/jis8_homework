@@ -7,15 +7,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class LibraryServiceTest {
     private TestBookRepository testBookRepository = new TestBookRepository();
     private LibraryService service = new LibraryService();
+    private List<Book> booksExpected;
+    private List<Book> booksResult;
 
     @Before
     public void setUp() throws Exception {
@@ -27,33 +26,46 @@ public class LibraryServiceTest {
     @Test
     public void findBooksWithPagesMoreThanTestPositive() {
         final int countPages = 200;
-        List<Book> booksExpected = Arrays.asList(
+        booksExpected = Arrays.asList(
                 testBookRepository.book1,
                 testBookRepository.book3,
                 testBookRepository.book4,
                 testBookRepository.book6
         );
+        booksResult = service.findBooksWithPagesMoreThan(countPages);
 
-        Assert.assertTrue(booksExpected.containsAll(service.findBooksWithPagesMoreThan(countPages)));
-        Assert.assertTrue(service.findBooksWithPagesMoreThan(countPages).containsAll(booksExpected));
+        Assert.assertTrue(booksExpected.containsAll(booksResult));
+        Assert.assertTrue(booksResult.containsAll(booksExpected));
     }
 
     @Test
     public void findBooksWithPagesMoreThanTestNegative() {
         final int countPages = 200;
-        List<Book> booksExpected = Arrays.asList(
+        booksExpected = Arrays.asList(
                 testBookRepository.book1,
                 testBookRepository.book3,
                 testBookRepository.book5,
                 testBookRepository.book6
         );
+        booksResult = service.findBooksWithPagesMoreThan(countPages);
 
-        Assert.assertFalse(booksExpected.containsAll(service.findBooksWithPagesMoreThan(countPages)));
-        Assert.assertFalse(service.findBooksWithPagesMoreThan(countPages).containsAll(booksExpected));
+        Assert.assertFalse(booksExpected.containsAll(booksResult));
+        Assert.assertFalse(booksResult.containsAll(booksExpected));
     }
 
     @Test
-    public void findBookWithMaxCountPages() {
+    public void findBooksWithMaxCountPages() {
+        booksExpected = Arrays.asList(
+                testBookRepository.book1
+        );
+
+        booksResult = service.findBooksWithMaxCountPages();
+
+        System.out.println(booksResult);
+        System.out.println(booksExpected);
+
+        Assert.assertFalse(booksExpected.containsAll(booksResult));
+        Assert.assertFalse(booksResult.containsAll(booksExpected));
     }
 
     @Test
