@@ -4,7 +4,6 @@ import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
 import org.junit.Before;
 import org.mockito.Mock;
-import sun.plugin.javascript.navig.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
