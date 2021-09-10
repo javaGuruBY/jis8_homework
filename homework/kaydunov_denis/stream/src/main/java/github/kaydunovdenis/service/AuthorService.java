@@ -4,20 +4,15 @@ import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
 
 public class AuthorService {
-    BookService bookService;
 
-    public AuthorService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void addBook(Author author, Book book) {
-        if (!containsBook(author, book)) {
+    static public void addBook(Author author, Book book) {
+        if (!hasBook(author, book)) {
             author.getBooks().add(book);
+            BookService.addAuthor(author, book);
         }
-        bookService.addAuthor(author, book);
     }
 
-    public boolean containsBook(Author author, Book book) {
+    static public boolean hasBook(Author author, Book book) {
         return author.getBooks().contains(book);
     }
 }

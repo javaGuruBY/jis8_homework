@@ -22,7 +22,7 @@ public class Author {
         this.name = name;
         this.age = age;
         this.books = books;
-        books.stream().forEach(book -> BookRepository.BOOKS.put(book.getTitle(), book));
+        //books.stream().forEach(book -> BookRepository.BOOKS.put(book.getTitle(), book));
     }
 
     public String getName() {

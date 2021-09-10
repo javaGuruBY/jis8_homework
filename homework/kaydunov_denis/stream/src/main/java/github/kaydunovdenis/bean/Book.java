@@ -22,7 +22,7 @@ public class Book {
         this.title = title;
         this.authors = authors;
         this.numberOfPages = numberOfPages;
-        BookRepository.BOOKS.put(title, this);
+        //BookRepository.BOOKS.put(title, this);
     }
 
     public String getTitle() {
