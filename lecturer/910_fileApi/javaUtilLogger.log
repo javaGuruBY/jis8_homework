@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-09-10T18:52:20.260804949Z</date>
+  <millis>1631299940260</millis>
+  <nanos>804949</nanos>
+  <sequence>4</sequence>
+  <logger>logfile</logger>
+  <level>INFO</level>
+  <class>com.tutrit.java.quickstart.service.LoggerTest</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>this logs to a file</message>
+</record>
+</log>
