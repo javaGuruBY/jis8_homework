@@ -41,7 +41,7 @@ public class LibraryService {
     /**
      * @return II. find the books with min number of pages;
      */
-    public List<Book> findBookWithMinCountPages() {
+    public List<Book> findBooksWithMinCountPages() {
         int minPages = findMinCountPagesAmongAllBooks();
         return BOOKS.values().stream()
                 .filter(book -> book.getNumberOfPages() == minPages)

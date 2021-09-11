@@ -2,6 +2,7 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Book;
 import github.kaydunovdenis.repository.MockBookRepository;
+import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@Log4j
 public class LibraryServiceTest {
     private final MockBookRepository mockBookRepository = new MockBookRepository();
     private final Map<String, Book> mockBooks = MockBookRepository.getMockBooks();
@@ -70,7 +72,18 @@ public class LibraryServiceTest {
     }
 
     @Test
-    public void findBookWithMinCountPages() {
+    public void findBooksWithMinCountPages() {
+        booksExpected = Collections.singletonList(
+                mockBookRepository.book7
+        );
+
+        booksResult = service.findBooksWithMaxCountPages();
+
+
+        log.info("booksExpected:{}", booksExpected.toString());
+        Assert.assertTrue(booksExpected.equals(booksResult));
+
+        //Assert.assertFalse(booksResult.containsAll(booksExpected));
     }
 
     @Test
