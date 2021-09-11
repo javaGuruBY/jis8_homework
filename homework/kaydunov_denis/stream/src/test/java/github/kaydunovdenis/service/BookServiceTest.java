@@ -13,7 +13,7 @@ public class BookServiceTest {
     @Test
     public void addAuthor() {
         Author author = new Author("Nik", (short) 45, new ArrayList<>());
-        Book book = new Book("One, one, one", Collections.singletonList(author), 132);
+        Book book = new Book("One, one, one", new ArrayList<>(), 132);
         Assert.assertFalse(BookService.hasAuthor(author, book));
 
         BookService.addAuthor(author, book);
