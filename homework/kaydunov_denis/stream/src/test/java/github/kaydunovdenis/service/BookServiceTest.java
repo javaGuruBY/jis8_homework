@@ -6,35 +6,33 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
+import java.util.Collections;
 
 public class BookServiceTest {
 
     @Test
     public void addAuthor() {
         Author author = new Author("Nik", (short) 45, new ArrayList<>());
-        Book book = new Book("One, one, one", Arrays.asList(author), 132);
-        Assert.assertFalse(BookService.hasAutor(author, book));
+        Book book = new Book("One, one, one", Collections.singletonList(author), 132);
+        Assert.assertFalse(BookService.hasAuthor(author, book));
 
         BookService.addAuthor(author, book);
-        Assert.assertTrue(BookService.hasAutor(author, book));
+        Assert.assertTrue(BookService.hasAuthor(author, book));
 
-        Author newAutor = new Author("Nigan", (short) 34, new ArrayList<>());
-        Assert.assertFalse(BookService.hasAutor(newAutor, book));
+        Author newAuthor = new Author("Nigerian", (short) 34, new ArrayList<>());
+        Assert.assertFalse(BookService.hasAuthor(newAuthor, book));
     }
 
     @Test
-    public void hasAutor() {
+    public void hasAuthor() {
         Author author = new Author("Nik", (short) 45, new ArrayList<>());
-        Book book = new Book("One, one, one", Arrays.asList(author), 132);
-        Assert.assertFalse(BookService.hasAutor(author, book));
+        Book book = new Book("One, one, one", new ArrayList<>(), 132);
+        Assert.assertFalse(BookService.hasAuthor(author, book));
 
         book.getAuthors().add(author);
-        Assert.assertTrue(BookService.hasAutor(author, book));
+        Assert.assertTrue(BookService.hasAuthor(author, book));
 
-        Author newAutor = new Author("Nigan", (short) 34, new ArrayList<>());
-        Assert.assertFalse(BookService.hasAutor(newAutor, book));
+        Author newAuthor = new Author("Nigerian", (short) 34, new ArrayList<>());
+        Assert.assertFalse(BookService.hasAuthor(newAuthor, book));
     }
 }

@@ -1,24 +1,28 @@
 package github.kaydunovdenis.repository;
 
+import github.kaydunovdenis.bean.Book;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Map;
+
 public class BookRepositoryTest {
-    private TestBookRepository testBookRepository = new TestBookRepository();
+    private final MockBookRepository mockBookRepository = new MockBookRepository();
+    private final Map<String, Book> mockBooks = MockBookRepository.getMockBooks();
+
     @Before
-    public void setUp() throws Exception {
-        BookRepository.BOOKS.clear();
+    public void setUp() {
+        mockBooks.clear();
     }
 
     @Test
-    public void ckeckAddBooksInBookRepository() {
-        //TODO как здесь использовать Mock, чтобы реальный BOOKS не задействовать?
-        Assert.assertEquals(0, BookRepository.BOOKS.size());
-        testBookRepository.testInitialRepository(BookRepository.BOOKS);
-        int resultSize = BookRepository.BOOKS.size();
+    public void checkAddBooksInBookRepository() {
+        Assert.assertEquals(0, mockBooks.size());
+        mockBookRepository.testInitialRepository(mockBooks);
+        int resultSize = mockBooks.size();
         Assert.assertEquals(7, resultSize);
-        testBookRepository.testInitialRepository(BookRepository.BOOKS);
-        Assert.assertEquals(7, BookRepository.BOOKS.size());
+        mockBookRepository.testInitialRepository(mockBooks);
+        Assert.assertEquals(7, mockBooks.size());
     }
 }

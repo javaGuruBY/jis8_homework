@@ -1,8 +1,5 @@
 package github.kaydunovdenis.bean;
 
-import com.sun.istack.internal.NotNull;
-import github.kaydunovdenis.repository.BookRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +15,7 @@ public class Author {
         books = new ArrayList<>();
     }
 
-    public Author(String name, short age, @NotNull List<Book> books) {
+    public Author(String name, short age, List<Book> books) {
         this.name = name;
         this.age = age;
         this.books = books;

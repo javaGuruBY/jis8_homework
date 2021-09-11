@@ -2,15 +2,11 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
-import github.kaydunovdenis.repository.TestBookRepository;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
+import java.util.Collections;
 
 public class AuthorServiceTest {
 
@@ -29,7 +25,7 @@ public class AuthorServiceTest {
     @Test
     public void hasBook() {
         Author author = new Author("Nik", (short) 45, new ArrayList<>());
-        Book book = new Book("One, one, one", Arrays.asList(author), 132);
+        Book book = new Book("One, one, one", Collections.singletonList(author), 132);
         Assert.assertFalse(AuthorService.hasBook(author, book));
 
         author.getBooks().add(book);

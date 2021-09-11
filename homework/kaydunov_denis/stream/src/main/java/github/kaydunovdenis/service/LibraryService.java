@@ -12,10 +12,8 @@ import static github.kaydunovdenis.repository.BookRepository.BOOKS;
 public class LibraryService {
 
     /**
-     * I. find Books With Pages More Than countPages
-     *
-     * @param countPages
-     * @return
+     * @param countPages of book
+     * @return I. find Books With Pages More Than countPages
      */
     public List<Book> findBooksWithPagesMoreThan(int countPages) {
         return BOOKS.values().stream()
@@ -24,9 +22,7 @@ public class LibraryService {
     }
 
     /**
-     * II. find the books with max number of pages;
-     *
-     * @return
+     * @return II. find the books with max number of pages;
      */
     public List<Book> findBooksWithMaxCountPages() {
         int maxPages = findMaxCountPagesAmongAllBooks();
@@ -37,15 +33,13 @@ public class LibraryService {
 
     private int findMaxCountPagesAmongAllBooks() {
         return BOOKS.values().stream()
-                .max(Comparator.comparing(book -> book.getNumberOfPages()))
-                .get()
-                .getNumberOfPages();
+                .map(Book::getNumberOfPages)
+                .max(Integer::compareTo)
+                .orElse(0);
     }
 
     /**
-     * II. find the books with min number of pages;
-     *
-     * @return
+     * @return II. find the books with min number of pages;
      */
     public List<Book> findBookWithMinCountPages() {
         int minPages = findMinCountPagesAmongAllBooks();
@@ -56,13 +50,13 @@ public class LibraryService {
 
     private int findMinCountPagesAmongAllBooks() {
         return BOOKS.values().stream()
-                .min(Comparator.comparing(book -> book.getNumberOfPages()))
+                .min(Comparator.comparing(Book::getNumberOfPages))
                 .get()
                 .getNumberOfPages();
     }
 
     /**
-     * III. filter books with only single author;
+     * @return III. filter books with only single author;
      */
     public List<Book> findBookWithOnlySingleAuthor() {
         final int countAuthors = 1;
@@ -72,31 +66,29 @@ public class LibraryService {
     }
 
     /**
-     * IV. sort the books by number of pages;
+     * @return IV. sort the books by number of pages;
      */
     public List<Book> sortBooksByNumberOfPage() {
         return BOOKS.values().stream()
-                .sorted(Comparator.comparing(book -> book.getNumberOfPages()))
+                .sorted(Comparator.comparing(Book::getNumberOfPages))
                 .collect(Collectors.toList());
     }
 
     /**
-     * IV. sort the books by number of title;
+     * @return IV. sort the books by number of title;
      */
     public List<Book> sortBooksByNumberOfTitle() {
         return BOOKS.values().stream()
-                .sorted(Comparator.comparing(book -> book.getTitle()))
+                .sorted(Comparator.comparing(Book::getTitle))
                 .collect(Collectors.toList());
     }
 
     /**
-     * V. get list of all titles;
-     *
-     * @return
+     * @return V. get list of all titles;
      */
     public List<String> getListOfAllTitles() {
         return BOOKS.values().stream()
-                .map(book -> book.getTitle())
+                .map(Book::getTitle)
                 .collect(Collectors.toList());
     }
 
@@ -108,9 +100,9 @@ public class LibraryService {
     }
 
     /**
-     * VII. get distinct list of all authors
+     * @return VII. get distinct list of all authors
      */
-    public List<Author> getDistinctListAllAutors() {
+    public List<Author> getDistinctListAllAuthors() {
         return BOOKS.values().stream()
                 .flatMap(book -> book.getAuthors().stream())
                 .distinct()

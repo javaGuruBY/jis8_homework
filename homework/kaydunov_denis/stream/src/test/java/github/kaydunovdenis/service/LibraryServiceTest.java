@@ -1,36 +1,37 @@
 package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Book;
-import github.kaydunovdenis.repository.BookRepository;
-import github.kaydunovdenis.repository.TestBookRepository;
+import github.kaydunovdenis.repository.MockBookRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class LibraryServiceTest {
-    private TestBookRepository testBookRepository = new TestBookRepository();
-    private LibraryService service = new LibraryService();
+    private final MockBookRepository mockBookRepository = new MockBookRepository();
+    private final Map<String, Book> mockBooks = MockBookRepository.getMockBooks();
+    private final LibraryService service = new LibraryService();
     private List<Book> booksExpected;
     private List<Book> booksResult;
 
     @Before
-    public void setUp() throws Exception {
-        BookRepository.BOOKS.clear();
-        //TODO как подменить на Mock?
-        testBookRepository.testInitialRepository(BookRepository.BOOKS);
+    public void setUp() {
+        mockBooks.clear();
+        mockBookRepository.testInitialRepository(mockBooks);
     }
 
     @Test
     public void findBooksWithPagesMoreThanTestPositive() {
         final int countPages = 200;
         booksExpected = Arrays.asList(
-                testBookRepository.book1,
-                testBookRepository.book3,
-                testBookRepository.book4,
-                testBookRepository.book6
+                mockBookRepository.book1,
+                mockBookRepository.book3,
+                mockBookRepository.book4,
+                mockBookRepository.book6
         );
         booksResult = service.findBooksWithPagesMoreThan(countPages);
 
@@ -42,10 +43,10 @@ public class LibraryServiceTest {
     public void findBooksWithPagesMoreThanTestNegative() {
         final int countPages = 200;
         booksExpected = Arrays.asList(
-                testBookRepository.book1,
-                testBookRepository.book3,
-                testBookRepository.book5,
-                testBookRepository.book6
+                mockBookRepository.book1,
+                mockBookRepository.book3,
+                mockBookRepository.book5,
+                mockBookRepository.book6
         );
         booksResult = service.findBooksWithPagesMoreThan(countPages);
 
@@ -55,8 +56,8 @@ public class LibraryServiceTest {
 
     @Test
     public void findBooksWithMaxCountPages() {
-        booksExpected = Arrays.asList(
-                testBookRepository.book1
+        booksExpected = Collections.singletonList(
+                mockBookRepository.book1
         );
 
         booksResult = service.findBooksWithMaxCountPages();
@@ -93,6 +94,6 @@ public class LibraryServiceTest {
     }
 
     @Test
-    public void getDistinctListAllAutors() {
+    public void getDistinctListAllAuthors() {
     }
 }
