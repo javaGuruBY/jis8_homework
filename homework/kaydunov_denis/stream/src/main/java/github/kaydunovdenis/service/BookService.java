@@ -4,6 +4,8 @@ import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
 
 public class BookService {
+    private BookService() {
+    }
 
     public static void addAuthor(Author author, Book book) {
         if (!hasAuthor(author, book)) {

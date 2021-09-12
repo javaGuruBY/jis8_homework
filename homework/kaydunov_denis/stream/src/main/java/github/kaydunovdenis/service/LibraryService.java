@@ -2,12 +2,14 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
+import lombok.extern.log4j.Log4j;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@Log4j
 public class LibraryService {
     private final Map<String, Book> books;
 
@@ -112,7 +114,7 @@ public class LibraryService {
      * VI. print them using forEach method;
      */
     public void printAlTitles() {
-        getListOfAllTitles().forEach(System.out::println);
+        getListOfAllTitles().forEach(log::info);
     }
 
     /**

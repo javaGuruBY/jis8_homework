@@ -17,12 +17,17 @@ public class BookRepositoryTest {
     }
 
     @Test
+    public void checkInitialisation() {
+        Assert.assertNotNull(BookRepository.BOOKS);
+    }
+
+    @Test
     public void checkAddBooksInBookRepository() {
         Assert.assertEquals(0, mockBooks.size());
-        mockBookRepository.testInitialRepository(mockBooks);
+        mockBookRepository.testInitialRepository();
         int resultSize = mockBooks.size();
         Assert.assertEquals(7, resultSize);
-        mockBookRepository.testInitialRepository(mockBooks);
+        mockBookRepository.testInitialRepository();
         Assert.assertEquals(7, mockBooks.size());
     }
 }

@@ -3,25 +3,27 @@ package github.kaydunovdenis.service;
 import github.kaydunovdenis.bean.Author;
 import github.kaydunovdenis.bean.Book;
 import github.kaydunovdenis.repository.MockBookRepository;
+import lombok.extern.log4j.Log4j;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.*;
 
+import static github.kaydunovdenis.repository.MockBookRepository.*;
 import static org.junit.Assert.*;
 
+@Log4j
 public class LibraryServiceTest {
     private final MockBookRepository mockBookRepository = new MockBookRepository();
-    private final Map<String, Book> mockBooks = new HashMap<>();
     private LibraryService service;
     private List<Book> booksExpected = new ArrayList<>();
     private List<Book> booksResult = new ArrayList<>();
 
     @Before
     public void setUp() {
-        mockBookRepository.testInitialRepository(mockBooks);
-        service = new LibraryService(mockBooks);
+        mockBookRepository.testInitialRepository();
+        service = new LibraryService(MOCK_BOOKS);
     }
 
     @Test
@@ -131,6 +133,7 @@ public class LibraryServiceTest {
 
     @Test
     public void printAlTitles() {
+        getListOfAllTitles();
     }
 
     @Test
@@ -142,9 +145,9 @@ public class LibraryServiceTest {
         assertEquals(expected, service.getDistinctListAllAuthors());
     }
 
-    @Ignore
+    @Ignore("I dont know how write tests for parallel thread.")
     @Test
-    public void testFindBookWithOnlySingleAuthorUsedByParallelStream() {
-        //I dont know how write tests for parallel thread.
+    public void findBookWithOnlySingleAuthorUsedByParallelStream() {
+        findBookWithOnlySingleAuthor();
     }
 }

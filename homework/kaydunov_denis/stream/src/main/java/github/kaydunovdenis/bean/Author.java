@@ -19,7 +19,6 @@ public class Author {
         this.name = name;
         this.age = age;
         this.books = books;
-        //books.stream().forEach(book -> BookRepository.BOOKS.put(book.getTitle(), book));
     }
 
     public String getName() {
@@ -51,9 +50,7 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return age == author.age &&
-                Objects.equals(name, author.name) &&
-                Objects.equals(books, author.books);
+        return age == author.age && name.equals(author.name) && books.equals(author.books);
     }
 
     @Override

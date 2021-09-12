@@ -21,14 +21,14 @@ public class MockBookRepository {
     public Book book7 = new Book("One, one, one", Collections.singletonList(author1), 132);
 
 
-    public void testInitialRepository(Map<String, Book> books) {
-        books.put(book1.getTitle(), book1);
-        books.put(book2.getTitle(), book2);
-        books.put(book3.getTitle(), book3);
-        books.put(book4.getTitle(), book4);
-        books.put(book5.getTitle(), book5);
-        books.put(book6.getTitle(), book6);
-        books.put(book7.getTitle(), book7);
+    public void testInitialRepository() {
+        MOCK_BOOKS.put(book1.getTitle(), book1);
+        MOCK_BOOKS.put(book2.getTitle(), book2);
+        MOCK_BOOKS.put(book3.getTitle(), book3);
+        MOCK_BOOKS.put(book4.getTitle(), book4);
+        MOCK_BOOKS.put(book5.getTitle(), book5);
+        MOCK_BOOKS.put(book6.getTitle(), book6);
+        MOCK_BOOKS.put(book7.getTitle(), book7);
     }
 
     public static Map<String, Book> getMockBooks() {

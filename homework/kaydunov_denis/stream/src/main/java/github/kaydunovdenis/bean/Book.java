@@ -19,7 +19,6 @@ public class Book {
         this.title = title;
         this.authors = authors;
         this.numberOfPages = numberOfPages;
-        //BookRepository.BOOKS.put(title, this);
     }
 
     public String getTitle() {
@@ -51,9 +50,7 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return numberOfPages == book.numberOfPages &&
-                Objects.equals(title, book.title) &&
-                Objects.equals(authors, book.authors);
+        return numberOfPages == book.numberOfPages && Objects.equals(title, book.title) && Objects.equals(authors, book.authors);
     }
 
     @Override
