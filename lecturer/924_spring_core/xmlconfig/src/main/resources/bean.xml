@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="dev" class="com.tutrit.springcorequickstart.bean.Developer" scope="singleton">
+    <property name="name" value="Max"/>
+    <property name="skill" value="Java"/>
+    <property name="level" value="3"/>
+  </bean>
+
+  <bean id="JUNIOR" class="com.tutrit.springcorequickstart.bean.Developer" >
+    <property name="name" value="JUNIOR"/>
+    <property name="skill" value="Java"/>
+    <property name="level" value="3"/>
+  </bean>
+
+  <bean id="project" class="com.tutrit.springcorequickstart.bean.Project" autowire="byName" >
+    <constructor-arg value="TUTRIT.COM" />
+<!--    <constructor-arg ref="JUNIOR" />-->
+  </bean>
+</beans>
