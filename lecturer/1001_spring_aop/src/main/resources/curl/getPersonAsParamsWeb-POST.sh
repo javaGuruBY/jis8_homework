@@ -1,0 +1,1 @@
+curl -d 'name=max&age=18' -H "Content-Type: application/x-www-form-urlencoded" -X POST http://localhost:8080/web/persons-asParams
