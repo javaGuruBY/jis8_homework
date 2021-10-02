@@ -8,8 +8,9 @@ import java.math.BigDecimal;
 public class ShoppingCartService {
     private ProductService productService;
 
-    public ShoppingCartService() {
-        this.productService = new ProductService();
+
+    public ShoppingCartService(ProductService productService) {
+        this.productService = productService;
     }
 
     public void addProduct(final ShoppingCart shoppingCart, final Product product) {

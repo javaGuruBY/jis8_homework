@@ -1,42 +1,24 @@
-### Single Responsibility Principle - Task 4 for ShoppingListApplication
+### Maven/Gradle, JUnit + Mockito - Tasks 5, 6, 7 for ShoppingListApplication
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=coverage)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=code_smells)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=bugs)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5) 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 
--[Х] New domain - ShoppingCart
-Необходимо добавить новую сущность в проект - Shopping cart.
--[Х] У "корзины" должно быть название и список продуктов.
--[Х] Название корзины - обязательное поле
+### 5 Maven/Gradle, JUnit + Mockito
+-[х] Migrate to Maven/Gradle, add tests   
+-[х] Добавить в проект build tool Maven/Gradle.  
+-[х] Добавить библиотеки: JUnit 4.12 + Mockito 2.23.4
+-[х] Покрыть тестами уровни service/validation
 
-Функциональные требования:
--[х] Сохранение корзины
--[х] получение корзины
--[х] удаление корзины
--[х] Добавление продукта в корзину
--[х] Получение списка продуктов (в корзине)
--[х] Получение общей стоимости продуктов в корзине
-
-### Maven/Gradle, JUnit + Mockito
-Migrate to Maven/Gradle, add tests
-Task 5 for ShoppingListApplication
-Добавить в проект build tool Maven/Gradle.
-*Примечание: изменится структура проекта
-Добавить библиотеки: JUnit 4.12 + Mockito 2.23.4
-Покрыть тестами уровни service/validation
-
-### Dependency Injection, JUnit + Mockito
-Task 6 for ShoppingListApplication
-Переписать приложение с использованием Dependency Injection.
-Перенести настройку необходимых объектов в main метод.
-Покрыть код тестами и достигнуть > 50% покрытия кода тестами
+### 6 Dependency Injection, JUnit + Mockito
+-[х] Переписать приложение с использованием Dependency Injection.
+-[x] Перенести настройку необходимых объектов в main метод.
+-[х] Покрыть код тестами и достигнуть > 50% покрытия кода тестами
 
 ### Spring framework
-Spring Basics
-Task 7 for ShoppingListApplication
-Добавить в проект Spring Framework 4.3.22.RELEASE
-Внедрить использование Spring Dependency Injection / IoC
+-[ ] Добавить в проект Spring Framework 4.3.22.RELEASE
+-[ ] Внедрить использование Spring Dependency Injection / IoC
 https://docs.spring.io/spring/docs/4.3.22.RELEASE/spring-framework-reference/htmlsingle/
 
 ### SQL, JDBC Api

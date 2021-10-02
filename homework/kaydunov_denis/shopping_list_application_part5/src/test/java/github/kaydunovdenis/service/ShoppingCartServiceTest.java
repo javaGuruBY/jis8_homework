@@ -17,7 +17,7 @@ public class ShoppingCartServiceTest {
 
     @Before
     public void setUp() {
-        shoppingCartService = new ShoppingCartService();
+        shoppingCartService = new ShoppingCartService(new ProductService());
         shoppingCart = new ShoppingCart("Cart#1");
         product = getDefaultProduct();
     }
