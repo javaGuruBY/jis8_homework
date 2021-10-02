@@ -15,7 +15,7 @@ public class ShoppingListApplication {
     public static void main(String[] args) {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        final var shoppingCart = context.getBean("ShoppingCart", ShoppingCart.class);
+        final var shoppingCart = context.getBean(ShoppingCart.class);
         System.out.println(shoppingCart.getName());
 
         ShoppingCartService shoppingCartService = new ShoppingCartService(new ProductService());
