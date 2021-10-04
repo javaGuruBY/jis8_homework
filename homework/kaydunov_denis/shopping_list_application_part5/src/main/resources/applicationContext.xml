@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="shoppingCart"
-          class="github.kaydunovdenis.bean.shopping_cart.ShoppingCart">
-        <constructor-arg value="Cart1withXMLConfiguration"/>
-    </bean>
+        <!--Строка ниже задает Spring автоматически сканировать beans ны в папке kaydunovdenis -->
+        <context:component-scan base-package="github.kaydunovdenis"/>
+<!--    &lt;!&ndash; для загрузки значений объектов из properties файла&ndash;&gt;-->
+<!--    <context:property-placeholder location="shoppingCart.properties"/>-->
 
+<!--    <bean id="ProductService"-->
+<!--          class="github.kaydunovdenis.service.ProductService">-->
+<!--    </bean>-->
+<!--    <bean id="ShoppingCartService"-->
+<!--          class="github.kaydunovdenis.service.ShoppingCartService">-->
+<!--        <constructor-arg ref="ProductService"/>-->
+<!--    </bean>-->
+<!--    <bean id="DiscountValidator"-->
+<!--          class="github.kaydunovdenis.service.product_validator.DiscountValidator">-->
+<!--    </bean>-->
+<!--    <bean id="PriceValidator"-->
+<!--          class="github.kaydunovdenis.service.product_validator.PriceValidator">-->
+<!--    </bean>-->
+<!--    <bean id="ProductNameValidator"-->
+<!--          class="github.kaydunovdenis.service.product_validator.ProductNameValidator">-->
+<!--    </bean>-->
+<!--    <bean id="ShoppingCart1"-->
+<!--          class="github.kaydunovdenis.bean.shopping_cart.ShoppingCart">-->
+<!--        <property name="name" value="ShoppingCart1FromContextXML"/>-->
+<!--    </bean>-->
+<!--    <bean id="ShoppingCart2"-->
+<!--          class="github.kaydunovdenis.bean.shopping_cart.ShoppingCart">-->
+<!--        &lt;!&ndash;загрузка значений из properties файла&ndash;&gt;-->
+<!--        <property name="name" value="${shoppingCart.name}"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;initial product&ndash;&gt;-->
+<!--    <bean id="Product1"-->
+<!--          class="github.kaydunovdenis.bean.product.Product">-->
+<!--    </bean>-->
+<!--    <bean id="Product2"-->
+<!--          class="github.kaydunovdenis.bean.product.Product">-->
+<!--    </bean>-->
+<!--    <bean id="Product3"-->
+<!--          class="github.kaydunovdenis.bean.product.Product">-->
+<!--    </bean>-->
+<!--    <bean id="Product4"-->
+<!--          class="github.kaydunovdenis.bean.product.Product">-->
+<!--    </bean>-->
+
+<!--    <bean id="ShoppingCart3"-->
+<!--          class="github.kaydunovdenis.bean.shopping_cart.ShoppingCart"-->
+<!--          scope="prototype">-->
+<!--        <property name="name" value="ShoppingCart3FromContextXmlWithParameters"/>-->
+<!--        <property name="productList">-->
+<!--            <list>-->
+<!--                <ref bean="Product1"/>-->
+<!--                <ref bean="Product2"/>-->
+<!--                <ref bean="Product3"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>

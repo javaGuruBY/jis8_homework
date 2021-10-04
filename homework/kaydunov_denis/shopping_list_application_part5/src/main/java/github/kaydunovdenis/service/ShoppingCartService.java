@@ -2,16 +2,22 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+@Component
+@Data
 public class ShoppingCartService {
-    private ProductService productService;
+    private final ProductService productService;
 
-
+    @Autowired
     public ShoppingCartService(ProductService productService) {
         this.productService = productService;
     }
+
 
     public void addProduct(final ShoppingCart shoppingCart, final Product product) {
         shoppingCart.getProductList().add(product);
@@ -25,4 +31,6 @@ public class ShoppingCartService {
         }
         return totalPrice;
     }
+
+
 }

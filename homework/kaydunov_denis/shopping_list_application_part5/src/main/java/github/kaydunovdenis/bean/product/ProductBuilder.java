@@ -2,6 +2,9 @@ package github.kaydunovdenis.bean.product;
 
 import java.math.BigDecimal;
 
+/**
+ * Used Pattern Builder
+ */
 public class ProductBuilder {
     private Long id;
     private String name;

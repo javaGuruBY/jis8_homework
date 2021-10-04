@@ -17,8 +17,8 @@
 -[х] Покрыть код тестами и достигнуть > 50% покрытия кода тестами
 
 ### Spring framework
--[ ] Добавить в проект Spring Framework 4.3.22.RELEASE
--[ ] Внедрить использование Spring Dependency Injection / IoC
+-[х] Добавить в проект Spring Framework 4.3.22.RELEASE
+-[x] Внедрить использование Spring Dependency Injection / IoC
 https://docs.spring.io/spring/docs/4.3.22.RELEASE/spring-framework-reference/htmlsingle/
 
 ### SQL, JDBC Api
