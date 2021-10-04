@@ -46,6 +46,6 @@ public class SpringConfigTest {
     @Test
     public void shoppingCart1() {
         ShoppingCart shoppingCart1 = context.getBean(ShoppingCart.class);
-        Assert.assertEquals("ShoppingCart{name='null', productList=[]}", shoppingCart1.toString());
+        Assert.assertEquals("ShoppingCart(name=null, productList=[])", shoppingCart1.toString());
     }
 }

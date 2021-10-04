@@ -70,7 +70,7 @@ public class ShoppingCartTest {
 
     @Test
     public void testToString() {
-        String expected = "ShoppingCart{name='Cart#1', productList=[]}";
+        String expected = "ShoppingCart(name=Cart#1, productList=[])";
         assertEquals(expected, shoppingCart.toString());
     }
 }

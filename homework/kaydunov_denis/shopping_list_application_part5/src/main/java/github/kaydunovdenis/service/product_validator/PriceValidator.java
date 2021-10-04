@@ -1,8 +1,7 @@
 package github.kaydunovdenis.service.product_validator;
 
-import github.kaydunovdenis.bean.product.ProductConstants;
 import github.kaydunovdenis.bean.product.Product;
-import lombok.extern.apachecommons.CommonsLog;
+import github.kaydunovdenis.bean.product.ProductConstants;
 import org.springframework.stereotype.Component;
 
 @Component
