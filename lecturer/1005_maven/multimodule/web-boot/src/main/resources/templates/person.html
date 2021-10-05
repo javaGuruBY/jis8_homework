@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="person : ${peopleList}">
+    <h1 th:text="${person.getAge()}"></h1>
+    <h2 th:text="${person.getName()}"></h2>
+    <h3 th:text="${person.getTime()}"></h3>
+</div>
+</div>
+</body>
+</html>
