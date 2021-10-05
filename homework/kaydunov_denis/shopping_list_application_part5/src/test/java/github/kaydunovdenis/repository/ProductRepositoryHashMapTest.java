@@ -20,15 +20,19 @@ public class ProductRepositoryHashMapTest {
         ProductRepositoryHashMap.clear();
         product = getDefaultProduct();
     }
-
+    
     @Test
-    public void getProductMap() {
+    public void productMapShouldBeInitailizedOnStart() {
         Assert.assertNotNull(ProductRepositoryHashMap.getProductMap());
-        Assert.assertEquals(0, ProductRepositoryHashMap.getProductMap().size());
-
-        ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
-        Assert.assertEquals(1, ProductRepositoryHashMap.getProductMap().size());
     }
+    
+    @Test
+    public void productMapShouldBeEmptyOnStart() {
+       Assert.assertEquals(0, ProductRepositoryHashMap.getProductMap().size());       
+       ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
+       Assert.assertEquals(1, ProductRepositoryHashMap.getProductMap().size());
+    }
+    
 
     @Test
     public void containsProduct() {
