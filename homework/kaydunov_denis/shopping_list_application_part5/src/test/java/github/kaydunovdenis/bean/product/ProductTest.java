@@ -99,12 +99,9 @@ public class ProductTest {
 
     @Test
     public void testToString() {
-        product = getDefaultProduct();
         var expect = String.format("Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
                 " discount=%s, description='Not description'}", DEFAULT_PERCENTAGE_DISCOUNT);
-        LOG.info("Expect:\n {}", expect);
-        LOG.info("Result:\n {}", product);
-        Assert.assertEquals(expect, product.toString());
+        Assert.assertEquals(expect, getDefaultProduct().toString());
     }
 
     @Test

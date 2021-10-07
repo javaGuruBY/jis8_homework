@@ -44,8 +44,6 @@ public class ProductServiceTest {
         product.setDiscount(new BigDecimal("1"));
         expect = "100,00%";
         result = ProductService.getPercentageDiscount(product);
-        LOG.info("Expect:\n {}",expect);
-        LOG.info("Result:\n {}", result);
         Assert.assertEquals(expect, result);
     }
 
