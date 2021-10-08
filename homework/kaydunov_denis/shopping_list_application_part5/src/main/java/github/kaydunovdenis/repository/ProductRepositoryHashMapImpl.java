@@ -18,8 +18,4 @@ public class ProductRepositoryHashMapImpl implements Repository<Product> {
     public boolean contain(Product product) {
         return productRepository.containsKey(product.getName());
     }
-
-    public static void clear() {
-        productRepository.clear();
-    }
 }
