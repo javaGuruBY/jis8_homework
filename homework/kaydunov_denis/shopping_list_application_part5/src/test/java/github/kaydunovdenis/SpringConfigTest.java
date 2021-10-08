@@ -2,9 +2,9 @@ package github.kaydunovdenis;
 
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.service.ShoppingCartService;
-import github.kaydunovdenis.service.product_validator.DiscountValidator;
-import github.kaydunovdenis.service.product_validator.PriceValidator;
-import github.kaydunovdenis.service.product_validator.ProductNameValidator;
+import github.kaydunovdenis.service.product_validator.validityImpl.DiscountValidator;
+import github.kaydunovdenis.service.product_validator.validityImpl.PriceValidator;
+import github.kaydunovdenis.service.product_validator.validityImpl.ProductNameValidator;
 import github.kaydunovdenis.service.product_validator.Validity;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -25,13 +25,6 @@ public class SpringConfigTest {
     @Test
     public void initialContextTest() {
         Assert.assertTrue(context.getBeanDefinitionCount() > 0);
-    }
-
-    @Test
-    public void createShoppingCartServiceTest() {
-        ShoppingCartService shoppingCartService = context.getBean(ShoppingCartService.class);
-        String expected = "ShoppingCartService(productService=ProductService())";
-        Assert.assertEquals(expected, shoppingCartService.toString());
     }
 
     @Test

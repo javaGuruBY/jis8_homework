@@ -21,37 +21,37 @@ public class ProductTest {
 
     @Test
     public void getName() {
-        Assert.assertEquals("Notebook Acer 9302V-1", getDefaultProduct().getName());
+        Assert.assertEquals("Notebook Acer 9302V-1", getTestProduct().getName());
     }
 
     @Test
     public void getId() {
-        Assert.assertEquals(0, getDefaultProduct().getId().compareTo(1L));
+        Assert.assertEquals(0, getTestProduct().getId().compareTo(1L));
     }
 
     @Test
     public void getPrice() {
-        Assert.assertEquals(0, getDefaultProduct().getPrice().compareTo(new BigDecimal("1000.00")));
+        Assert.assertEquals(0, getTestProduct().getPrice().compareTo(new BigDecimal("1000.00")));
     }
 
     @Test
     public void getProductCategory() {
-        Assert.assertEquals(ProductCategory.NOTEBOOK, getDefaultProduct().getProductCategory());
+        Assert.assertEquals(ProductCategory.NOTEBOOK, getTestProduct().getProductCategory());
     }
 
     @Test
     public void getDiscount() {
-        Assert.assertEquals(0, getDefaultProduct().getDiscount().compareTo(new BigDecimal(DEFAULT_DISCOUNT)));
+        Assert.assertEquals(0, getTestProduct().getDiscount().compareTo(new BigDecimal(DEFAULT_DISCOUNT)));
     }
 
     @Test
     public void getDescription() {
-        Assert.assertEquals("Not description", getDefaultProduct().getDescription());
+        Assert.assertEquals("Not description", getTestProduct().getDescription());
     }
 
     @Test
     public void setName() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = "Name is change";
         product.setName(expect);
         Assert.assertEquals(expect, product.getName());
@@ -59,7 +59,7 @@ public class ProductTest {
 
     @Test
     public void setId() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = 2L;
         product.setId(expect);
         Assert.assertEquals(0, product.getId().compareTo(expect));
@@ -67,7 +67,7 @@ public class ProductTest {
 
     @Test
     public void setPrice() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = new BigDecimal("2000.00");
         product.setPrice(expect);
         Assert.assertEquals(0, product.getPrice().compareTo(expect));
@@ -75,7 +75,7 @@ public class ProductTest {
 
     @Test
     public void setProductCategory() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = ProductCategory.COMPUTER;
         product.setProductCategory(expect);
         Assert.assertEquals(expect, product.getProductCategory());
@@ -83,7 +83,7 @@ public class ProductTest {
 
     @Test
     public void setDiscount() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = new BigDecimal(DEFAULT_DISCOUNT);
         product.setDiscount(expect);
         Assert.assertEquals(0, product.getDiscount().compareTo(expect));
@@ -91,7 +91,7 @@ public class ProductTest {
 
     @Test
     public void setDescription() {
-        product = getDefaultProduct();
+        product = getTestProduct();
         var expect = "Description is change";
         product.setDescription(expect);
         Assert.assertEquals(expect, product.getDescription());
@@ -101,12 +101,12 @@ public class ProductTest {
     public void testToString() {
         var expect = String.format("Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
                 " discount=%s, description='Not description'}", DEFAULT_PERCENTAGE_DISCOUNT);
-        Assert.assertEquals(expect, getDefaultProduct().toString());
+        Assert.assertEquals(expect, getTestProduct().toString());
     }
 
     @Test
     public void testEqualsAndHashCode() {
-        Assert.assertEquals(getDefaultProduct(), getDefaultProduct());
+        Assert.assertEquals(getTestProduct(), getTestProduct());
         EqualsVerifier.simple().forClass(Product.class).verify();
     }
 
@@ -116,7 +116,7 @@ public class ProductTest {
         Assert.assertEquals(new Product(), resultProduct);
     }
 
-    public static Product getDefaultProduct() {
+    public static Product getTestProduct() {
         return new Product(1L,
                 "Notebook Acer 9302V-1",
                 new BigDecimal("1000.00"),

@@ -7,7 +7,7 @@ public class ProductBuilderTest {
 
     @Test
     public void build() {
-        var product = ProductTest.getDefaultProduct();
+        var product = ProductTest.getTestProduct();
         var resultProduct = new ProductBuilder().id(product.getId())
                 .description(product.getDescription())
                 .discount(product.getDiscount())

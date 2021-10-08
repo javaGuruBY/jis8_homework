@@ -1,66 +1,41 @@
 package github.kaydunovdenis.repository;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.bean.product.ProductCategory;
-import github.kaydunovdenis.bean.product.ProductTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.util.Map;
+import java.util.HashMap;
 
-import static github.kaydunovdenis.bean.product.ProductTest.*;
+import static github.kaydunovdenis.bean.product.ProductTest.getTestProduct;
 
 public class ProductRepositoryHashMapTest {
+    private Repository<Product> mockProductRepository;
+    private Repository<Product> realProductRepository;
     private Product product;
 
     @Before
     public void setUp() {
-        ProductRepositoryHashMap.clear();
-        product = getDefaultProduct();
+        mockProductRepository = new MockProductRepository();
+        realProductRepository = new ProductRepositoryHashMapImpl();
+        product = getTestProduct();
+    }
+
+    @Test
+    public void productMapShouldBeInitializedOnStart() {
+        Assert.assertNotNull(realProductRepository.getRepository());
     }
 
     @Test
     public void getProductMap() {
-        Assert.assertNotNull(ProductRepositoryHashMap.getProductMap());
-        Assert.assertEquals(0, ProductRepositoryHashMap.getProductMap().size());
-
-        ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
-        Assert.assertEquals(1, ProductRepositoryHashMap.getProductMap().size());
+        Assert.assertTrue(realProductRepository.getRepository() instanceof HashMap);
     }
 
     @Test
     public void containsProduct() {
-        Assert.assertFalse(ProductRepositoryHashMap.containsProduct(product));
+        Assert.assertFalse(mockProductRepository.contain(product));
 
-        ProductRepositoryHashMap.getProductMap().put(product.getName(), product);
-        Assert.assertTrue(ProductRepositoryHashMap.containsProduct(product));
-    }
-
-    public static void initialRepository(Map<String, Product> productMap) {
-        var tempProduct = new Product(1L,
-                "Notebook Acer 9302V-1",
-                new BigDecimal("1000.00"),
-                ProductCategory.NOTEBOOK,
-                new BigDecimal("0.02"),
-                "Not description");
-        productMap.put(tempProduct.getName(), tempProduct);
-
-        tempProduct = new Product(2L,
-                "Notebook Acer 9302V-2",
-                new BigDecimal("1120.90"),
-                ProductCategory.NOTEBOOK,
-                new BigDecimal("0.2"),
-                "Not description");
-        productMap.put(tempProduct.getName(), tempProduct);
-
-        tempProduct = new Product(3L,
-                "Tablet Acer Nubia's",
-                new BigDecimal("560.00"),
-                ProductCategory.TABLET,
-                new BigDecimal("0.53"),
-                "New super tablet for woman");
-        productMap.put(tempProduct.getName(), tempProduct);
+        mockProductRepository.getRepository().put(product.getName(), product);
+        Assert.assertTrue(mockProductRepository.contain(product));
     }
 }

@@ -5,33 +5,36 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 public class ShoppingCartRepositoryTest {
-    private ShoppingCartRepository shoppingCartRepository;
+    private ShoppingCartRepositoryHashMapImpl shoppingCartRepository;
     private ShoppingCart testShoppingCart;
 
 
     @Before
     public void setUp() {
-        shoppingCartRepository = new ShoppingCartRepository();
+        shoppingCartRepository = new ShoppingCartRepositoryHashMapImpl();
         testShoppingCart = new ShoppingCart("Cart#1");
     }
 
     @Test
-    public void getShoppingCarts() {
-        var shoppingCarts = shoppingCartRepository.getShoppingCarts();
-        Assert.assertNotNull(shoppingCarts);
-        Assert.assertEquals(0, shoppingCartRepository.getShoppingCarts().size());
+    public void repositoryShouldBeInitializedOnStart() {
+        Assert.assertNotNull(shoppingCartRepository.getRepository());
+    }
 
-        shoppingCartRepository.saveShoppingCart(testShoppingCart);
-        Assert.assertEquals(1, shoppingCartRepository.getShoppingCarts().size());
+
+    @Test
+    public void getShoppingCarts() {
+        Assert.assertTrue(shoppingCartRepository.getRepository() instanceof HashMap);
     }
 
     @Test
     public void removeShoppingCart() {
         saveShoppingCart();
-        Assert.assertEquals(1, shoppingCartRepository.getShoppingCarts().size());
+        Assert.assertEquals(1, shoppingCartRepository.getRepository().size());
         shoppingCartRepository.removeShoppingCart(testShoppingCart);
-        Assert.assertEquals(0, shoppingCartRepository.getShoppingCarts().size());
+        Assert.assertEquals(0, shoppingCartRepository.getRepository().size());
     }
 
     @Test
@@ -44,6 +47,6 @@ public class ShoppingCartRepositoryTest {
     @Test
     public void saveShoppingCart() {
         shoppingCartRepository.saveShoppingCart(testShoppingCart);
-        Assert.assertEquals(1, shoppingCartRepository.getShoppingCarts().size());
+        Assert.assertEquals(1, shoppingCartRepository.getRepository().size());
     }
 }

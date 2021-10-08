@@ -16,7 +16,7 @@ public class ProductServiceTest {
 
     @Before
     public void setUp() {
-        product = ProductTest.getDefaultProduct();
+        product = ProductTest.getTestProduct();
     }
 
     @Test
@@ -57,7 +57,7 @@ public class ProductServiceTest {
     @Test
     public void getPriceWithDiscount() {
         var productService = new ProductService();
-        var product = ProductTest.getDefaultProduct();
+        var product = ProductTest.getTestProduct();
         product.setPrice(new BigDecimal("100"));
         product.setDiscount(new BigDecimal("20"));
         var actual = productService.getPriceWithDiscount(product);

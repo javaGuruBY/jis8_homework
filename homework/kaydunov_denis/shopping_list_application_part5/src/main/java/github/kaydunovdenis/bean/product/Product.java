@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * value variable 0.2 = view 20,00%
  */
 @Data
-public class Product {
+public class Product implements Entity {
     private Long id;
     private String name;
     private BigDecimal price;

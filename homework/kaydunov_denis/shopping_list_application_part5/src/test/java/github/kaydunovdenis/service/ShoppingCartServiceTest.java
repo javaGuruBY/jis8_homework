@@ -2,24 +2,28 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
+import github.kaydunovdenis.repository.MockShoppingCartRepository;
+import github.kaydunovdenis.service.product_validator.ProductValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static github.kaydunovdenis.bean.product.ProductTest.getDefaultProduct;
+import static github.kaydunovdenis.bean.product.ProductTest.getTestProduct;
 
 public class ShoppingCartServiceTest {
+    private MockShoppingCartRepository repository;
     private ShoppingCartService shoppingCartService;
     private ShoppingCart shoppingCart;
     private Product product;
 
     @Before
     public void setUp() {
-        shoppingCartService = new ShoppingCartService(new ProductService());
+        repository = new MockShoppingCartRepository();
+        shoppingCartService = new ShoppingCartService(new ProductService(), new ProductValidator());
         shoppingCart = new ShoppingCart("Cart#1");
-        product = getDefaultProduct();
+        product = getTestProduct();
     }
 
     @Test
@@ -31,16 +35,25 @@ public class ShoppingCartServiceTest {
     }
 
     @Test
+    public void totalPriceSholdBeZeroOnStart() {
+        BigDecimal actual = shoppingCartService.calculateTotalPriceShoppingCart(shoppingCart);
+        Assert.assertEquals(0, BigDecimal.ZERO.compareTo(actual));
+    }
+
+    @Test
     public void calculateTotalPrice() {
         BigDecimal price = new BigDecimal("100.00");
         product.setPrice(price);
         product.setDiscount(new BigDecimal("0.00"));
 
-        BigDecimal actual = shoppingCartService.calculateTotalPrice(shoppingCart);
-        Assert.assertEquals(0, BigDecimal.ZERO.compareTo(actual));
-
         shoppingCartService.addProduct(shoppingCart, product);
-        actual = shoppingCartService.calculateTotalPrice(shoppingCart);
+        BigDecimal actual = shoppingCartService.calculateTotalPriceShoppingCart(shoppingCart);
         Assert.assertEquals(0, price.compareTo(actual));
+    }
+
+    @Test
+    public void addShoppingCart() {
+        repository.add(shoppingCart);
+        Assert.assertTrue(repository.getRepository().containsKey(shoppingCart.getName()));
     }
 }

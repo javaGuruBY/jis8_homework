@@ -20,13 +20,13 @@
 <!--        <constructor-arg ref="ProductService"/>-->
 <!--    </bean>-->
 <!--    <bean id="DiscountValidator"-->
-<!--          class="github.kaydunovdenis.service.product_validator.DiscountValidator">-->
+<!--          class="github.kaydunovdenis.service.product_validator.validityImpl.DiscountValidator">-->
 <!--    </bean>-->
 <!--    <bean id="PriceValidator"-->
-<!--          class="github.kaydunovdenis.service.product_validator.PriceValidator">-->
+<!--          class="github.kaydunovdenis.service.product_validator.validityImpl.PriceValidator">-->
 <!--    </bean>-->
 <!--    <bean id="ProductNameValidator"-->
-<!--          class="github.kaydunovdenis.service.product_validator.ProductNameValidator">-->
+<!--          class="github.kaydunovdenis.service.product_validator.validityImpl.ProductNameValidator">-->
 <!--    </bean>-->
 <!--    <bean id="ShoppingCart1"-->
 <!--          class="github.kaydunovdenis.bean.shopping_cart.ShoppingCart">-->
