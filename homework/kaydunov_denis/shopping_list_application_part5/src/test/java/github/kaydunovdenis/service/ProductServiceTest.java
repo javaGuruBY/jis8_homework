@@ -48,7 +48,7 @@ public class ProductServiceTest {
     }
 
     @Test(expected = NumberFormatException.class)
-    public void testValueDiscountMore100Percent() {
+    public void whenDiscountOver100_shouldReturnNoMoreThan100() {
         product.setDiscount(new BigDecimal("1,12"));
         ProductService.getPercentageDiscount(product);
     }
