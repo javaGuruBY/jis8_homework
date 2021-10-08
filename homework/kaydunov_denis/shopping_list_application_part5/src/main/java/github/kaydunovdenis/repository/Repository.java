@@ -1,6 +1,6 @@
 package github.kaydunovdenis.repository;
 
-import github.kaydunovdenis.bean.product.Entity;
+import github.kaydunovdenis.bean.Entity;
 
 import java.util.Map;
 

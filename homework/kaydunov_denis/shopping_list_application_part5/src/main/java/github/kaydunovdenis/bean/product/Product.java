@@ -1,5 +1,6 @@
 package github.kaydunovdenis.bean.product;
 
+import github.kaydunovdenis.bean.Entity;
 import github.kaydunovdenis.service.ProductService;
 import lombok.Data;
 

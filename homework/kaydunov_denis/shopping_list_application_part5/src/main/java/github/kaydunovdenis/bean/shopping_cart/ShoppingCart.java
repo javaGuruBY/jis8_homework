@@ -1,6 +1,6 @@
 package github.kaydunovdenis.bean.shopping_cart;
 
-import github.kaydunovdenis.bean.product.Entity;
+import github.kaydunovdenis.bean.Entity;
 import github.kaydunovdenis.bean.product.Product;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
