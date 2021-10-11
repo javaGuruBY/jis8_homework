@@ -1,11 +1,10 @@
 package github.kaydunovdenis;
 
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
-import github.kaydunovdenis.service.ShoppingCartService;
-import github.kaydunovdenis.service.product_validator.validityImpl.DiscountValidator;
-import github.kaydunovdenis.service.product_validator.validityImpl.PriceValidator;
-import github.kaydunovdenis.service.product_validator.validityImpl.ProductNameValidator;
-import github.kaydunovdenis.service.product_validator.Validity;
+import github.kaydunovdenis.service.validator.impls.DiscountValidator;
+import github.kaydunovdenis.service.validator.impls.PriceValidator;
+import github.kaydunovdenis.service.validator.impls.ProductNameValidator;
+import github.kaydunovdenis.service.validator.Validity;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

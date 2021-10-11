@@ -1,9 +1,9 @@
-package github.kaydunovdenis.service.product_validator.validityImpl;
+package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.product.ProductConstants;
-import github.kaydunovdenis.service.product_validator.ProductValidationException;
-import github.kaydunovdenis.service.product_validator.Validity;
+import github.kaydunovdenis.service.validator.ProductValidationException;
+import github.kaydunovdenis.service.validator.Validity;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
@@ -26,10 +26,15 @@ public class DiscountValidator implements Validity {
             throw new ProductValidationException("Discount can't be less than " + ProductConstants.MIN_DISCOUNT);
     }
 
+    /**
+     * Discount must be zero if product have price less than
+     * @see ProductConstants
+     * @param product
+     */
     private void checkAvailable(final @NotNull Product product) {
-        if (product.getPrice().doubleValue() < ProductConstants.MIN_PRICE_WITH_DISCOUNT_AVAILABLE) {
-            throw new ProductValidationException("Discount must be zero if product have price less then "
-                    + ProductConstants.MIN_PRICE_WITH_DISCOUNT_AVAILABLE);
+        if (product.getPrice().doubleValue() < ProductConstants.MIN_PRICE_FOR_DISCOUNT_AVAILABLE) {
+            throw new ProductValidationException("Discount must be zero if product have price less than "
+                    + ProductConstants.MIN_PRICE_FOR_DISCOUNT_AVAILABLE);
         }
     }
 }

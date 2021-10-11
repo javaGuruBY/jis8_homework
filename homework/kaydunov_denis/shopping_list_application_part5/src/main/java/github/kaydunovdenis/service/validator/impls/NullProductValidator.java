@@ -1,8 +1,8 @@
-package github.kaydunovdenis.service.product_validator.validityImpl;
+package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.service.product_validator.ProductValidationException;
-import github.kaydunovdenis.service.product_validator.Validity;
+import github.kaydunovdenis.service.validator.ProductValidationException;
+import github.kaydunovdenis.service.validator.Validity;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -23,22 +23,16 @@ public class ProductServiceTest {
     public void getPercentageDiscount() {
         var expect = ProductTest.DEFAULT_PERCENTAGE_DISCOUNT;
         var result = ProductService.getPercentageDiscount(product);
-        LOG.info("Expect:\n {}",expect);
-        LOG.info("Result:\n {}", result);
         Assert.assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("0.1234"));
         expect = "12,34%";
         result = ProductService.getPercentageDiscount(product);
-        LOG.info("Expect:\n {}",expect);
-        LOG.info("Result:\n {}", result);
         Assert.assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("0.99349"));
         expect = "99,35%";
         result = ProductService.getPercentageDiscount(product);
-        LOG.info("Expect:\n {}",expect);
-        LOG.info("Result:\n {}", result);
         Assert.assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("1"));

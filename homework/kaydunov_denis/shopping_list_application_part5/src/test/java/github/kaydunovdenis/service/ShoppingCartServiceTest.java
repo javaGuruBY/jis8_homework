@@ -3,7 +3,7 @@ package github.kaydunovdenis.service;
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.repository.MockShoppingCartRepository;
-import github.kaydunovdenis.service.product_validator.ProductValidator;
+import github.kaydunovdenis.service.validator.ProductValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,4 +56,6 @@ public class ShoppingCartServiceTest {
         repository.add(shoppingCart);
         Assert.assertTrue(repository.getRepository().containsKey(shoppingCart.getName()));
     }
+
+
 }

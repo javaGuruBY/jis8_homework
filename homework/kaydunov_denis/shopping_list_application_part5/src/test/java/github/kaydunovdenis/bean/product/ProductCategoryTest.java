@@ -6,8 +6,12 @@ import org.junit.Test;
 public class ProductCategoryTest {
 
     @Test
-    public void valueOf() {
-        Assert.assertEquals(ProductCategory.PHONE, ProductCategory.valueOf("PHONE"));
+    public void containPositive() {
+        Assert.assertTrue(ProductCategory.contain(ProductCategory.valueOf("PHONE")));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void containNegative() {
+        Assert.assertFalse(ProductCategory.contain(ProductCategory.valueOf("PHY")));
+    }
 }

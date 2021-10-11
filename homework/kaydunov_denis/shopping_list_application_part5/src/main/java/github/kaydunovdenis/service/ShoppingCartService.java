@@ -2,8 +2,7 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
-import github.kaydunovdenis.repository.Repository;
-import github.kaydunovdenis.service.product_validator.ProductValidator;
+import github.kaydunovdenis.service.validator.ProductValidator;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,6 +33,4 @@ public class ShoppingCartService {
         }
         return totalPrice;
     }
-
-
 }

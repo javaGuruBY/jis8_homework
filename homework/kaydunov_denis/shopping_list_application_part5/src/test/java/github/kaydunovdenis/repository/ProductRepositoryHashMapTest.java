@@ -32,7 +32,7 @@ public class ProductRepositoryHashMapTest {
     }
 
     @Test
-    public void containsProduct() {
+    public void containsNegative() {
         Assert.assertFalse(mockProductRepository.contain(product));
 
         mockProductRepository.getRepository().put(product.getName(), product);

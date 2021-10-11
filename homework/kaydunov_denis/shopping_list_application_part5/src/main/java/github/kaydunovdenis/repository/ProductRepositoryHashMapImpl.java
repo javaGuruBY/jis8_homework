@@ -6,16 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProductRepositoryHashMapImpl implements Repository<Product> {
-    private static final Map<String, Product> productRepository = new HashMap<>();
-
-    public ProductRepositoryHashMapImpl() {
-    }
+    private static final Map<String, Product> repository = new HashMap<>();
 
     public Map<String, Product> getRepository() {
-        return productRepository;
+        return repository;
     }
 
     public boolean contain(Product product) {
-        return productRepository.containsKey(product.getName());
+        return repository.containsKey(product.getName());
     }
 }

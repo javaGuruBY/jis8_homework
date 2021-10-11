@@ -1,4 +1,4 @@
-package github.kaydunovdenis.service.product_validator;
+package github.kaydunovdenis.service.validator;
 
 public class ProductValidationException extends RuntimeException {
 

@@ -9,7 +9,11 @@ public enum ProductCategory {
     TABLET;
 
     public static boolean contain(ProductCategory category) {
-        return List.of(ProductCategory.values()).contains(category);
+        try {
+            return List.of(ProductCategory.values()).contains(category);
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 }
 

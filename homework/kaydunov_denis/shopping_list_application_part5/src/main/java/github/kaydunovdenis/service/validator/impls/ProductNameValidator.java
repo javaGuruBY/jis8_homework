@@ -1,8 +1,8 @@
-package github.kaydunovdenis.service.product_validator.validityImpl;
+package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.service.product_validator.ProductValidationException;
-import github.kaydunovdenis.service.product_validator.Validity;
+import github.kaydunovdenis.service.validator.ProductValidationException;
+import github.kaydunovdenis.service.validator.Validity;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
@@ -13,13 +13,13 @@ import static github.kaydunovdenis.bean.product.ProductConstants.MIN_LENGTH_NAME
 public class ProductNameValidator implements Validity {
 
     @Override
-    public void validate(final @NotNull Product product) {
+    public void validate(final @NotNull Product product) throws ProductValidationException {
         checkNotNull(product);
         checkMinLength(product);
         checkMaxLength(product);
     }
 
-    private void checkNotNull(final Product product) {
+    private void checkNotNull(final Product product) throws ProductValidationException {
         if (product.getName() == null) {
             throw new ProductValidationException("Name of product shouldn't be null");
         }
