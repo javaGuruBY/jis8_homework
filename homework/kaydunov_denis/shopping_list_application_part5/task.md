@@ -6,18 +6,18 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javaGuruBY_java-free-stream-5&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javaGuruBY_java-free-stream-5)  
 
 ### 5 Maven/Gradle, JUnit + Mockito
--[х] Migrate to Maven/Gradle, add tests   
--[х] Добавить в проект build tool Maven/Gradle.  
--[х] Добавить библиотеки: JUnit 4.12 + Mockito 2.23.4
--[х] Покрыть тестами уровни service/validation
+-[x] Migrate to Maven/Gradle, add tests.     
+-[x] Добавить в проект build tool Maven/Gradle.  
+-[x] Добавить библиотеки: JUnit 4.12 + Mockito 2.23.4. 
+-[x] Покрыть тестами уровни service/validation.
 
 ### 6 Dependency Injection, JUnit + Mockito
--[х] Переписать приложение с использованием Dependency Injection.
+-[x] Переписать приложение с использованием Dependency Injection.
 -[x] Перенести настройку необходимых объектов в main метод.
--[х] Покрыть код тестами и достигнуть > 50% покрытия кода тестами
+-[x] Покрыть код тестами и достигнуть > 50% покрытия кода тестами.
 
 ### Spring framework
--[х] Добавить в проект Spring Framework 4.3.22.RELEASE
+-[x] Добавить в проект Spring Framework 4.3.22.RELEASE
 -[x] Внедрить использование Spring Dependency Injection / IoC
 https://docs.spring.io/spring/docs/4.3.22.RELEASE/spring-framework-reference/htmlsingle/
 
