@@ -1,13 +1,14 @@
 package github.kaydunovdenis.bean.product;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ProductBuilderTest {
 
     @Test
     public void build() {
-        var product = ProductTest.getTestProduct();
+        var product = TestProductProvider.getTestProduct();
         var resultProduct = new ProductBuilder().id(product.getId())
                 .description(product.getDescription())
                 .discount(product.getDiscount())
@@ -16,6 +17,6 @@ public class ProductBuilderTest {
                 .price(product.getPrice())
                 .build();
 
-        Assert.assertEquals(product, resultProduct);
+        assertEquals(product, resultProduct);
     }
 }

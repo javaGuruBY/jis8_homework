@@ -10,7 +10,8 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static github.kaydunovdenis.bean.product.ProductTest.getTestProduct;
+import static github.kaydunovdenis.bean.product.TestProductProvider.getTestProduct;
+import static org.junit.Assert.*;
 
 public class ShoppingCartServiceTest {
     private MockShoppingCartRepository repository;
@@ -28,16 +29,16 @@ public class ShoppingCartServiceTest {
 
     @Test
     public void addProduct() {
-        Assert.assertEquals(0, shoppingCart.getProductList().size());
+        assertEquals(0, shoppingCart.getProductList().size());
         shoppingCartService.addProduct(shoppingCart, product);
-        Assert.assertEquals(1, shoppingCart.getProductList().size());
-        Assert.assertTrue(shoppingCart.getProductList().contains(product));
+        assertEquals(1, shoppingCart.getProductList().size());
+        assertTrue(shoppingCart.getProductList().contains(product));
     }
 
     @Test
-    public void totalPriceSholdBeZeroOnStart() {
+    public void totalPriceShouldBeZeroOnStart() {
         BigDecimal actual = shoppingCartService.calculateTotalPriceShoppingCart(shoppingCart);
-        Assert.assertEquals(0, BigDecimal.ZERO.compareTo(actual));
+        assertEquals(0, BigDecimal.ZERO.compareTo(actual));
     }
 
     @Test
@@ -48,14 +49,12 @@ public class ShoppingCartServiceTest {
 
         shoppingCartService.addProduct(shoppingCart, product);
         BigDecimal actual = shoppingCartService.calculateTotalPriceShoppingCart(shoppingCart);
-        Assert.assertEquals(0, price.compareTo(actual));
+        assertEquals(0, price.compareTo(actual));
     }
 
     @Test
     public void addShoppingCart() {
         repository.add(shoppingCart);
-        Assert.assertTrue(repository.getRepository().containsKey(shoppingCart.getName()));
+        assertTrue(repository.getRepository().containsKey(shoppingCart.getName()));
     }
-
-
 }

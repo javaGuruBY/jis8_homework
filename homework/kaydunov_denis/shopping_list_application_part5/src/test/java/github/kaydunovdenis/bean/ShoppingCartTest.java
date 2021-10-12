@@ -6,12 +6,13 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.meanbean.test.BeanTester;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ShoppingCartTest {
     private final String nameCart = "Cart#1";
@@ -72,5 +73,10 @@ public class ShoppingCartTest {
     public void testToString() {
         String expected = "ShoppingCart(name=Cart#1, productList=[])";
         assertEquals(expected, shoppingCart.toString());
+    }
+
+    @Test
+    public void annotationDataShouldFunctionCorrectly() {
+        new BeanTester().testBean(ShoppingCart.class);
     }
 }

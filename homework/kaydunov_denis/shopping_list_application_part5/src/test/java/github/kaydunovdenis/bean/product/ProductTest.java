@@ -1,12 +1,12 @@
 package github.kaydunovdenis.bean.product;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
-import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.meanbean.test.BeanTester;
 
 import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * About the discount:
@@ -14,114 +14,107 @@ import java.math.BigDecimal;
  * value variable 0.2 = view 20,00%
  */
 public class ProductTest {
-    private static final String DEFAULT_DISCOUNT = "0.2";
-    public static final String DEFAULT_PERCENTAGE_DISCOUNT = "20,00%";
-    private static final Logger LOG = LoggerFactory.getLogger(ProductTest.class.getSimpleName());
     private Product product;
 
     @Test
     public void getName() {
-        Assert.assertEquals("Notebook Acer 9302V-1", getTestProduct().getName());
+        assertEquals("Notebook Acer 9302V-1", TestProductProvider.getTestProduct().getName());
     }
 
     @Test
     public void getId() {
-        Assert.assertEquals(0, getTestProduct().getId().compareTo(1L));
+        assertEquals(0, TestProductProvider.getTestProduct().getId().compareTo(1L));
     }
 
     @Test
     public void getPrice() {
-        Assert.assertEquals(0, getTestProduct().getPrice().compareTo(new BigDecimal("1000.00")));
+        assertEquals(0, TestProductProvider.getTestProduct().getPrice().compareTo(new BigDecimal("1000.00")));
     }
 
     @Test
     public void getProductCategory() {
-        Assert.assertEquals(ProductCategory.NOTEBOOK, getTestProduct().getProductCategory());
+        assertEquals(ProductCategory.NOTEBOOK, TestProductProvider.getTestProduct().getProductCategory());
     }
 
     @Test
     public void getDiscount() {
-        Assert.assertEquals(0, getTestProduct().getDiscount().compareTo(new BigDecimal(DEFAULT_DISCOUNT)));
+        assertEquals(0, TestProductProvider.getTestProduct().getDiscount().compareTo(new BigDecimal(TestProductProvider.DEFAULT_DISCOUNT)));
     }
 
     @Test
     public void getDescription() {
-        Assert.assertEquals("Not description", getTestProduct().getDescription());
+        assertEquals("Not description", TestProductProvider.getTestProduct().getDescription());
     }
 
     @Test
     public void setName() {
-        product = getTestProduct();
+        product = TestProductProvider.getTestProduct();
         var expect = "Name is change";
         product.setName(expect);
-        Assert.assertEquals(expect, product.getName());
+        assertEquals(expect, product.getName());
     }
 
     @Test
     public void setId() {
-        product = getTestProduct();
+        product = TestProductProvider.getTestProduct();
         var expect = 2L;
         product.setId(expect);
-        Assert.assertEquals(0, product.getId().compareTo(expect));
+        assertEquals(0, product.getId().compareTo(expect));
     }
 
     @Test
     public void setPrice() {
-        product = getTestProduct();
+        product = TestProductProvider.getTestProduct();
         var expect = new BigDecimal("2000.00");
         product.setPrice(expect);
-        Assert.assertEquals(0, product.getPrice().compareTo(expect));
+        assertEquals(0, product.getPrice().compareTo(expect));
     }
 
     @Test
     public void setProductCategory() {
-        product = getTestProduct();
+        product = TestProductProvider.getTestProduct();
         var expect = ProductCategory.COMPUTER;
         product.setProductCategory(expect);
-        Assert.assertEquals(expect, product.getProductCategory());
+        assertEquals(expect, product.getProductCategory());
     }
 
     @Test
     public void setDiscount() {
-        product = getTestProduct();
-        var expect = new BigDecimal(DEFAULT_DISCOUNT);
+        product = TestProductProvider.getTestProduct();
+        var expect = new BigDecimal(TestProductProvider.DEFAULT_DISCOUNT);
         product.setDiscount(expect);
-        Assert.assertEquals(0, product.getDiscount().compareTo(expect));
+        assertEquals(0, product.getDiscount().compareTo(expect));
     }
 
     @Test
     public void setDescription() {
-        product = getTestProduct();
+        product = TestProductProvider.getTestProduct();
         var expect = "Description is change";
         product.setDescription(expect);
-        Assert.assertEquals(expect, product.getDescription());
+        assertEquals(expect, product.getDescription());
     }
 
     @Test
     public void testToString() {
         var expect = String.format("Product{id=1, name='Notebook Acer 9302V-1', price=1000.00, productCategory=NOTEBOOK," +
-                " discount=%s, description='Not description'}", DEFAULT_PERCENTAGE_DISCOUNT);
-        Assert.assertEquals(expect, getTestProduct().toString());
+                " discount=%s, description='Not description'}", TestProductProvider.DEFAULT_PERCENTAGE_DISCOUNT);
+        assertEquals(expect, TestProductProvider.getTestProduct().toString());
     }
 
     @Test
     public void testEqualsAndHashCode() {
-        Assert.assertEquals(getTestProduct(), getTestProduct());
+        assertEquals(TestProductProvider.getTestProduct(), TestProductProvider.getTestProduct());
         EqualsVerifier.simple().forClass(Product.class).verify();
     }
 
     @Test
     public void testBuilder() {
         var resultProduct = new Product().builder().build();
-        Assert.assertEquals(new Product(), resultProduct);
+        assertEquals(new Product(), resultProduct);
     }
 
-    public static Product getTestProduct() {
-        return new Product(1L,
-                "Notebook Acer 9302V-1",
-                new BigDecimal("1000.00"),
-                ProductCategory.NOTEBOOK,
-                new BigDecimal(DEFAULT_DISCOUNT),
-                "Not description");
+    @Test
+    public void annotationDataShouldFunctionCorrectly() {
+        new BeanTester().testBean(Product.class);
     }
 }

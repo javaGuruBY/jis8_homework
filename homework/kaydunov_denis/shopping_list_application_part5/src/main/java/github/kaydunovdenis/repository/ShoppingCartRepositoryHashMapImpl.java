@@ -13,11 +13,6 @@ public class ShoppingCartRepositoryHashMapImpl implements Repository<ShoppingCar
         return repository;
     }
 
-    @Override
-    public boolean contain(ShoppingCart shoppingCart) {
-        return repository.containsKey(shoppingCart.getName());
-    }
-
     public void removeShoppingCart(ShoppingCart shoppingCart) {
         repository.remove(shoppingCart.getName());
     }

@@ -1,10 +1,11 @@
 package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.bean.product.TestProductProvider;
 import github.kaydunovdenis.service.validator.ProductValidationException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static github.kaydunovdenis.bean.product.TestProductProvider.getAnotherTestProduct;
 
 public class NullValidatorTest {
     private NullProductValidator nullValidator;
@@ -13,7 +14,7 @@ public class NullValidatorTest {
     @Before
     public void setUp() {
         nullValidator = new NullProductValidator();
-        product = new TestProductProvider().getTestProduct();
+        product = getAnotherTestProduct();
     }
 
     @Test

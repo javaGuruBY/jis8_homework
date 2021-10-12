@@ -131,6 +131,21 @@
             <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!--For make testing Beans and POJOs as easy as possible-->
+        <dependency>
+            <groupId>org.meanbean</groupId>
+            <artifactId>meanbean</artifactId>
+            <version>2.0.3</version>
+            <scope>test</scope>
+        </dependency>
+        <!--For using parameterised tests with objects-parameters-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- -->
     </dependencies>
 
     <build>

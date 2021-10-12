@@ -7,15 +7,17 @@ import github.kaydunovdenis.service.validator.impls.PriceValidator;
 import github.kaydunovdenis.service.validator.impls.ProductNameValidator;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Slf4j
 public class ProductValidator {
     @Getter
-    private List<Validity> list = new ArrayList<>();
+    private final List<Validity> list = new ArrayList<>();
 
     public ProductValidator() {
         list.add(new DiscountValidator());
@@ -29,7 +31,13 @@ public class ProductValidator {
         // Validity и добавлять их инстанс в list
     }
 
-    public void validate(@NonNull Product product) throws ProductValidationException {
-        list.forEach(it -> validate(product));
+    public boolean validate(@NonNull final Product product) {
+        try {
+            list.forEach(validator -> validator.validate(product));
+            return true;
+        } catch (ProductValidationException e) {
+            log.info(e.getMessage());
+            return false;
+        }
     }
 }

@@ -17,11 +17,6 @@ public class MockProductRepository implements Repository<Product> {
         return mockProductMap;
     }
 
-    @Override
-    public boolean contain(Product product) {
-        return mockProductMap.containsKey(product.getName());
-    }
-
     public static void initial(Map<String, Product> productMap) {
         var tempProduct = new Product(1L,
                 "Notebook Acer 9302V-1",

@@ -1,6 +1,6 @@
 package github.kaydunovdenis.repository;
 
-import github.kaydunovdenis.bean.product.ProductTest;
+import github.kaydunovdenis.bean.product.TestProductProvider;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,11 +16,6 @@ public class MockShoppingCartRepository implements Repository<ShoppingCart> {
         return mockRepository;
     }
 
-    @Override
-    public boolean contain(@NotNull ShoppingCart shoppingCart) {
-        return mockRepository.containsKey(shoppingCart.getName());
-    }
-
     public void initial() {
         var tempShoppingCart = new ShoppingCart();
         mockRepository.put(tempShoppingCart.getName(), tempShoppingCart);
@@ -29,7 +24,7 @@ public class MockShoppingCartRepository implements Repository<ShoppingCart> {
         mockRepository.put(tempShoppingCart.getName(), tempShoppingCart);
 
         tempShoppingCart = new ShoppingCart("Test Cart #2 for MockRepository",
-                List.of(ProductTest.getTestProduct()));
+                List.of(TestProductProvider.getTestProduct()));
         mockRepository.put(tempShoppingCart.getName(), tempShoppingCart);
     }
 }

@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
+import static org.junit.Assert.*;
+
 public class ShoppingCartRepositoryTest {
     private ShoppingCartRepositoryHashMapImpl shoppingCartRepository;
     private ShoppingCart testShoppingCart;
@@ -20,33 +22,33 @@ public class ShoppingCartRepositoryTest {
 
     @Test
     public void repositoryShouldBeInitializedOnStart() {
-        Assert.assertNotNull(shoppingCartRepository.getRepository());
+        assertNotNull(shoppingCartRepository.getRepository());
     }
 
 
     @Test
     public void getShoppingCarts() {
-        Assert.assertTrue(shoppingCartRepository.getRepository() instanceof HashMap);
+        assertTrue(shoppingCartRepository.getRepository() instanceof HashMap);
     }
 
     @Test
     public void removeShoppingCart() {
         saveShoppingCart();
-        Assert.assertEquals(1, shoppingCartRepository.getRepository().size());
+        assertEquals(1, shoppingCartRepository.getRepository().size());
         shoppingCartRepository.removeShoppingCart(testShoppingCart);
-        Assert.assertEquals(0, shoppingCartRepository.getRepository().size());
+        assertEquals(0, shoppingCartRepository.getRepository().size());
     }
 
     @Test
     public void getShoppingCartByName() {
         shoppingCartRepository.saveShoppingCart(testShoppingCart);
         var result = shoppingCartRepository.getShoppingCartByName("Cart#1");
-        Assert.assertEquals(testShoppingCart, result);
+        assertEquals(testShoppingCart, result);
     }
 
     @Test
     public void saveShoppingCart() {
         shoppingCartRepository.saveShoppingCart(testShoppingCart);
-        Assert.assertEquals(1, shoppingCartRepository.getRepository().size());
+        assertEquals(1, shoppingCartRepository.getRepository().size());
     }
 }

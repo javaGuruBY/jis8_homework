@@ -1,6 +1,7 @@
 package github.kaydunovdenis.repository;
 
 import github.kaydunovdenis.bean.Entity;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -11,5 +12,8 @@ public interface Repository<T extends Entity> {
         getRepository().put(t.getName(), t);
     }
 
-    boolean contain(T t);
+    default boolean contain(@NotNull T t) {
+        return getRepository().containsKey(t.getName())
+                && getRepository().containsValue(t);
+    }
 }

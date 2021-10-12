@@ -1,14 +1,16 @@
 package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.bean.product.TestProductProvider;
 import github.kaydunovdenis.service.validator.ProductValidationException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import static github.kaydunovdenis.bean.product.TestProductProvider.getAnotherTestProduct;
+import static org.junit.Assert.assertThrows;
 
 class ProductNameValidatorTest {
     private ProductNameValidator productNameValidator;
@@ -18,7 +20,7 @@ class ProductNameValidatorTest {
     @Before
     public void setUp() {
         productNameValidator = new ProductNameValidator();
-        product = new TestProductProvider().getTestProduct();
+        product = getAnotherTestProduct();
     }
 
     @Test(expected = ProductValidationException.class)
@@ -35,10 +37,11 @@ class ProductNameValidatorTest {
     }
 
     @ParameterizedTest
+    @NullSource
     @ValueSource(strings = {"Name is 33_symbols_______________", "2_"})
-    void testNegative() {
-        product.setName("Name is 33_symbols_______________");
-        Assert.assertThrows(ProductValidationException.class,
+    void testNegative(String name) {
+        product.setName(name);
+        assertThrows(ProductValidationException.class,
                 () -> productNameValidator.validate(product));
     }
 }

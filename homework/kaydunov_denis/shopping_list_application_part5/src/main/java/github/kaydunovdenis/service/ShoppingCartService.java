@@ -3,14 +3,12 @@ package github.kaydunovdenis.service;
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.service.validator.ProductValidator;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Component
-@Data
 public class ShoppingCartService {
     private final ProductService productService;
     private final ProductValidator productValidator;
@@ -22,6 +20,7 @@ public class ShoppingCartService {
     }
 
     public void addProduct(final ShoppingCart shoppingCart, final Product product) {
+        productValidator.validate(product);
         shoppingCart.getProductList().add(product);
     }
 

@@ -11,8 +11,4 @@ public class ProductRepositoryHashMapImpl implements Repository<Product> {
     public Map<String, Product> getRepository() {
         return repository;
     }
-
-    public boolean contain(Product product) {
-        return repository.containsKey(product.getName());
-    }
 }

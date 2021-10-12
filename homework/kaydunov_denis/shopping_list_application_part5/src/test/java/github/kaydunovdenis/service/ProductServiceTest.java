@@ -1,44 +1,44 @@
 package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
-import github.kaydunovdenis.bean.product.ProductTest;
+import github.kaydunovdenis.bean.product.TestProductProvider;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 
+import static org.junit.Assert.*;
+
 public class ProductServiceTest {
-    private final Logger LOG = LoggerFactory.getLogger(this.getClass().getSimpleName());
     private Product product;
 
     @Before
     public void setUp() {
-        product = ProductTest.getTestProduct();
+        product = TestProductProvider.getTestProduct();
     }
 
     @Test
     public void getPercentageDiscount() {
-        var expect = ProductTest.DEFAULT_PERCENTAGE_DISCOUNT;
+        //TODO replace on parameterized tests
+        var expect = TestProductProvider.DEFAULT_PERCENTAGE_DISCOUNT;
         var result = ProductService.getPercentageDiscount(product);
-        Assert.assertEquals(expect, result);
+        assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("0.1234"));
         expect = "12,34%";
         result = ProductService.getPercentageDiscount(product);
-        Assert.assertEquals(expect, result);
+        assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("0.99349"));
         expect = "99,35%";
         result = ProductService.getPercentageDiscount(product);
-        Assert.assertEquals(expect, result);
+        assertEquals(expect, result);
 
         product.setDiscount(new BigDecimal("1"));
         expect = "100,00%";
         result = ProductService.getPercentageDiscount(product);
-        Assert.assertEquals(expect, result);
+        assertEquals(expect, result);
     }
 
     @Test(expected = NumberFormatException.class)
@@ -51,10 +51,10 @@ public class ProductServiceTest {
     @Test
     public void getPriceWithDiscount() {
         var productService = new ProductService();
-        var product = ProductTest.getTestProduct();
+        var product = TestProductProvider.getTestProduct();
         product.setPrice(new BigDecimal("100"));
         product.setDiscount(new BigDecimal("20"));
         var actual = productService.getPriceWithDiscount(product);
-        Assert.assertEquals(new BigDecimal("80.00"), actual);
+        assertEquals(new BigDecimal("80.00"), actual);
     }
 }

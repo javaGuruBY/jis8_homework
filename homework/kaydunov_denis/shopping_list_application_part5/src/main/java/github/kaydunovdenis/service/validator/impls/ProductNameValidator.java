@@ -13,7 +13,7 @@ import static github.kaydunovdenis.bean.product.ProductConstants.MIN_LENGTH_NAME
 public class ProductNameValidator implements Validity {
 
     @Override
-    public void validate(final @NotNull Product product) throws ProductValidationException {
+    public void validate(final Product product) throws ProductValidationException {
         checkNotNull(product);
         checkMinLength(product);
         checkMaxLength(product);

@@ -13,6 +13,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 public class SpringConfigTest {
     private static ApplicationContext context;
 
@@ -23,7 +25,7 @@ public class SpringConfigTest {
 
     @Test
     public void initialContextTest() {
-        Assert.assertTrue(context.getBeanDefinitionCount() > 0);
+        assertTrue(context.getBeanDefinitionCount() > 0);
     }
 
     @Test
@@ -38,6 +40,6 @@ public class SpringConfigTest {
     @Test
     public void shoppingCart1() {
         ShoppingCart shoppingCart1 = context.getBean(ShoppingCart.class);
-        Assert.assertEquals("ShoppingCart(name=null, productList=[])", shoppingCart1.toString());
+        assertEquals("ShoppingCart(name=null, productList=[])", shoppingCart1.toString());
     }
 }

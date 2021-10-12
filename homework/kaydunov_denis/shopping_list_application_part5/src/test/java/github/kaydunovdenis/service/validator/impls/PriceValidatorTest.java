@@ -11,7 +11,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.math.BigDecimal;
 
-import static github.kaydunovdenis.bean.product.ProductTest.getTestProduct;
+import static github.kaydunovdenis.bean.product.TestProductProvider.getTestProduct;
+import static org.junit.Assert.*;
 
 class PriceValidatorTest {
     private PriceValidator priceValidator;
@@ -34,7 +35,7 @@ class PriceValidatorTest {
     @ValueSource(strings = {"-12.3", "0"})
     void testNegative(String arg) {
         product.setPrice(new BigDecimal(arg));
-        Assert.assertThrows(ProductValidationException.class,
+        assertThrows(ProductValidationException.class,
                 () -> priceValidator.validate(product));
     }
 }
