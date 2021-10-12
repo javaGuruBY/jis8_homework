@@ -2,7 +2,6 @@ package github.kaydunovdenis.repository;
 
 import github.kaydunovdenis.bean.product.TestProductProvider;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.List;

@@ -4,14 +4,14 @@ import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.repository.MockShoppingCartRepository;
 import github.kaydunovdenis.service.validator.ProductValidator;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
 import static github.kaydunovdenis.bean.product.TestProductProvider.getTestProduct;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ShoppingCartServiceTest {
     private MockShoppingCartRepository repository;

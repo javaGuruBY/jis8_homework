@@ -2,7 +2,6 @@ package github.kaydunovdenis.service.validator.impls;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.service.validator.ProductValidationException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +11,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.math.BigDecimal;
 
 import static github.kaydunovdenis.bean.product.TestProductProvider.getTestProduct;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThrows;
 
 class PriceValidatorTest {
     private PriceValidator priceValidator;

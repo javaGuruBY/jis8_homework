@@ -1,4 +1,4 @@
-package github.kaydunovdenis.bean;
+package github.kaydunovdenis.bean.shoppingcart;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
@@ -6,7 +6,6 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.meanbean.test.BeanTester;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -73,10 +72,5 @@ public class ShoppingCartTest {
     public void testToString() {
         String expected = "ShoppingCart(name=Cart#1, productList=[])";
         assertEquals(expected, shoppingCart.toString());
-    }
-
-    @Test
-    public void annotationDataShouldFunctionCorrectly() {
-        new BeanTester().testBean(ShoppingCart.class);
     }
 }

@@ -1,7 +1,6 @@
 package github.kaydunovdenis.repository;
 
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 

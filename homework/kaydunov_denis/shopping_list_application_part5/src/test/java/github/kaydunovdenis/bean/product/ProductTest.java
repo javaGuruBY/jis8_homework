@@ -2,7 +2,6 @@ package github.kaydunovdenis.bean.product;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;
-import org.meanbean.test.BeanTester;
 
 import java.math.BigDecimal;
 
@@ -111,10 +110,5 @@ public class ProductTest {
     public void testBuilder() {
         var resultProduct = new Product().builder().build();
         assertEquals(new Product(), resultProduct);
-    }
-
-    @Test
-    public void annotationDataShouldFunctionCorrectly() {
-        new BeanTester().testBean(Product.class);
     }
 }
