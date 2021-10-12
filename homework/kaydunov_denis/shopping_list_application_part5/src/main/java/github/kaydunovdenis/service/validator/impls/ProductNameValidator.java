@@ -3,7 +3,6 @@ package github.kaydunovdenis.service.validator.impls;
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.service.validator.ProductValidationException;
 import github.kaydunovdenis.service.validator.Validity;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import static github.kaydunovdenis.bean.product.ProductConstants.MAX_LENGTH_NAME;

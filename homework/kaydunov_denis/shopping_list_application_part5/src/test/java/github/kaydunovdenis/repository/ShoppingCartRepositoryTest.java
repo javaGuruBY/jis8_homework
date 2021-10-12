@@ -24,7 +24,6 @@ public class ShoppingCartRepositoryTest {
         assertNotNull(shoppingCartRepository.getRepository());
     }
 
-
     @Test
     public void getShoppingCarts() {
         assertTrue(shoppingCartRepository.getRepository() instanceof HashMap);

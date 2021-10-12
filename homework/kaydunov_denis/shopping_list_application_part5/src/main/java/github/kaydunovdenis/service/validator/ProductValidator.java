@@ -6,7 +6,6 @@ import github.kaydunovdenis.service.validator.impls.NullProductValidator;
 import github.kaydunovdenis.service.validator.impls.PriceValidator;
 import github.kaydunovdenis.service.validator.impls.ProductNameValidator;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +22,6 @@ public class ProductValidator {
         list.add(new DiscountValidator());
         list.add(new ProductNameValidator());
         list.add(new PriceValidator());
-        list.add(new NullProductValidator());
         //TODO как избавиться от null валидатора? сперва должна быть проверка на null
         // потом все остальное
 
@@ -31,8 +29,9 @@ public class ProductValidator {
         // Validity и добавлять их инстанс в list
     }
 
-    public boolean validate(@NonNull final Product product) {
+    public boolean validate(final Product product) {
         try {
+            new NullProductValidator().validate(product);
             list.forEach(validator -> validator.validate(product));
             return true;
         } catch (ProductValidationException e) {
