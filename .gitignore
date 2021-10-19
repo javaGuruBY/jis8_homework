@@ -21,3 +21,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+homework/yaroslav_zhimanov/threadApi/main/resources/credential.properties
+homework/yaroslav_zhimanov/threadApi/main/resources/log4j.properties
+homework/yaroslav_zhimanov/threadApi/main/resources/readme.md
+
+
