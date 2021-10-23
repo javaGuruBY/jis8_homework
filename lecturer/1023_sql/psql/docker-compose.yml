@@ -1,0 +1,28 @@
+# docker-compose -f ./lecturer/1023_sql/psql/docker-compose.yml up
+# docker-compose -f ./lecturer/1023_sql/psql/docker-compose.yml down
+# docker ps
+
+version: '3.1'
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+# system: postgreSQL
+# server: db
+# user: postgres
+# pass: 1234
+# database: postgres
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /var/lib/postgresql/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./01_jis_init.sql:/docker-entrypoint-initdb.d/01_jis_init.sql
+      - ./02_jis_create_user_table.sql:/docker-entrypoint-initdb.d/02_jis_create_user_table.sql
+      - ./03_jis_init_user_table.sql:/docker-entrypoint-initdb.d/03_jis_init_user_table.sql

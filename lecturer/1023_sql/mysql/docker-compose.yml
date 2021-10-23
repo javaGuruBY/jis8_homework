@@ -1,0 +1,27 @@
+# docker-compose -f ./lecturer/1023_sql/mysql/docker-compose.yml up
+# docker-compose -f ./lecturer/1023_sql/mysql/docker-compose.yml down
+# docker ps
+
+version: '3.1'
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+# system: MySQL
+# server: db
+# user: root
+# pass: 1234
+# database: jis
+
+  db:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./01_jis_init.sql:/docker-entrypoint-initdb.d/01_jis_init.sql
+      - ./02_jis_create_user_table.sql:/docker-entrypoint-initdb.d/02_jis_create_user_table.sql
+      - ./03_jis_init_user_table.sql:/docker-entrypoint-initdb.d/03_jis_init_user_table.sql
