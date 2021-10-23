@@ -1,0 +1,3 @@
+CREATE USER jis8 WITH PASSWORD '1234';
+-- \du
+DROP USER jis8;
