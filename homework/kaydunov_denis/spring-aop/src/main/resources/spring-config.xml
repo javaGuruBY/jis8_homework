@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+    <aop:aspectj-autoproxy />
+
+    <bean id="UserService" class="github.kaydunovdenis.service.UserService" />
+    <bean id="HumanService" class="github.kaydunovdenis.service.HumanService" />
+
+    <!-- Aspect -->
+    <bean id="Log" class="github.kaydunovdenis.aspects.Logging" />
+    <bean id="LoggingWithWildcard" class="github.kaydunovdenis.aspects.LoggingWithWildcard" />
+
+</beans>
