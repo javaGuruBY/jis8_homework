@@ -1,6 +1,6 @@
 package com.tutrit.java.quickstart.config;
 
-import com.tutrit.java.quickstart.dao.JBossDao;
+import com.tutrit.java.quickstart.dao.JBoysDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,12 +8,11 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Properties;
 
 public class JisAtLocalhost {
     private static Connection connection;
-    private static Logger log = LoggerFactory.getLogger(JBossDao.class);
+    private static Logger log = LoggerFactory.getLogger(JBoysDao.class);
 
     public static Connection getConnection() throws Exception {
         try {
