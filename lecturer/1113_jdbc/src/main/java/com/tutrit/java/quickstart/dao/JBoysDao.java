@@ -7,10 +7,10 @@ import java.sql.Statement;
 
 import static com.tutrit.java.quickstart.config.JisAtLocalhost.getConnection;
 
-public class JBossDao {
-    private static Logger log = LoggerFactory.getLogger(JBossDao.class);
+public class JBoysDao {
+    private static Logger log = LoggerFactory.getLogger(JBoysDao.class);
 
-    public void createTableJBoss() {
+    public void createTableJBoys() {
         try (Statement st = getConnection().createStatement()) {
             st.execute(Query.CREATE_JBOYS);
         } catch (Exception ex) {
@@ -18,7 +18,7 @@ public class JBossDao {
         }
     }
 
-    public void dropTableJBoss() {
+    public void dropTableJBoys() {
         try (Statement st = getConnection().createStatement()) {
             st.execute(Query.DROP_JBOYS);
         } catch (Exception ex) {
