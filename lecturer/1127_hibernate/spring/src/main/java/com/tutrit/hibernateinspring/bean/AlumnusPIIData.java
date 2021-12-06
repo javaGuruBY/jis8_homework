@@ -1,20 +1,25 @@
 package com.tutrit.hibernateinspring.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Data
+@Setter
+@Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class AlumnusPIIData {
     @Id
-    @GeneratedValue
     Long id;
     String data;
+
+    @MapsId
+    @OneToOne
+    Alumnus alumnus;
+
+    public AlumnusPIIData(Long id, String data) {
+        this.id = id;
+        this.data = data;
+    }
 }

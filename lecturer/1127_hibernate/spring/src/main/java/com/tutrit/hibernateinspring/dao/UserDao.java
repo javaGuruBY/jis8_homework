@@ -1,6 +1,7 @@
 package com.tutrit.hibernateinspring.dao;
 
 import com.tutrit.hibernateinspring.bean.Student;
+import com.tutrit.hibernateinspring.bean.User;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -14,24 +15,25 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class StudentDao {
+public class UserDao {
 
     EntityManager entityManager;
 
     @Transactional
-    public void save(Student student) {
-        entityManager.persist(student);
+    public void save(User user) {
+        entityManager.persist(user);
     }
 
-    public List<Student> findAll() {
+    @Transactional(readOnly = true)
+    public List<User> findAll() {
         return getSession()
-                .createQuery("from Student", Student.class)
+                .createQuery("from User", User.class)
                 .getResultList();
     }
 
     @Transactional
-    public void save(List<Student> students) {
-        students.stream().forEach(student -> entityManager.persist(student));
+    public void save(List<User> users) {
+        users.stream().forEach(student -> entityManager.persist(users));
     }
 
     private Session getSession() {
