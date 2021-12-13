@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -104,4 +105,26 @@ class AlumnusRepositoryTest {
         List<AlumnusHiredDto> onlyHired = alumnusRepository.findOnlyHiredInfo();
         assertEquals(6, onlyHired.size());
     }
+
+    @Test
+    void testFindAllWithSpecifications() {
+        List<Alumnus> alumni = alumnusRepository.findAll(Specification.where(AlumnusSpecifications.isHired()));
+        assertEquals(6, alumni.size());
+
+        alumni = alumnusRepository.findAll(Specification.where(AlumnusSpecifications.nameIs("Alumnus 4")));
+        assertEquals(1, alumni.size());
+        assertEquals("Alumnus 4", alumni.get(0).getName());
+
+        alumni = alumnusRepository.findAll(Specification.where(
+                AlumnusSpecifications.nameIs("Alumnus 4")
+                        .and(AlumnusSpecifications.isHired())));
+        assertEquals(1, alumni.size());
+        assertEquals("Alumnus 4", alumni.get(0).getName());
+
+        alumni = alumnusRepository.findAll(Specification.where(
+                AlumnusSpecifications.nameIs("Alumnus 2")
+                        .and(AlumnusSpecifications.isHired())));
+        assertEquals(0, alumni.size());
+    }
+
 }
