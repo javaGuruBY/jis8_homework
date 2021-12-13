@@ -1,0 +1,10 @@
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (1, true, 'Alumnus 1', null, 1);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (2, false, 'Alumnus 2', null, 2);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (3, true, 'Alumnus 3', null, 3);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (4, true, 'Alumnus 4', null, 1);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (5, false, 'Alumnus 5', null, 2);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (6, true, 'Alumnus 6', null, 3);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (7, false, 'Alumnus 7', null, 1);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (8, true, 'Alumnus 8', null, 2);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (9, false, 'Alumnus 9', null, 3);
+INSERT INTO JIS.alumnus (alumnus_id, hired, name, primary_skill, project_id) VALUES (10, true, 'Alumnus 10', null, null);

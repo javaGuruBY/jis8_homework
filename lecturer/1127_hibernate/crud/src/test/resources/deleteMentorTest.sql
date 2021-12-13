@@ -1,0 +1,1 @@
+INSERT INTO JIS.mentor (mentor_id, full_name) VALUES (101, 'Marina');

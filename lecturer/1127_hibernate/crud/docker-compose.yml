@@ -1,0 +1,15 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  lab-db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: JIS
+    volumes:
+      - ./lab-db:/var/lib/mysql
+    ports:
+      - "3306:3306"
