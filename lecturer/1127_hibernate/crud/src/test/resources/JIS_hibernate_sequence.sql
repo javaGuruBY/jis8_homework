@@ -1,0 +1,1 @@
+INSERT INTO JIS.hibernate_sequence (next_val) VALUES (100);

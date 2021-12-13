@@ -1,0 +1,10 @@
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (1, 'https://github.com/student1', 1);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (2, 'https://github.com/student2', null);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (3, 'https://github.com/student3', 2);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (4, 'https://github.com/student4', null);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (5, 'https://github.com/student5', 3);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (6, 'https://github.com/student6', null);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (7, 'https://github.com/student7', 1);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (8, 'https://github.com/student8', null);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (9, 'https://github.com/student9', 2);
+INSERT INTO JIS.student (student_id, git_hub, project_id) VALUES (10, 'https://github.com/student10', null);

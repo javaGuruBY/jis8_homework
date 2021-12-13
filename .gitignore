@@ -25,4 +25,7 @@ homework/yaroslav_zhimanov/threadApi/main/resources/credential.properties
 homework/yaroslav_zhimanov/threadApi/main/resources/log4j.properties
 homework/yaroslav_zhimanov/threadApi/main/resources/readme.md
 
-
+**/.idea
+**/target
+**/.DS_Store
+**/*.iml
