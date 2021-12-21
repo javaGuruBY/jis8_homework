@@ -2,12 +2,12 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.product.ProductConstants;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-@Component
+@Service
 public class ProductService {
 
     public BigDecimal getPriceWithDiscount(final Product product) {
