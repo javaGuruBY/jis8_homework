@@ -15,6 +15,6 @@ public class ShoppingListApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext();
-        System.out.println(context);
+        log.info(String.valueOf(context));
     }
 }

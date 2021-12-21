@@ -21,7 +21,7 @@
         <!-- Default file encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--My properties-->
-        <spring.version>5.3.10</spring.version>
+        <spring.version>5.3.13</spring.version>
     </properties>
 
     <dependencies>
@@ -31,12 +31,18 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>2.0.0-alpha1</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
 
         <!-- Performs Tests -->
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
-            <version>5.8.1</version>
+            <version>5.8.2</version>
         </dependency>
 
         <!-- Plugin for Tests Analysis -->
@@ -66,7 +72,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.22</version>
         </dependency>
         <!--Here's the end of the default dependencies-->
 
@@ -74,7 +80,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>3.12.4</version>
+            <version>4.1.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -99,7 +105,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.7.1</version>
+            <version>3.8</version>
             <scope>test</scope>
         </dependency>
 
@@ -128,7 +134,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.8.1</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
         <!--For make testing Beans and POJOs as easy as possible-->
@@ -145,6 +151,7 @@
             <version>7.4.0</version>
             <scope>test</scope>
         </dependency>
+        <!--Spring Boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
@@ -154,9 +161,8 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.5.4</version>
+            <version>2.6.1</version>
         </dependency>
-        <!-- -->
     </dependencies>
 
     <build>

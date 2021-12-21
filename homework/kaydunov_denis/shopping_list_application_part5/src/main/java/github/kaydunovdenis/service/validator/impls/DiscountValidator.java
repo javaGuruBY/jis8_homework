@@ -5,7 +5,6 @@ import github.kaydunovdenis.bean.product.ProductConstants;
 import github.kaydunovdenis.service.validator.ProductValidationException;
 import github.kaydunovdenis.service.validator.Validity;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
