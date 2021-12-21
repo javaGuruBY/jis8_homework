@@ -2,7 +2,7 @@ package github.kaydunovdenis.bean.product;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 public class ProductCategoryTest {
@@ -12,8 +12,10 @@ public class ProductCategoryTest {
         assertTrue(ProductCategory.contain(ProductCategory.valueOf("PHONE")));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void containNegative() {
-        assertFalse(ProductCategory.contain(ProductCategory.valueOf("PHY")));
+       // assertTrue(ProductCategory.contain(ProductCategory.valueOf("PHY")));
+        assertThrows(IllegalArgumentException.class,
+                () -> ProductCategory.valueOf("PHY"));
     }
 }
