@@ -2,7 +2,7 @@ package github.kaydunovdenis.service;
 
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
-import github.kaydunovdenis.service.validator.ProductValidator;
+import github.kaydunovdenis.service.validator.ProductValidatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,16 +11,16 @@ import java.math.BigDecimal;
 @Component
 public class ShoppingCartService {
     private final ProductService productService;
-    private final ProductValidator productValidator;
+    private final ProductValidatorService productValidatorService;
 
     @Autowired
-    public ShoppingCartService(ProductService productService, ProductValidator productValidator) {
+    public ShoppingCartService(ProductService productService, ProductValidatorService productValidatorService) {
         this.productService = productService;
-        this.productValidator = productValidator;
+        this.productValidatorService = productValidatorService;
     }
 
     public void addProduct(final ShoppingCart shoppingCart, final Product product) {
-        productValidator.validate(product);
+        productValidatorService.validate(product);
         shoppingCart.getProductList().add(product);
     }
 

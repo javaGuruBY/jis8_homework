@@ -5,15 +5,17 @@ import github.kaydunovdenis.bean.product.ProductConstants;
 import github.kaydunovdenis.service.validator.ProductValidationException;
 import github.kaydunovdenis.service.validator.Validity;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DiscountValidator implements Validity {
     @Override
-    public void validate(final Product product) throws ProductValidationException {
+    public boolean validate(final Product product) throws ProductValidationException {
         checkAvailable(product);
         checkMin(product);
         checkMax(product);
+        return true;
     }
 
     private void checkMax(final @NotNull Product product) throws ProductValidationException{

@@ -3,9 +3,10 @@ package github.kaydunovdenis.service;
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.repository.MockShoppingCartRepository;
-import github.kaydunovdenis.service.validator.ProductValidator;
+import github.kaydunovdenis.service.validator.ProductValidatorService;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 
@@ -18,11 +19,13 @@ public class ShoppingCartServiceTest {
     private ShoppingCartService shoppingCartService;
     private ShoppingCart shoppingCart;
     private Product product;
+    @Autowired
+    private ProductValidatorService productValidatorService;
 
     @Before
     public void setUp() {
         repository = new MockShoppingCartRepository();
-        shoppingCartService = new ShoppingCartService(new ProductService(), new ProductValidator());
+        shoppingCartService = new ShoppingCartService(new ProductService(), productValidatorService);
         shoppingCart = new ShoppingCart("Cart#1");
         product = getTestProduct();
     }
