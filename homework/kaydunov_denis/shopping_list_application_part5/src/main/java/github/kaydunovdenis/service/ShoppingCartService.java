@@ -3,18 +3,20 @@ package github.kaydunovdenis.service;
 import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.service.validator.ProductValidatorService;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@NoArgsConstructor
 @Service
 public class ShoppingCartService {
-    private final ProductService productService;
-    private final ProductValidatorService productValidatorService;
+    private ProductService productService;
+    private ProductValidatorService productValidatorService;
 
-    @Autowired
-    public ShoppingCartService(ProductService productService, ProductValidatorService productValidatorService) {
+    public ShoppingCartService(@Autowired ProductService productService,
+                               @Autowired ProductValidatorService productValidatorService) {
         this.productService = productService;
         this.productValidatorService = productValidatorService;
     }
