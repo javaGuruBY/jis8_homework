@@ -2,6 +2,7 @@ package github.kaydunovdenis.service.validator;
 
 import github.kaydunovdenis.bean.product.Product;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static github.kaydunovdenis.bean.product.TestProductProvider.getAnotherTestProduct;
@@ -15,10 +16,11 @@ public class ProductValidatorTest {
     @Before
     public void setUp() throws Exception {
         //TODO переписать чтобы не было null
-        productValidatorService = new ProductValidatorService(null);
+        productValidatorService = TestValidatorProvider.productValidatorService;
         product = getAnotherTestProduct();
     }
 
+    @Ignore("redundant, будет актуально если тесты писать подключая Spring context, а не TestValidatorProvider")
     @Test
     public void listValidatorsShouldBeFilledOnStart() {
         assertTrue(productValidatorService.getList().size() > 0);

@@ -5,11 +5,13 @@ import github.kaydunovdenis.service.ProductService;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * About the discount:
  * value variable 1 = view 100,00%
  * value variable 0.2 = view 20,00%
+ * @see ProductConstants;
  */
 @Data
 public class Product implements Entity {
@@ -33,21 +35,30 @@ public class Product implements Entity {
         this.description = description;
     }
 
-    /**
-     * @ProductConstants ProductConstants.MIN_DISCOUNT = 0;
-     * ProductConstants.MAX_DISCOUNT = 100;
-     */
-    public BigDecimal getDiscount() {
-        return discount;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        if (!Objects.equals(id, product.id)) return false;
+        if (!Objects.equals(name, product.name)) return false;
+        if (!Objects.equals(price, product.price)) return false;
+        if (productCategory != product.productCategory) return false;
+        if (!Objects.equals(discount, product.discount) || discount.compareTo(product.discount) != 0) return false;
+        return Objects.equals(description, product.description);
     }
 
-    /**
-     * @see ProductConstants
-     * default MIN_DISCOUNT = 0;
-     * default MAX_DISCOUNT = 100;
-     */
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (productCategory != null ? productCategory.hashCode() : 0);
+        result = 31 * result + (discount != null ? discount.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        return result;
     }
 
     @Override

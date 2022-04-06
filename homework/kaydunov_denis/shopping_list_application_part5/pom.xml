@@ -174,7 +174,7 @@
 
     <build>
         <plugins>
-            <!-- Builds an executable JAR -->
+            <!-- Builds an executable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

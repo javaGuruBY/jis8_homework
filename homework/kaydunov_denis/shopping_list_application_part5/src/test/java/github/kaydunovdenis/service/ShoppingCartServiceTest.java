@@ -4,17 +4,11 @@ import github.kaydunovdenis.bean.product.Product;
 import github.kaydunovdenis.bean.shopping_cart.ShoppingCart;
 import github.kaydunovdenis.repository.MockShoppingCartRepository;
 import github.kaydunovdenis.service.validator.ProductValidatorService;
-import github.kaydunovdenis.service.validator.Validity;
-import github.kaydunovdenis.service.validator.impls.DiscountValidator;
-import github.kaydunovdenis.service.validator.impls.NullProductValidator;
-import github.kaydunovdenis.service.validator.impls.PriceValidator;
-import github.kaydunovdenis.service.validator.impls.ProductNameValidator;
+import github.kaydunovdenis.service.validator.TestValidatorProvider;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import static github.kaydunovdenis.bean.product.TestProductProvider.getTestProduct;
 import static org.junit.Assert.assertEquals;
@@ -30,22 +24,7 @@ public class ShoppingCartServiceTest {
     @Before
     public void setUp() {
         repository = new MockShoppingCartRepository();
-
-        //TODO вот так вот создавать валидаторы? это так не должно быть!
-        final DiscountValidator discountValidator = new DiscountValidator();
-        final NullProductValidator nullProductValidator = new NullProductValidator();
-        final PriceValidator priceValidator = new PriceValidator();
-        final ProductNameValidator productNameValidator = new ProductNameValidator();
-        List<Validity> validityList = new ArrayList<>() {
-            {
-                add(discountValidator);
-                add(nullProductValidator);
-                add(priceValidator);
-                add(productNameValidator);
-            }
-        };
-
-        ProductValidatorService productValidatorService = new ProductValidatorService(validityList);
+        ProductValidatorService productValidatorService = TestValidatorProvider.productValidatorService;
         shoppingCartService = new ShoppingCartService(new ProductService(), productValidatorService);
         shoppingCart = new ShoppingCart("Cart#1");
         product = getTestProduct();

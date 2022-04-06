@@ -20,6 +20,7 @@ public class ShoppingListApplicationTest {
     @Ignore("redundant")
     @Test
     public void main() {
+        //TODO ЭТо ужасный тест!!!!!
         assertTrue(true);
     }
 }
