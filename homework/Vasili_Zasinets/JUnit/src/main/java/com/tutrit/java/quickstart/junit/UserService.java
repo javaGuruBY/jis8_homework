@@ -1,0 +1,17 @@
+package com.tutrit.java.quickstart.junit;
+
+import static com.tutrit.java.quickstart.junit.validation.Validator.validation;
+
+public class UserService {
+
+    UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public void addUser(User user)  {
+        validation(user);
+        userRepository.save(user);
+    }
+}
